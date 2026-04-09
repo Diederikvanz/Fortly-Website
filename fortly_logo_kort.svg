@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="120" viewBox="0 0 380 120">
+
+  <!-- Dark navy background -->
+  <rect fill="#0A192F" x="0" y="0" width="380" height="120" rx="14"/>
+
+  <!-- Icon square -->
+  <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+
+  <!-- F: top bar, vertical stem, mid bar -->
+  <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+  <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+  <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+
+  <!-- Divider -->
+  <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Wordmark -->
+  <text x="142" y="60" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="58" letter-spacing="-1">
+    <tspan fill="#F5F5F7">fort</tspan><tspan fill="#007AFF">ly</tspan>
+  </text>
+</svg>
