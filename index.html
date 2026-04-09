@@ -888,10 +888,35 @@
     document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
 
     // Contact form
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      document.getElementById('contact-form').classList.add('hidden');
-      document.getElementById('form-success').classList.remove('hidden');
+
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (response.ok) {
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        contactForm.reset();
+      } else {
+        let errorMessage = 'Er is iets misgegaan. Probeer het later opnieuw.';
+        try {
+          const data = await response.json();
+          if (data && data.error) {
+            errorMessage = data.error;
+          }
+        } catch (err) {
+          // ignore JSON parse errors
+        }
+        alert(errorMessage);
+      }
     });
   </script>
 </body>
