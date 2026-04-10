@@ -906,6 +906,19 @@
     document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
 
     // Contact form
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18076485002/hUd8CJefsJkcEIqLxatD',
+        'event_callback': callback
+      });
+      return false;
+    }
+
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
 
@@ -923,6 +936,7 @@
         contactForm.classList.add('hidden');
         formSuccess.classList.remove('hidden');
         contactForm.reset();
+        gtag_report_conversion();
       } else {
         let errorMessage = 'Er is iets misgegaan. Probeer het later opnieuw.';
         try {
