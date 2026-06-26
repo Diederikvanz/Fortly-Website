@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /bedankt.html
 
 Sitemap: https://www.fortly.nl/sitemap.xml

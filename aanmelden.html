@@ -13,8 +13,22 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aanmelden — Fortly Boekhouding</title>
-  <meta name="description" content="Meld je aan bij Fortly en regel je boekhouding in vijf minuten. Vaste prijs, persoonlijk contact, geen verrassingen.">
+  <title>Aanmelden | Fortly — Boekhouder voor ZZP'ers vanaf €85/maand</title>
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="canonical" href="https://www.fortly.nl/aanmelden.html" />
+  <meta name="description" content="Meld je aan bij Fortly en start met een vaste boekhouder. Kies je pakket (€85, €145 of €200/maand excl. btw) en wij nemen binnen één werkdag contact op." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/aanmelden.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.fortly.nl/aanmelden.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.fortly.nl/aanmelden.html" />
+  <meta property="og:site_name" content="Fortly" />
+  <meta property="og:title" content="Aanmelden bij Fortly — Start je boekhouding vandaag" />
+  <meta property="og:description" content="Kies je pakket en meld je in 2 minuten aan. Vaste boekhouder, vaste prijs, persoonlijk contact." />
+  <meta property="og:image" content="https://www.fortly.nl/fortly_logo_kort.png" />
+  <meta property="og:locale" content="nl_NL" />
 
   <script>
     window.tailwind = window.tailwind || {};
@@ -82,6 +96,39 @@
     .afu { animation: fadeInUp .6s ease-out forwards; opacity: 0; }
     .d1 { animation-delay: .1s; } .d2 { animation-delay: .2s; } .d3 { animation-delay: .3s; }
   </style>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fortly.nl/"},
+      {"@type": "ListItem", "position": 2, "name": "Aanmelden", "item": "https://www.fortly.nl/aanmelden.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.fortly.nl/aanmelden.html",
+    "url": "https://www.fortly.nl/aanmelden.html",
+    "name": "Aanmelden bij Fortly — Boekhouder voor ZZP'ers",
+    "description": "Meld je aan bij Fortly. Kies je boekhoudpakket en start direct met een vaste boekhouder voor een vaste maandprijs.",
+    "inLanguage": "nl-NL",
+    "isPartOf": {"@id": "https://www.fortly.nl/#website"},
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fortly.nl/"},
+        {"@type": "ListItem", "position": 2, "name": "Aanmelden", "item": "https://www.fortly.nl/aanmelden.html"}
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -89,7 +136,7 @@
   <header style="background:var(--dark);height:80px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full" style="max-width:1100px;">
       <a href="https://www.fortly.nl" style="text-decoration:none;">
-        <img src="fortly_logo_outlined.svg" alt="Fortly" style="width:120px;height:120px;">
+        <img src="fortly_logo_outlined.svg" alt="Fortly — Boekhouder voor ZZP'ers" width="120" height="120" style="width:120px;height:120px;">
       </a>
       <a href="https://www.fortly.nl" style="font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">
         ← Terug naar website
@@ -113,6 +160,7 @@
   </div>
 
   <!-- MAIN -->
+  <main>
   <div class="container mx-auto px-4 sm:px-6 py-12" style="max-width:1100px;">
     <div class="grid gap-10" style="grid-template-columns:1fr; align-items:start;">
 
@@ -133,9 +181,9 @@
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;" id="pakketGrid">
 
               <label class="pakket-card" id="card-instap" onclick="selectPakket('instap')">
-                <input type="radio" name="pakket" value="Instap — €75/maand">
+                <input type="radio" name="pakket" value="Instap — €85/maand">
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Instap</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€75</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€85</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
                 <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">tot 200 boekingen</div>
               </label>
@@ -172,30 +220,30 @@
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
               <div class="form-group">
-                <label class="form-label">Naam *</label>
-                <input class="form-input" name="naam" type="text" placeholder="Jan de Vries" required>
+                <label class="form-label" for="naam">Naam *</label>
+                <input class="form-input" id="naam" name="naam" type="text" placeholder="Jan de Vries" autocomplete="name" required>
               </div>
               <div class="form-group">
-                <label class="form-label">Bedrijfsnaam *</label>
-                <input class="form-input" name="bedrijfsnaam" type="text" placeholder="De Vries Advies" required>
-              </div>
-            </div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-              <div class="form-group">
-                <label class="form-label">E-mailadres *</label>
-                <input class="form-input" name="email" type="email" placeholder="jan@bedrijf.nl" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Telefoonnummer *</label>
-                <input class="form-input" name="telefoon" type="tel" placeholder="+31 6 12 34 56 78" required>
+                <label class="form-label" for="bedrijfsnaam">Bedrijfsnaam *</label>
+                <input class="form-input" id="bedrijfsnaam" name="bedrijfsnaam" type="text" placeholder="De Vries Advies" autocomplete="organization" required>
               </div>
             </div>
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
               <div class="form-group">
-                <label class="form-label">Rechtsvorm *</label>
-                <select class="form-input" name="rechtsvorm" required>
+                <label class="form-label" for="email">E-mailadres *</label>
+                <input class="form-input" id="email" name="email" type="email" placeholder="jan@bedrijf.nl" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="telefoon">Telefoonnummer *</label>
+                <input class="form-input" id="telefoon" name="telefoon" type="tel" placeholder="+31 6 12 34 56 78" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="rechtsvorm">Rechtsvorm *</label>
+                <select class="form-input" id="rechtsvorm" name="rechtsvorm" required>
                   <option value="">Kies…</option>
                   <option>Eenmanszaak</option>
                   <option>ZZP</option>
@@ -205,14 +253,14 @@
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label">KVK-nummer <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
-                <input class="form-input" name="kvk" type="text" placeholder="12345678">
+                <label class="form-label" for="kvk">KVK-nummer <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
+                <input class="form-input" id="kvk" name="kvk" type="text" placeholder="12345678">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Heb je al een boekhouder?</label>
-              <select class="form-input" name="huidige_boekhouder">
+              <label class="form-label" for="huidige_boekhouder">Heb je al een boekhouder?</label>
+              <select class="form-input" id="huidige_boekhouder" name="huidige_boekhouder">
                 <option value="">Kies…</option>
                 <option>Nee, ik begin net</option>
                 <option>Ja, ik wil overstappen</option>
@@ -221,8 +269,8 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Opmerkingen <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
-              <textarea class="form-input" name="opmerkingen" rows="3" placeholder="Vertel kort over je situatie of stel een vraag…" style="resize:vertical;"></textarea>
+              <label class="form-label" for="opmerkingen">Opmerkingen <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
+              <textarea class="form-input" id="opmerkingen" name="opmerkingen" rows="3" placeholder="Vertel kort over je situatie of stel een vraag…" style="resize:vertical;"></textarea>
             </div>
 
             <button type="submit" class="btn-submit">
@@ -316,6 +364,8 @@
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer style="background:var(--dark);padding:2.5rem 0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.07);">
     <div style="text-align:center;">
@@ -333,7 +383,7 @@
       document.getElementById('card-'+p).classList.add('selected');
       document.querySelector('#card-'+p+' input').checked = true;
 
-      const waarden = { instap: 'Instap — €75/maand', groei: 'Groei — €145/maand', bv: 'BV / DGA — €200/maand' };
+      const waarden = { instap: 'Instap — €85/maand', groei: 'Groei — €145/maand', bv: 'BV / DGA — €200/maand' };
       document.getElementById('pakket-hidden').value = waarden[p];
     }
 
