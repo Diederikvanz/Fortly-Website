@@ -20,6 +20,10 @@
   <meta name="keywords" content="boekhouder ZZP, boekhouder Amsterdam, administratie ZZP, boekhouder eenmanszaak, boekhouder vaste prijs, boekhouder starters, administratiekantoor Amsterdam" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Fortly — Indufort Consulting" />
+  <meta name="geo.region" content="NL-NH" />
+  <meta name="geo.placename" content="Amsterdam" />
+  <meta name="geo.position" content="52.3101;4.9461" />
+  <meta name="ICBM" content="52.3101, 4.9461" />
   <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/" />
   <link rel="alternate" hreflang="x-default" href="https://www.fortly.nl/" />
 
@@ -326,12 +330,37 @@
       "@type": "PostalAddress",
       "streetAddress": "Joan Muyskenweg 82",
       "addressLocality": "Amsterdam",
+      "addressRegion": "Noord-Holland",
       "postalCode": "1114 AN",
       "addressCountry": "NL"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Nederland"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.3101,
+      "longitude": 4.9461
+    },
+    "areaServed": [
+      {"@type": "Country", "name": "Nederland"},
+      {"@type": "AdministrativeArea", "name": "Noord-Holland"},
+      {"@type": "City", "name": "Amsterdam"},
+      {"@type": "City", "name": "Amstelveen"},
+      {"@type": "City", "name": "Haarlem"},
+      {"@type": "City", "name": "Almere"},
+      {"@type": "City", "name": "Utrecht"},
+      {"@type": "City", "name": "Rotterdam"},
+      {"@type": "City", "name": "Den Haag"},
+      {"@type": "City", "name": "Zaandam"},
+      {"@type": "City", "name": "Diemen"},
+      {"@type": "City", "name": "Purmerend"}
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.3101,
+        "longitude": 4.9461
+      },
+      "geoRadius": "250000"
     },
     "priceRange": "€€",
     "openingHoursSpecification": [
