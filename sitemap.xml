@@ -4,7 +4,7 @@
   <url>
     <loc>https://www.fortly.nl/</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/"/>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,5 +14,47 @@
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/"/>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/wat-kost-een-boekhouder-zzp.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/wat-kost-een-boekhouder-zzp.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/btw-aangifte-zzp-gids.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/btw-aangifte-zzp-gids.html"/>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/zelfstandigenaftrek-startersaftrek-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/zelfstandigenaftrek-startersaftrek-2026.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/eenmanszaak-naar-bv-wanneer.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/eenmanszaak-naar-bv-wanneer.html"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fortly.nl/blog/boekhouding-starten-als-zzp.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/boekhouding-starten-als-zzp.html"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
