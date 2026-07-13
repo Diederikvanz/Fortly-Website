@@ -61,7 +61,7 @@
 
   <style>
     :root {
-      --blue: #007AFF;
+      --blue: #007AFF; --blue-text: #0064CC;
       --dark: #0A192F;
       --text: #1D1D1F;
       --muted: #58585b;
@@ -72,7 +72,7 @@
     body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
     h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 
-    .section-label { font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--blue); display: inline-block; margin-bottom: .75rem; }
+    .section-label { font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--blue-text); display: inline-block; margin-bottom: .75rem; }
 
     /* Pakket cards */
     .pakket-card { border: 2px solid var(--border); border-radius: 1rem; padding: 1.25rem 1rem; cursor: pointer; transition: all .2s; background: white; position: relative; text-align: center; }
@@ -156,7 +156,7 @@
       <h1 class="afu d2 text-white" style="font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;">
         Meld je aan bij Fortly
       </h1>
-      <p class="afu d3" style="color:rgba(255,255,255,.65);font-size:1.05rem;font-weight:300;line-height:1.7;">
+      <p class="afu d3" style="color:rgba(255,255,255,.65);font-size:1.05rem;font-weight:400;line-height:1.7;">
         Kies je pakket, vul je gegevens in en wij nemen binnen één werkdag contact op.
         Geen gedoe, geen verrassingen.
       </p>
@@ -178,7 +178,13 @@
         @media(min-width:480px){
           #pakketGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
-      </style>
+      
+    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
+    a:focus-visible, button:focus-visible, .btn-submit:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .pakket-card:focus-within {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+  </style>
       <div class="grid gap-10 main-grid" style="grid-template-columns:1fr;align-items:start;">
 
         <!-- FORMULIER -->
@@ -192,7 +198,7 @@
               <label class="pakket-card" id="card-instap" onclick="selectPakket('instap')">
                 <input type="radio" name="pakket" value="Instap, €85/maand">
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Instap</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€85</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€85</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
                 <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">tot 200 boekingen</div>
               </label>
@@ -201,7 +207,7 @@
                 <div class="popular-badge">Meest gekozen</div>
                 <input type="radio" name="pakket" value="Groei, €145/maand" checked>
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Groei</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€145</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€145</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
                 <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">tot 500 boekingen</div>
               </label>
@@ -209,14 +215,14 @@
               <label class="pakket-card" id="card-bv" onclick="selectPakket('bv')">
                 <input type="radio" name="pakket" value="MKB &amp; BV / DGA, €200/maand">
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">MKB &amp; BV</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€200</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€200</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
                 <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">onbeperkt</div>
               </label>
 
             </div>
             <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;text-align:center;">
-              Twijfel je? Geen zorgen, we bespreken het samen. <a href="https://www.fortly.nl#pakketten" style="color:var(--blue);font-weight:600;">Vergelijk pakketten →</a>
+              Twijfel je? Geen zorgen, we bespreken het samen. <a href="https://www.fortly.nl#pakketten" style="color:var(--blue-text);font-weight:600;">Vergelijk pakketten →</a>
             </p>
           </div>
 
@@ -298,7 +304,7 @@
             </div>
             <h3 style="font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.5rem;">Aanmelding ontvangen!</h3>
             <p style="color:var(--muted);font-size:.95rem;line-height:1.7;">We nemen binnen één werkdag contact met je op.<br>Welkom bij Fortly!</p>
-            <a href="https://www.fortly.nl" style="display:inline-block;margin-top:1.5rem;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.85rem;color:var(--blue);text-decoration:none;">← Terug naar de website</a>
+            <a href="https://www.fortly.nl" style="display:inline-block;margin-top:1.5rem;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.85rem;color:var(--blue-text);text-decoration:none;">← Terug naar de website</a>
           </div>
         </div>
 
@@ -364,7 +370,7 @@
           <!-- Contact -->
           <div style="background:white;border-radius:1.25rem;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:center;">
             <p style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem;">Liever even bellen?</p>
-            <a href="tel:+31623071852" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue);text-decoration:none;">+31 6 230 71 852</a>
+            <a href="tel:+31623071852" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue-text);text-decoration:none;">+31 6 230 71 852</a>
             <p style="font-size:.72rem;color:var(--muted);margin-top:.3rem;">Bereikbaar op werkdagen 9:00–17:30</p>
           </div>
 

@@ -54,18 +54,18 @@
     :root {
       --color-primary-dark: #1D1D1F;
       --color-primary-deep-dark: #0A192F;
-      --color-accent-blue: #007AFF;
+      --color-accent-blue: #007AFF; --color-accent-text: #0064CC;
       --color-text-dark: #1D1D1F;
       --color-text-medium: #58585b;
       --color-text-on-dark: #F5F5F7;
-      --color-text-muted-on-dark: #A1A1A6;
+      --color-text-muted-on-dark: #B4B4BC;
       --color-background-main: #F5F5F7;
       --color-border-light: #D2D2D7;
     }
     ::selection { background-color: var(--color-accent-blue); color: #fff; }
     body { font-family: 'Open Sans', sans-serif; color: var(--color-text-dark); -webkit-font-smoothing: antialiased; background: #fff; font-size: 17px; line-height: 1.7; letter-spacing: -0.012em; }
     h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--color-primary-dark); font-weight: 700; line-height: 1.25; margin-bottom: 0.7em; letter-spacing: -0.02em; }
-    .btn { display: inline-block; font-family: 'Montserrat', sans-serif; font-weight: 600; padding: 0.875rem 2rem; border-radius: 9999px; transition: all 0.2s cubic-bezier(0.25,0.1,0.25,1); text-align: center; font-size: 0.875rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; line-height: 1.3; }
+    .btn { display: inline-block; font-family: 'Montserrat', sans-serif; font-weight: 600; padding: 0.875rem 2rem; border-radius: 0.625rem; transition: all 0.2s cubic-bezier(0.25,0.1,0.25,1); text-align: center; font-size: 0.875rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; line-height: 1.3; }
     .btn-white { background: white; color: var(--color-primary-dark); border-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     .btn-white:hover { background: #F0F0F0; transform: translateY(-2px); }
     .btn-accent { background: var(--color-accent-blue); color: white; border-color: var(--color-accent-blue); border-radius: 0.625rem; }
@@ -73,17 +73,23 @@
     .nav-link { font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 500; color: var(--color-text-muted-on-dark); text-decoration: none; padding: 0.75rem 1rem; border-radius: 6px; transition: color 0.2s, background 0.2s; }
     .nav-link:hover { color: white; background: rgba(255,255,255,0.1); }
     .nav-link.active { color: white; }
-    .section-label { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent-blue); margin-bottom: 1rem; }
+    .section-label { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent-text); margin-bottom: 1rem; }
     #mobile-menu { display: none; }
     #mobile-menu.open { display: block; }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-blue); }
+    .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-text); }
     .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
     .card-img { height: 190px; background-size: cover; background-position: center; }
     .featured-card { flex-direction: column; }
     @media (min-width: 768px) { .featured-card { flex-direction: row; } }
+  
+    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
+    a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .service-card:focus-visible, .plan-card:focus-visible, .article-card:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--color-accent-blue);
+      outline-offset: 2px;
+    }
   </style>
 
   <!-- Structured Data: Blog -->
@@ -163,7 +169,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
       <span class="section-label text-blue-400">Fortly Kennisbank</span>
       <h1 class="text-white" style="font-size:clamp(2.2rem,5vw,3.4rem);">Slimmer ondernemen begint bij inzicht</h1>
-      <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:300;">
+      <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:400;">
         Praktische tips over boekhouding, btw, belasting besparen en ondernemen, helder uitgelegd voor ZZP'ers en het MKB. Geschreven door de controllers van Fortly.
       </p>
     </div>
@@ -184,7 +190,7 @@
           <div class="flex items-center gap-3 mt-5 text-sm" style="color:var(--color-text-medium);">
             <time datetime="2026-07-08">8 juli 2026</time><span>•</span><span>7 min leestijd</span>
           </div>
-          <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-blue);font-family:'Montserrat',sans-serif;">Lees het artikel →</span>
+          <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees het artikel →</span>
         </div>
       </a>
     </div>
@@ -219,7 +225,7 @@
 
         <!-- Post: vennootschapsbelasting -->
         <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="article-card reveal">
-          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&fit=crop&w=700&q=70&fm=webp');"></div>
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&fit=crop&w=700&q=70&fm=webp');"></div>
           <div class="p-6 flex flex-col flex-1">
             <span class="tag mb-3" style="align-self:flex-start;">MKB &amp; Belasting</span>
             <h3 style="font-size:1.2rem;">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
