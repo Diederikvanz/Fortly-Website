@@ -19,7 +19,7 @@
   <meta name="description" content="Btw-aangifte ZZP in 2026: alles over tarieven (21% en 9%), kwartaaldeadlines, btw terugvragen, de KOR en het voorkomen van boetes. Duidelijk uitgelegd." />
   <meta name="keywords" content="btw-aangifte ZZP, btw aangifte doen, kwartaalaangifte btw, btw terugvragen, btw tarieven 2026, omzetbelasting ZZP, KOR" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Fortly — Indufort Consulting" />
+  <meta name="author" content="Fortly, onderdeel van Indufort Consulting" />
   <meta name="geo.region" content="NL-NH" />
   <meta name="geo.placename" content="Amsterdam" />
   <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/btw-aangifte-zzp-gids.html" />
@@ -30,7 +30,7 @@
   <meta property="og:url" content="https://www.fortly.nl/blog/btw-aangifte-zzp-gids.html" />
   <meta property="og:site_name" content="Fortly" />
   <meta property="og:title" content="Btw-aangifte voor ZZP'ers: de complete gids voor 2026" />
-  <meta property="og:description" content="Tarieven, kwartaaldeadlines, btw terugvragen en de KOR — zo doe je in 2026 als ZZP'er foutloos btw-aangifte, zonder boetes." />
+  <meta property="og:description" content="Tarieven, kwartaaldeadlines, btw terugvragen en de KOR, zo doe je in 2026 als ZZP'er foutloos btw-aangifte, zonder boetes." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
   <meta property="og:image:alt" content="ZZP'er doet btw-aangifte achter de laptop" />
   <meta property="og:locale" content="nl_NL" />
@@ -40,7 +40,7 @@
   <meta property="article:section" content="Btw &amp; Aangiften" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Btw-aangifte voor ZZP'ers: de complete gids voor 2026" />
-  <meta name="twitter:description" content="Tarieven, kwartaaldeadlines, btw terugvragen en de KOR — zo doe je in 2026 als ZZP'er foutloos btw-aangifte." />
+  <meta name="twitter:description" content="Tarieven, kwartaaldeadlines, btw terugvragen en de KOR, zo doe je in 2026 als ZZP'er foutloos btw-aangifte." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
 
   <script>
@@ -194,6 +194,8 @@
 
     /* Tables */
     .article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.97rem; }
+    .article-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0; }
+    .article-body .table-scroll table { margin: 0; }
     .article-body thead { background: var(--color-primary-deep-dark); }
     .article-body th { color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; }
     .article-body td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-border-light); }
@@ -227,6 +229,10 @@
     .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
     .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-blue); }
+  
+    /* Voorkom horizontale overflow: lange NL-samenstellingen breken; tabellen scrollen via .table-scroll; clip als vangnet. */
+    body { overflow-x: clip; }
+    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
   </style>
 
   <!-- Structured Data: BlogPosting -->
@@ -313,7 +319,7 @@
   <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
       <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly — Online boekhouder voor ZZP'ers in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
+        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
       </a>
       <div class="hidden md:flex items-center">
         <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
@@ -363,7 +369,7 @@
       <span class="tag" style="background:rgba(0,122,255,0.15);">Btw &amp; Aangiften</span>
       <h1 class="text-white mt-5" style="font-size:clamp(2rem,4.5vw,3rem);">Btw-aangifte voor ZZP'ers: de complete gids voor 2026</h1>
       <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:300;">
-        Elk kwartaal weer die btw-aangifte. We leggen rustig uit hoe het werkt in 2026 — de tarieven, de deadlines, btw terugvragen en de fouten die je maar beter kunt vermijden.
+        Elk kwartaal weer die btw-aangifte. We leggen rustig uit hoe het werkt in 2026, de tarieven, de deadlines, btw terugvragen en de fouten die je maar beter kunt vermijden.
       </p>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 text-sm" style="color:var(--color-text-muted-on-dark);">
         <span>Door <strong style="color:white;font-weight:600;">Team Fortly</strong></span>
@@ -398,7 +404,7 @@
           <span class="callout-label">Kort antwoord</span>
           <p>Als ZZP'er doe je meestal per kwartaal btw-aangifte bij de Belastingdienst, uiterlijk één maand na het kwartaaleinde (30 april, 31 juli, 31 oktober en 31 januari). Je berekent 21%, 9% of 0% btw, trekt de betaalde voorbelasting af en draagt het verschil af. Bij een omzet onder €20.000 kun je kiezen voor de kleineondernemersregeling (KOR).</p>
         </div>
-        <p>Voor veel ZZP'ers is de <strong>btw-aangifte</strong> het onderdeel van het ondernemen dat het meeste hoofdpijn oplevert. Toch is het in de kern helemaal niet zo ingewikkeld: je berekent hoeveel btw je van klanten hebt ontvangen, hoeveel je zelf hebt betaald, en het verschil betaal je of krijg je terug. In deze gids nemen we je stap voor stap mee door de btw-aangifte in 2026 — van de tarieven en deadlines tot de fouten die je geld kunnen kosten. Zodat jij weer met een gerust hart kunt ondernemen.</p>
+        <p>Voor veel ZZP'ers is de <strong>btw-aangifte</strong> het onderdeel van het ondernemen dat het meeste hoofdpijn oplevert. Toch is het in de kern helemaal niet zo ingewikkeld: je berekent hoeveel btw je van klanten hebt ontvangen, hoeveel je zelf hebt betaald, en het verschil betaal je of krijg je terug. In deze gids nemen we je stap voor stap mee door de btw-aangifte in 2026, van de tarieven en deadlines tot de fouten die je geld kunnen kosten. Zodat jij weer met een gerust hart kunt ondernemen.</p>
 
         <h2 id="wat-en-wie">Wat is btw-aangifte en wie moet het doen?</h2>
         <p>Btw staat voor <strong>belasting over de toegevoegde waarde</strong>, ook wel omzetbelasting genoemd. Als ondernemer reken je btw over vrijwel alles wat je verkoopt. Die btw is niet van jou: je int hem namens de Belastingdienst en draagt hem periodiek af via je <strong>btw-aangifte</strong>. Zodra je bij de Kamer van Koophandel staat ingeschreven en zelfstandig diensten of producten levert, ben je in principe btw-plichtig.</p>
@@ -407,7 +413,7 @@
         <h2 id="tarieven">De btw-tarieven in 2026</h2>
         <p>Nederland kent in 2026 drie btw-tarieven. Welk tarief je gebruikt, hangt af van wat je precies levert. Het overgrote deel van de ZZP'ers werkt met het algemene tarief van 21%.</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <thead>
             <tr><th>Tarief</th><th>Voor wie / wat</th><th>Voorbeelden</th></tr>
           </thead>
@@ -416,28 +422,28 @@
             <tr><td><strong>9%</strong> (verlaagd tarief)</td><td>Eerste levensbehoeften en bepaalde diensten</td><td>Voedingsmiddelen, medicijnen, kappersdiensten, reparatie van kleding en schoenen</td></tr>
             <tr><td><strong>0%</strong> / vrijstelling</td><td>Leveringen naar het buitenland en vrijgestelde sectoren</td><td>Export en diensten binnen de EU (0%), en vrijgestelde branches zoals zorg, onderwijs en verzekeringen</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p>Let op het verschil tussen <strong>0%</strong> en een <strong>vrijstelling</strong>. Bij het 0%-tarief reken je geen btw aan je klant, maar mag je de betaalde btw op je kosten wél terugvragen. Bij een echte vrijstelling (zoals in de zorg) kan dat níet. Een aandachtspunt voor 2026: het btw-tarief op <strong>logies en overnachtingen</strong> is per 1 januari 2026 verhoogd van 9% naar 21%. Verhuur je bijvoorbeeld een vakantiewoning, dan reken je nu het hoge tarief.</p>
 
         <div class="callout">
           <span class="callout-label">Tip van Fortly</span>
-          <p>Twijfel je bij een factuur tussen 21% en 9%? Kies bij twijfel voor het hoge tarief en vraag het na. Rekende je te weinig btw, dan draai jij als ondernemer voor het verschil op — je klant betaalt niet mee. Een goede boekhouder controleert dit standaard voor je.</p>
+          <p>Twijfel je bij een factuur tussen 21% en 9%? Kies bij twijfel voor het hoge tarief en vraag het na. Rekende je te weinig btw, dan draai jij als ondernemer voor het verschil op, je klant betaalt niet mee. Een goede boekhouder controleert dit standaard voor je.</p>
         </div>
 
         <h2 id="wanneer">Wanneer moet je btw-aangifte doen?</h2>
-        <p>De meeste ZZP'ers doen <strong>per kwartaal</strong> btw-aangifte. Na afloop van elk kwartaal heb je één maand de tijd om zowel de aangifte in te dienen als het bedrag te betalen. Zorg dat het geld op de deadline daadwerkelijk binnen is bij de Belastingdienst — een betaling die nog onderweg is, telt niet als op tijd. Dit zijn de kwartaaldeadlines voor 2026:</p>
+        <p>De meeste ZZP'ers doen <strong>per kwartaal</strong> btw-aangifte. Na afloop van elk kwartaal heb je één maand de tijd om zowel de aangifte in te dienen als het bedrag te betalen. Zorg dat het geld op de deadline daadwerkelijk binnen is bij de Belastingdienst, een betaling die nog onderweg is, telt niet als op tijd. Dit zijn de kwartaaldeadlines voor 2026:</p>
         <ol>
           <li><strong>1e kwartaal (jan–mrt):</strong> uiterlijk 30 april 2026</li>
           <li><strong>2e kwartaal (apr–jun):</strong> uiterlijk 31 juli 2026</li>
           <li><strong>3e kwartaal (jul–sep):</strong> uiterlijk 31 oktober 2026</li>
           <li><strong>4e kwartaal (okt–dec):</strong> uiterlijk 31 januari 2027</li>
         </ol>
-        <p>Heb je in een kwartaal helemaal niets omgezet? Dan doe je toch aangifte — een zogenoemde <strong>nihilaangifte</strong> van €0. Vergeet je die, dan krijg je alsnog een boete. Sommige ondernemers doen op verzoek per maand of per jaar aangifte, maar het kwartaal is voor ZZP'ers verreweg het meest gebruikelijk.</p>
+        <p>Heb je in een kwartaal helemaal niets omgezet? Dan doe je toch aangifte, een zogenoemde <strong>nihilaangifte</strong> van €0. Vergeet je die, dan krijg je alsnog een boete. Sommige ondernemers doen op verzoek per maand of per jaar aangifte, maar het kwartaal is voor ZZP'ers verreweg het meest gebruikelijk.</p>
 
         <h2 id="terugvragen">Btw terugvragen: voorbelasting op zakelijke kosten</h2>
         <p>Hier zit het goede nieuws. De btw die je zelf betaalt op zakelijke aankopen heet <strong>voorbelasting</strong>, en die mag je terugvragen bij je aangifte. Denk aan je laptop, je software-abonnementen, je telefoon, kantoorspullen of de brandstof voor zakelijke ritten. Je verrekent de betaalde voorbelasting met de btw die je aan je klanten hebt gerekend.</p>
-        <p>Het rekensommetje is simpel: <strong>ontvangen btw min betaalde voorbelasting</strong>. Is dat bedrag positief, dan betaal je dat aan de Belastingdienst. Is het negatief — bijvoorbeeld omdat je flink hebt geïnvesteerd — dan krijg je het verschil terug. Precies daarom is de btw-aangifte niet alleen een verplichting, maar soms ook een moment waarop er geld jouw kant op komt.</p>
+        <p>Het rekensommetje is simpel: <strong>ontvangen btw min betaalde voorbelasting</strong>. Is dat bedrag positief, dan betaal je dat aan de Belastingdienst. Is het negatief, bijvoorbeeld omdat je flink hebt geïnvesteerd, dan krijg je het verschil terug. Precies daarom is de btw-aangifte niet alleen een verplichting, maar soms ook een moment waarop er geld jouw kant op komt.</p>
         <p>Belangrijk: bewaar altijd een <strong>geldige factuur op naam van je onderneming</strong>. Zonder correcte factuur mag je de btw niet terugvragen. En let op de zakelijk-privéverhouding: koop je iets dat je deels privé gebruikt, dan mag je alleen het zakelijke deel van de btw terugvragen. Wil je hier écht op besparen, combineer dit dan met de <a href="/blog/zelfstandigenaftrek-startersaftrek-2026.html">zelfstandigenaftrek en startersaftrek 2026</a> in je inkomstenbelasting.</p>
 
         <h2 id="fouten">De 5 meest gemaakte fouten bij btw-aangifte</h2>
@@ -446,7 +452,7 @@
           <li><strong>De deadline missen.</strong> Verreweg de meest voorkomende én duurste fout. Zet de vier kwartaaldata meteen in je agenda.</li>
           <li><strong>De nihilaangifte vergeten.</strong> Geen omzet betekent niet: geen aangifte. Ook €0 moet je indienen.</li>
           <li><strong>Privé en zakelijk door elkaar halen.</strong> Btw terugvragen op een privé-aankoop leidt vroeg of laat tot correcties en gedoe bij een controle.</li>
-          <li><strong>Facturen zonder de juiste gegevens.</strong> Ontbreekt je btw-nummer of een correcte omschrijving, dan is de factuur ongeldig — voor jou én je klant.</li>
+          <li><strong>Facturen zonder de juiste gegevens.</strong> Ontbreekt je btw-nummer of een correcte omschrijving, dan is de factuur ongeldig, voor jou én je klant.</li>
           <li><strong>Het verkeerde tarief toepassen.</strong> 9% rekenen waar 21% hoort, kost jou het verschil. Twijfel je, controleer het dan altijd.</li>
         </ul>
 
@@ -461,7 +467,7 @@
 
         <h2 id="te-laat">Te laat met je btw-aangifte?</h2>
         <p>Het overkomt de beste ondernemer een keer, maar het kan aardig in de papieren lopen. De Belastingdienst maakt onderscheid tussen te laat <strong>aangifte doen</strong> en te laat <strong>betalen</strong>.</p>
-        <p>Voor het te laat indienen van je aangifte krijg je een <strong>verzuimboete</strong>: een vast bedrag. Voor het te laat betalen wordt de boete een <strong>percentage van het verschuldigde bedrag</strong>, met een wettelijk minimum en maximum. Blijf je in gebreke of gebeurt het herhaaldelijk, dan lopen de boetes op en kan de Belastingdienst je omzet <strong>ambtshalve schatten</strong> — vrijwel altijd in jouw nadeel. Ben je een keer te laat? Betaal dan alsnog zo snel mogelijk; dat beperkt de schade.</p>
+        <p>Voor het te laat indienen van je aangifte krijg je een <strong>verzuimboete</strong>: een vast bedrag. Voor het te laat betalen wordt de boete een <strong>percentage van het verschuldigde bedrag</strong>, met een wettelijk minimum en maximum. Blijf je in gebreke of gebeurt het herhaaldelijk, dan lopen de boetes op en kan de Belastingdienst je omzet <strong>ambtshalve schatten</strong>, vrijwel altijd in jouw nadeel. Ben je een keer te laat? Betaal dan alsnog zo snel mogelijk; dat beperkt de schade.</p>
         <p>De Belastingdienst kijkt ook naar je verleden. Was je altijd keurig op tijd en verzuim je een enkele keer, dan valt de boete doorgaans mee. Maar bouw je een patroon op van te laat indienen of betalen, dan stapelen de verzuimboetes zich op en word je strenger beoordeeld. Een structureel foutloze aangifte voorkomt dus niet alleen boetes op de korte termijn, maar houdt je ook uit het vizier van de fiscus voor de lange termijn. Voor de meeste ZZP'ers is dat precies de reden om de aangifte uit handen te geven.</p>
 
         <div class="callout">

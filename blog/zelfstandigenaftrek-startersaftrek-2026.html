@@ -19,7 +19,7 @@
   <meta name="description" content="Zelfstandigenaftrek 2026 (€1.200), startersaftrek en MKB-winstvrijstelling uitgelegd. Ontdek met een concreet rekenvoorbeeld hoeveel belasting je écht bespaart." />
   <meta name="keywords" content="zelfstandigenaftrek 2026, startersaftrek, ondernemersaftrek, urencriterium, MKB-winstvrijstelling, belasting besparen ZZP" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Fortly — Indufort Consulting" />
+  <meta name="author" content="Fortly, onderdeel van Indufort Consulting" />
   <meta name="geo.region" content="NL-NH" />
   <meta name="geo.placename" content="Amsterdam" />
   <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/zelfstandigenaftrek-startersaftrek-2026.html" />
@@ -194,6 +194,8 @@
 
     /* Tables */
     .article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.97rem; }
+    .article-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0; }
+    .article-body .table-scroll table { margin: 0; }
     .article-body thead { background: var(--color-primary-deep-dark); }
     .article-body th { color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; }
     .article-body td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-border-light); }
@@ -227,6 +229,10 @@
     .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
     .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-blue); }
+  
+    /* Voorkom horizontale overflow: lange NL-samenstellingen breken; tabellen scrollen via .table-scroll; clip als vangnet. */
+    body { overflow-x: clip; }
+    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
   </style>
 
   <!-- Structured Data: BlogPosting -->
@@ -314,7 +320,7 @@
   <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
       <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly — Online boekhouder voor ZZP'ers in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
+        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
       </a>
       <div class="hidden md:flex items-center">
         <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
@@ -399,29 +405,29 @@
           <span class="callout-label">Kort antwoord</span>
           <p>In 2026 bedraagt de zelfstandigenaftrek €1.200 en de startersaftrek €2.123. Samen met de MKB-winstvrijstelling (12,70%) verlagen ze je belastbare winst flink. Voorwaarde is het urencriterium: minimaal 1.225 uur per jaar in je onderneming. Een starter bespaart hiermee al snel honderden tot ruim duizend euro aan inkomstenbelasting.</p>
         </div>
-        <p>Als ondernemer voor de inkomstenbelasting betaal je gelukkig niet over je hele winst belasting. De overheid geeft je een aantal aftrekposten die speciaal voor ondernemers bedoeld zijn. De bekendste is de <strong>zelfstandigenaftrek</strong>, maar er zijn er meer. In 2026 verandert er het nodige: de zelfstandigenaftrek daalt fors. Toch valt er nog steeds veel te besparen — mits je de regels kent. In deze gids leggen we ze stap voor stap uit en rekenen we voor wat je er onder de streep aan overhoudt.</p>
+        <p>Als ondernemer voor de inkomstenbelasting betaal je gelukkig niet over je hele winst belasting. De overheid geeft je een aantal aftrekposten die speciaal voor ondernemers bedoeld zijn. De bekendste is de <strong>zelfstandigenaftrek</strong>, maar er zijn er meer. In 2026 verandert er het nodige: de zelfstandigenaftrek daalt fors. Toch valt er nog steeds veel te besparen, mits je de regels kent. In deze gids leggen we ze stap voor stap uit en rekenen we voor wat je er onder de streep aan overhoudt.</p>
 
         <h2 id="ondernemersaftrek">Wat is de ondernemersaftrek?</h2>
         <p>De <strong>ondernemersaftrek</strong> is een verzamelnaam voor verschillende bedragen die je van je winst mag aftrekken. Voor de meeste ZZP'ers gaat het om drie onderdelen die op elkaar stapelen:</p>
         <ul>
-          <li><strong>De zelfstandigenaftrek</strong> — een vast bedrag dat je van je winst aftrekt als je aan het urencriterium voldoet.</li>
-          <li><strong>De startersaftrek</strong> — een extra aftrek in je eerste jaren als ondernemer, bovenop de zelfstandigenaftrek.</li>
-          <li><strong>De MKB-winstvrijstelling</strong> — een percentage van je winst dat sowieso onbelast blijft, ook als je niet aan het urencriterium voldoet.</li>
+          <li><strong>De zelfstandigenaftrek</strong>, een vast bedrag dat je van je winst aftrekt als je aan het urencriterium voldoet.</li>
+          <li><strong>De startersaftrek</strong>, een extra aftrek in je eerste jaren als ondernemer, bovenop de zelfstandigenaftrek.</li>
+          <li><strong>De MKB-winstvrijstelling</strong>, een percentage van je winst dat sowieso onbelast blijft, ook als je niet aan het urencriterium voldoet.</li>
         </ul>
-        <p>Samen zorgen deze regelingen ervoor dat je belastbare winst — en dus je belastingaanslag — flink lager uitvalt dan je "kale" winst. Hoe dat precies werkt, zie je verderop in het <a href="#rekenvoorbeeld">rekenvoorbeeld</a>.</p>
+        <p>Samen zorgen deze regelingen ervoor dat je belastbare winst, en dus je belastingaanslag, flink lager uitvalt dan je "kale" winst. Hoe dat precies werkt, zie je verderop in het <a href="#rekenvoorbeeld">rekenvoorbeeld</a>.</p>
 
         <h2 id="zelfstandigenaftrek">De zelfstandigenaftrek in 2026</h2>
         <p>De zelfstandigenaftrek is een vast bedrag dat je van je winst mag aftrekken. In <strong>2026 bedraagt de zelfstandigenaftrek €1.200</strong>. Dat is een flinke daling ten opzichte van eerdere jaren, en dat is geen toeval.</p>
         <p>De overheid <strong>bouwt de zelfstandigenaftrek al enkele jaren stap voor stap af</strong>. Waar de aftrek in 2025 nog €2.470 was, zakt hij in 2026 naar €1.200 en daalt hij naar verwachting in 2027 verder tot €900. Het idee achter deze afbouw is het verkleinen van het fiscale verschil tussen zelfstandigen en werknemers.</p>
-        <p>Voor jou als ZZP'er betekent dit dat het belang van de <em>andere</em> regelingen — de startersaftrek en vooral de MKB-winstvrijstelling — alleen maar groter wordt. Je hebt recht op de zelfstandigenaftrek als je ondernemer bent voor de inkomstenbelasting en voldoet aan het urencriterium. Omdat de exacte bedragen jaarlijks wijzigen, controleer je het actuele bedrag altijd bij de Belastingdienst.</p>
+        <p>Voor jou als ZZP'er betekent dit dat het belang van de <em>andere</em> regelingen, de startersaftrek en vooral de MKB-winstvrijstelling, alleen maar groter wordt. Je hebt recht op de zelfstandigenaftrek als je ondernemer bent voor de inkomstenbelasting en voldoet aan het urencriterium. Omdat de exacte bedragen jaarlijks wijzigen, controleer je het actuele bedrag altijd bij de Belastingdienst.</p>
 
         <div class="callout">
           <span class="callout-label">Tip van Fortly</span>
-          <p>Houd het hele jaar door een <strong>urenregistratie</strong> bij, ook als je zeker denkt te weten dat je ruim boven de 1.225 uur uitkomt. Noteer niet alleen je facturabele uren, maar óók administratie, acquisitie, reistijd en scholing. Een simpel bestand of je agenda volstaat — zolang het maar aannemelijk maakt dat je aan het urencriterium voldoet als de Belastingdienst ernaar vraagt.</p>
+          <p>Houd het hele jaar door een <strong>urenregistratie</strong> bij, ook als je zeker denkt te weten dat je ruim boven de 1.225 uur uitkomt. Noteer niet alleen je facturabele uren, maar óók administratie, acquisitie, reistijd en scholing. Een simpel bestand of je agenda volstaat, zolang het maar aannemelijk maakt dat je aan het urencriterium voldoet als de Belastingdienst ernaar vraagt.</p>
         </div>
 
         <h2 id="startersaftrek">De startersaftrek: extra voordeel in je eerste jaren</h2>
-        <p>Ben je net begonnen? Dan is er goed nieuws. Bovenop de zelfstandigenaftrek krijg je in je eerste jaren de <strong>startersaftrek</strong>. In 2026 bedraagt die <strong>€2.123</strong> — een bedrag dat, anders dan de zelfstandigenaftrek, de afgelopen jaren stabiel is gebleven.</p>
+        <p>Ben je net begonnen? Dan is er goed nieuws. Bovenop de zelfstandigenaftrek krijg je in je eerste jaren de <strong>startersaftrek</strong>. In 2026 bedraagt die <strong>€2.123</strong>, een bedrag dat, anders dan de zelfstandigenaftrek, de afgelopen jaren stabiel is gebleven.</p>
         <p>De voorwaarden zijn overzichtelijk:</p>
         <ul>
           <li>Je hebt <strong>recht op de zelfstandigenaftrek</strong> (en voldoet dus aan het urencriterium).</li>
@@ -432,7 +438,7 @@
 
         <h2 id="urencriterium">Het urencriterium: de 1.225-uren-eis</h2>
         <p>Zowel de zelfstandigenaftrek als de startersaftrek hangen af van één belangrijke voorwaarde: het <strong>urencriterium</strong>. Je moet per kalenderjaar <strong>minimaal 1.225 uur</strong> aan je onderneming besteden. Dat komt neer op ongeveer 24 uur per week over een heel jaar.</p>
-        <p>Een veelgemaakte misvatting is dat alleen je factureerbare uren meetellen. Dat klopt niet — <strong>ook je indirecte uren tellen mee</strong>:</p>
+        <p>Een veelgemaakte misvatting is dat alleen je factureerbare uren meetellen. Dat klopt niet, <strong>ook je indirecte uren tellen mee</strong>:</p>
         <ul>
           <li>Administratie, boekhouding en het bijwerken van je facturen.</li>
           <li>Acquisitie, offertes maken en netwerken.</li>
@@ -457,15 +463,15 @@
         <div class="my-10 rounded-2xl overflow-hidden" style="background:var(--color-primary-deep-dark);">
           <div class="relative p-8 sm:p-10 text-center" style="background:radial-gradient(ellipse 70% 90% at 50% 0%, rgba(0,122,255,0.16) 0%, transparent 70%);">
             <h3 class="text-white" style="font-size:1.5rem;">Zeker weten dat je geen aftrek misloopt?</h3>
-            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Fortly verwerkt elke aftrekpost correct in je IB-aangifte en bewaakt je urencriterium. Zo betaal je geen euro te veel belasting — en mis je nooit een voordeel.</p>
+            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Fortly verwerkt elke aftrekpost correct in je IB-aangifte en bewaakt je urencriterium. Zo betaal je geen euro te veel belasting, en mis je nooit een voordeel.</p>
             <a href="/aanmelden.html" class="btn btn-white">Nu starten</a>
           </div>
         </div>
 
         <h2 id="rekenvoorbeeld">Rekenvoorbeeld: hoeveel bespaar je écht?</h2>
-        <p>Genoeg theorie — laten we rekenen. Stel: je bent een <strong>startende ZZP'er met een winst van €50.000</strong> in 2026, je voldoet aan het urencriterium en je hebt recht op de startersaftrek. Zo bouwt je belastbare winst op:</p>
+        <p>Genoeg theorie, laten we rekenen. Stel: je bent een <strong>startende ZZP'er met een winst van €50.000</strong> in 2026, je voldoet aan het urencriterium en je hebt recht op de startersaftrek. Zo bouwt je belastbare winst op:</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <thead>
             <tr><th>Stap</th><th>Bedrag</th></tr>
           </thead>
@@ -477,7 +483,7 @@
             <tr><td>Af: MKB-winstvrijstelling (12,70%)</td><td>− €5.928</td></tr>
             <tr><td><strong>Belastbare winst</strong></td><td><strong>€40.749</strong></td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p>Zonder deze regelingen zou je belastbare winst hoger uitvallen. Ter vergelijking: had je alleen de MKB-winstvrijstelling gekregen (12,70% van €50.000 = €6.350), dan was je belastbare winst €43.650 geweest. Dankzij de zelfstandigen- en startersaftrek daalt je belastbare winst met bijna <strong>€2.900 extra</strong>.</p>
         <p>Reken je met een gemiddeld belastingtarief in de eerste schijf van ongeveer 37%, dan levert die extra aftrek je grofweg <strong>zo'n €1.070 minder inkomstenbelasting</strong> op. Tel je het totale effect van álle drie de regelingen samen, dan scheelt dat je in dit voorbeeld al gauw enkele duizenden euro's ten opzichte van belasting over de volledige €50.000.</p>

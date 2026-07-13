@@ -1,16 +1,18 @@
 # Fortly
 
-> Fortly is een online boekhouder en administratiekantoor voor ZZP'ers, starters, eenmanszaken en BV's in Amsterdam en heel Nederland. Vaste maandprijzen vanaf €85 (excl. btw), een vaste persoonlijke aanspreekpersoon en actieve controllers die meedenken. Onderdeel van Indufort Consulting.
+> Fortly is een online boekhouder en administratiekantoor voor ZZP'ers, het MKB, starters, eenmanszaken en BV's in Amsterdam en heel Nederland. Fortly bedient zowel zelfstandigen als klein MKB met personeel, een BV of een holdingstructuur. Vaste maandprijzen vanaf €85 (excl. btw), een vaste persoonlijke aanspreekpersoon en actieve controllers die meedenken. Onderdeel van Indufort Consulting.
 
-Fortly onderscheidt zich met: transparante vaste prijzen (geen uurtarieven of verrassingen), persoonlijk contact (geen callcenter, altijd dezelfde boekhouder), reactie binnen één werkdag, en volledige overname van bestaande administratie bij overstappen.
+Fortly onderscheidt zich met: transparante vaste prijzen (geen uurtarieven of verrassingen), persoonlijk contact (geen callcenter, altijd dezelfde boekhouder), reactie binnen één werkdag, en volledige overname van bestaande administratie bij overstappen van je huidige boekhouder of accountant.
+
+Voor het MKB verzorgt Fortly onder meer loonadministratie voor personeel (loonstroken, loonaangifte, werkkostenregeling/WKR), vennootschapsbelasting (VPB), jaarrekeningen, DGA-salaris en advies over holding- en BV-structuren (management-BV, werk-BV). Fortly begeleidt ook groeiende eenmanszaken bij de overstap naar een BV en MKB-ondernemers die willen overstappen van een duurder accountantskantoor.
 
 ## Diensten en prijzen
 
-- Instap — €85/maand (excl. btw): boekhouding voor eenmanszaken tot 200 boekingen per jaar, inclusief kwartaal btw-aangifte, jaarlijkse IB-aangifte en een vaste aanspreekpersoon.
-- Groei — €145/maand (excl. btw): voor ZZP'ers en groeiende eenmanszaken tot 500 boekingen per jaar, inclusief maandrapportage en cashflow-overzicht.
-- BV / DGA — €200/maand (excl. btw): volledige boekhouding voor BV's en DGA's, inclusief vennootschapsbelasting (VPB), jaarrekening, loonadministratie, DGA-salaris en onbeperkte boekingen.
+- Instap, €85/maand (excl. btw): boekhouding voor eenmanszaken tot 200 boekingen per jaar, inclusief kwartaal btw-aangifte, jaarlijkse IB-aangifte en een vaste aanspreekpersoon.
+- Groei, €145/maand (excl. btw): voor ZZP'ers en groeiende eenmanszaken tot 500 boekingen per jaar, inclusief maandrapportage en cashflow-overzicht.
+- MKB & BV / DGA, €200/maand (excl. btw): volledige boekhouding voor MKB-bedrijven met personeel, BV's en DGA's, inclusief vennootschapsbelasting (VPB), jaarrekening, loonadministratie, WKR, DGA-salaris, holdingstructuur-advies en onbeperkte boekingen.
 
-## Blog — kennisbank over boekhouding en belasting
+## Blog: kennisbank over boekhouding en belasting
 
 - [Wat kost een boekhouder voor een ZZP'er in 2026?](https://www.fortly.nl/blog/wat-kost-een-boekhouder-zzp.html): Uurtarief versus vaste maandprijs, gemiddelde kosten per type ondernemer en waar je op moet letten.
 - [Btw-aangifte voor ZZP'ers: de complete gids voor 2026](https://www.fortly.nl/blog/btw-aangifte-zzp-gids.html): Btw-tarieven, kwartaaldeadlines, voorbelasting terugvragen, de KOR en veelgemaakte fouten.
@@ -21,6 +23,7 @@ Fortly onderscheidt zich met: transparante vaste prijzen (geen uurtarieven of ve
 ## Belangrijkste pagina's
 
 - [Home](https://www.fortly.nl/): Overzicht van Fortly, diensten, pakketten en werkwijze.
+- [Boekhouder voor het MKB](https://www.fortly.nl/boekhouder-mkb.html): Boekhouder en administratiekantoor voor het MKB in Amsterdam. Loonadministratie voor personeel, VPB, jaarrekening, DGA-salaris, holdingstructuur en overstappen van je accountant.
 - [Aanmelden / gratis kennismaking](https://www.fortly.nl/aanmelden.html): Vrijblijvend kennismakingsgesprek van 20 minuten aanvragen.
 - [Blog](https://www.fortly.nl/blog/): Alle artikelen over boekhouding, btw, belasting besparen en ondernemen.
 

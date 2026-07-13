@@ -13,7 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aanmelden | Fortly — Boekhouder voor ZZP'ers vanaf €85/maand</title>
+  <title>Aanmelden | Fortly, Boekhouder voor ZZP &amp; MKB vanaf €85/maand</title>
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.fortly.nl/aanmelden.html" />
   <meta name="description" content="Meld je aan bij Fortly en start met een vaste boekhouder. Kies je pakket (€85, €145 of €200/maand excl. btw) en wij nemen binnen één werkdag contact op." />
@@ -29,7 +29,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.fortly.nl/aanmelden.html" />
   <meta property="og:site_name" content="Fortly" />
-  <meta property="og:title" content="Aanmelden bij Fortly — Start je boekhouding vandaag" />
+  <meta property="og:title" content="Aanmelden bij Fortly, start je boekhouding vandaag" />
   <meta property="og:description" content="Kies je pakket en meld je in 2 minuten aan. Vaste boekhouder, vaste prijs, persoonlijk contact." />
   <meta property="og:image" content="https://www.fortly.nl/fortly_logo_kort.png" />
   <meta property="og:locale" content="nl_NL" />
@@ -120,7 +120,7 @@
     "@type": "WebPage",
     "@id": "https://www.fortly.nl/aanmelden.html",
     "url": "https://www.fortly.nl/aanmelden.html",
-    "name": "Aanmelden bij Fortly — Boekhouder voor ZZP'ers",
+    "name": "Aanmelden bij Fortly, boekhouder voor ZZP en MKB",
     "description": "Meld je aan bij Fortly. Kies je boekhoudpakket en start direct met een vaste boekhouder voor een vaste maandprijs.",
     "inLanguage": "nl-NL",
     "isPartOf": {"@id": "https://www.fortly.nl/#website"},
@@ -140,7 +140,7 @@
   <header style="background:var(--dark);height:80px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full" style="max-width:1100px;">
       <a href="https://www.fortly.nl" style="text-decoration:none;">
-        <img src="fortly_logo_outlined.svg" alt="Fortly — Boekhouder voor ZZP'ers" width="120" height="120" style="width:120px;height:120px;">
+        <img src="fortly_logo_outlined.svg" alt="Fortly, boekhouder voor ZZP en MKB" width="120" height="120" style="width:120px;height:120px;">
       </a>
       <a href="https://www.fortly.nl" style="font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">
         ← Terug naar website
@@ -173,6 +173,11 @@
         @media(min-width:900px){
           .main-grid { grid-template-columns: 1fr 340px !important; }
         }
+        /* Pakketkaarten: gestapeld op telefoon, naast elkaar vanaf 480px */
+        #pakketGrid { grid-template-columns: 1fr; }
+        @media(min-width:480px){
+          #pakketGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
       </style>
       <div class="grid gap-10 main-grid" style="grid-template-columns:1fr;align-items:start;">
 
@@ -181,11 +186,11 @@
 
           <!-- Pakketkeuze -->
           <div style="margin-bottom:2rem;">
-            <p class="section-label">Stap 1 — Kies je pakket</p>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;" id="pakketGrid">
+            <p class="section-label">Stap 1: Kies je pakket</p>
+            <div style="display:grid;gap:.75rem;" id="pakketGrid">
 
               <label class="pakket-card" id="card-instap" onclick="selectPakket('instap')">
-                <input type="radio" name="pakket" value="Instap — €85/maand">
+                <input type="radio" name="pakket" value="Instap, €85/maand">
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Instap</div>
                 <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€85</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
@@ -194,7 +199,7 @@
 
               <label class="pakket-card selected" id="card-groei" onclick="selectPakket('groei')">
                 <div class="popular-badge">Meest gekozen</div>
-                <input type="radio" name="pakket" value="Groei — €145/maand" checked>
+                <input type="radio" name="pakket" value="Groei, €145/maand" checked>
                 <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Groei</div>
                 <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€145</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
@@ -202,8 +207,8 @@
               </label>
 
               <label class="pakket-card" id="card-bv" onclick="selectPakket('bv')">
-                <input type="radio" name="pakket" value="BV / DGA — €200/maand">
-                <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">BV / DGA</div>
+                <input type="radio" name="pakket" value="MKB &amp; BV / DGA, €200/maand">
+                <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">MKB &amp; BV</div>
                 <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);letter-spacing:-.03em;">€200</div>
                 <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
                 <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">onbeperkt</div>
@@ -211,18 +216,18 @@
 
             </div>
             <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;text-align:center;">
-              Twijfel je? Geen zorgen — we bespreken het samen. <a href="https://www.fortly.nl#pakketten" style="color:var(--blue);font-weight:600;">Vergelijk pakketten →</a>
+              Twijfel je? Geen zorgen, we bespreken het samen. <a href="https://www.fortly.nl#pakketten" style="color:var(--blue);font-weight:600;">Vergelijk pakketten →</a>
             </p>
           </div>
 
           <!-- Gegevens -->
-          <p class="section-label">Stap 2 — Jouw gegevens</p>
+          <p class="section-label">Stap 2: Jouw gegevens</p>
           <form id="aanmeld-form" action="https://formspree.io/f/xkoaqnaz" method="POST">
             <!-- Hidden velden -->
             <input type="hidden" name="_subject" value="Nieuwe aanmelding via fortly.nl/aanmelden">
-            <input type="hidden" name="pakket" id="pakket-hidden" value="Groei — €145/maand">
+            <input type="hidden" name="pakket" id="pakket-hidden" value="Groei, €145/maand">
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
               <div class="form-group">
                 <label class="form-label" for="naam">Naam *</label>
                 <input class="form-input" id="naam" name="naam" type="text" placeholder="Jan de Vries" autocomplete="name" required>
@@ -233,7 +238,7 @@
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
               <div class="form-group">
                 <label class="form-label" for="email">E-mailadres *</label>
                 <input class="form-input" id="email" name="email" type="email" placeholder="jan@bedrijf.nl" autocomplete="email" required>
@@ -244,7 +249,7 @@
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
               <div class="form-group">
                 <label class="form-label" for="rechtsvorm">Rechtsvorm *</label>
                 <select class="form-input" id="rechtsvorm" name="rechtsvorm" required>
@@ -336,7 +341,7 @@
               </div>
               <div>
                 <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);">Alles geregeld</div>
-                <div style="font-size:.8rem;color:var(--muted);">Btw, aangifte, jaarrekening — wij doen het</div>
+                <div style="font-size:.8rem;color:var(--muted);">Btw, aangifte, jaarrekening, wij doen het</div>
               </div>
             </div>
           </div>
@@ -373,7 +378,7 @@
   <!-- FOOTER -->
   <footer style="background:var(--dark);padding:2.5rem 0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.07);">
     <div style="text-align:center;">
-      <p style="font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);">© 2026 Fortly — Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,.3);text-decoration:none;">Indufort Consulting</a></p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);">© 2026 Fortly, onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,.3);text-decoration:none;">Indufort Consulting</a></p>
     </div>
   </footer>
 
@@ -387,7 +392,7 @@
       document.getElementById('card-'+p).classList.add('selected');
       document.querySelector('#card-'+p+' input').checked = true;
 
-      const waarden = { instap: 'Instap — €85/maand', groei: 'Groei — €145/maand', bv: 'BV / DGA — €200/maand' };
+      const waarden = { instap: 'Instap, €85/maand', groei: 'Groei, €145/maand', bv: 'MKB & BV / DGA, €200/maand' };
       document.getElementById('pakket-hidden').value = waarden[p];
     }
 

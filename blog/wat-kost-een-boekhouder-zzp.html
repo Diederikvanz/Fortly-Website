@@ -19,7 +19,7 @@
   <meta name="description" content="Wat kost een boekhouder voor een ZZP'er in 2026? Complete gids: uurtarief vs. vaste maandprijs, gemiddelde kosten, wat je krijgt en hoe je bespaart. Vanaf €85 per maand." />
   <meta name="keywords" content="wat kost een boekhouder, boekhouder ZZP kosten, boekhouder prijs, boekhouder eenmanszaak kosten, boekhouder vaste prijs, kosten boekhouder per maand, boekhouder uurtarief" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Fortly — Indufort Consulting" />
+  <meta name="author" content="Fortly, onderdeel van Indufort Consulting" />
   <meta name="geo.region" content="NL-NH" />
   <meta name="geo.placename" content="Amsterdam" />
   <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/wat-kost-een-boekhouder-zzp.html" />
@@ -194,6 +194,8 @@
 
     /* Tables */
     .article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.97rem; }
+    .article-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0; }
+    .article-body .table-scroll table { margin: 0; }
     .article-body thead { background: var(--color-primary-deep-dark); }
     .article-body th { color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; }
     .article-body td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-border-light); }
@@ -227,6 +229,10 @@
     .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
     .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-blue); }
+  
+    /* Voorkom horizontale overflow: lange NL-samenstellingen breken; tabellen scrollen via .table-scroll; clip als vangnet. */
+    body { overflow-x: clip; }
+    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
   </style>
 
   <!-- Structured Data: BlogPosting -->
@@ -313,7 +319,7 @@
   <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
       <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly — Online boekhouder voor ZZP'ers in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
+        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
       </a>
       <div class="hidden md:flex items-center">
         <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
@@ -363,7 +369,7 @@
       <span class="tag" style="background:rgba(0,122,255,0.15);">Kosten &amp; Prijzen</span>
       <h1 class="text-white mt-5" style="font-size:clamp(2rem,4.5vw,3rem);">Wat kost een boekhouder voor een ZZP'er in 2026?</h1>
       <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:300;">
-        Uurtarief of vaste maandprijs? We zetten de échte kosten van een boekhouder voor ZZP'ers op een rij — zodat je weet wat een eerlijke prijs is en waar je op moet letten.
+        Uurtarief of vaste maandprijs? We zetten de échte kosten van een boekhouder voor ZZP'ers op een rij, zodat je weet wat een eerlijke prijs is en waar je op moet letten.
       </p>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 text-sm" style="color:var(--color-text-muted-on-dark);">
         <span>Door <strong style="color:white;font-weight:600;">Team Fortly</strong></span>
@@ -395,14 +401,14 @@
       <div class="article-body">
         <div class="callout" style="background:rgba(0,122,255,0.06);border-left:4px solid var(--color-accent-blue);">
           <span class="callout-label">Kort antwoord</span>
-          <p>Een boekhouder voor een ZZP'er kost in 2026 gemiddeld €75 tot €150 per maand bij een vast pakket, of €60 tot €150 per uur bij een uurtarief. Bij Fortly betaal je een vaste maandprijs vanaf €85 (excl. btw), inclusief btw-aangifte, IB-aangifte en persoonlijk contact — zonder verrassingen achteraf.</p>
+          <p>Een boekhouder voor een ZZP'er kost in 2026 gemiddeld €75 tot €150 per maand bij een vast pakket, of €60 tot €150 per uur bij een uurtarief. Bij Fortly betaal je een vaste maandprijs vanaf €85 (excl. btw), inclusief btw-aangifte, IB-aangifte en persoonlijk contact, zonder verrassingen achteraf.</p>
         </div>
-        <p>Het is een van de eerste vragen die je jezelf als ondernemer stelt: <strong>wat kost een boekhouder eigenlijk?</strong> En terecht, want de verschillen zijn groot. De één betaalt €40 per maand voor losse software, de ander stuurt maandelijks honderden euro's over naar een traditioneel kantoor. In deze gids leggen we precies uit wat je in 2026 kunt verwachten, welke prijsmodellen er zijn en hoe je voorkomt dat je te veel betaalt — of juist te weinig krijgt.</p>
+        <p>Het is een van de eerste vragen die je jezelf als ondernemer stelt: <strong>wat kost een boekhouder eigenlijk?</strong> En terecht, want de verschillen zijn groot. De één betaalt €40 per maand voor losse software, de ander stuurt maandelijks honderden euro's over naar een traditioneel kantoor. In deze gids leggen we precies uit wat je in 2026 kunt verwachten, welke prijsmodellen er zijn en hoe je voorkomt dat je te veel betaalt, of juist te weinig krijgt.</p>
 
         <h2 id="uurtarief-of-vast">Uurtarief of vaste maandprijs?</h2>
         <p>Grofweg zijn er twee manieren waarop een boekhouder afrekent. Het verschil bepaalt niet alleen je kosten, maar ook je gemoedsrust.</p>
         <h3>1. Het klassieke uurtarief</h3>
-        <p>Veel traditionele administratiekantoren rekenen per uur. Een boekhouder kost dan al snel <strong>€60 tot €150 per uur</strong>, in de Randstad vaak aan de bovenkant. Klinkt overzichtelijk, maar het addertje zit onder het gras: elk telefoontje, elke e-mail met een vraag en elke correctie tikt aan. Aan het eind van het jaar weet je pas écht wat je kwijt bent — en dat valt vaak tegen.</p>
+        <p>Veel traditionele administratiekantoren rekenen per uur. Een boekhouder kost dan al snel <strong>€60 tot €150 per uur</strong>, in de Randstad vaak aan de bovenkant. Klinkt overzichtelijk, maar het addertje zit onder het gras: elk telefoontje, elke e-mail met een vraag en elke correctie tikt aan. Aan het eind van het jaar weet je pas écht wat je kwijt bent, en dat valt vaak tegen.</p>
         <h3>2. De vaste maandprijs</h3>
         <p>Steeds meer ZZP'ers kiezen daarom voor een <strong>vast bedrag per maand</strong>. Je weet vooraf precies waar je aan toe bent, je durft gerust te bellen met een vraag, en er komen geen verrassingen op je af. Bij Fortly begint een compleet pakket bijvoorbeeld <a href="/#pakketten">vanaf €85 per maand</a>, inclusief btw- en inkomstenbelastingaangifte.</p>
 
@@ -414,7 +420,7 @@
         <h2 id="gemiddelde-kosten">Wat kost een boekhouder gemiddeld?</h2>
         <p>De kosten hangen sterk af van je rechtsvorm en het aantal boekingen. Ter oriëntatie een overzicht van wat ondernemers in 2026 gemiddeld betalen voor een complete boekhouding:</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <thead>
             <tr><th>Type ondernemer</th><th>Gemiddelde kosten per maand</th><th>Wat is meestal inbegrepen</th></tr>
           </thead>
@@ -424,18 +430,18 @@
             <tr><td>Eenmanszaak met personeel</td><td>€175 – €300</td><td>Bovenstaande + loonadministratie</td></tr>
             <tr><td>BV / DGA</td><td>€200 – €450</td><td>VPB, jaarrekening, DGA-salaris, loon</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
-        <p>Bij Fortly werken we bewust met vaste, transparante pakketten: <strong>Instap (€85)</strong>, <strong>Groei (€145)</strong> en <strong>BV/DGA (€200)</strong> per maand, exclusief btw. Zo betaal je een eerlijke prijs die past bij jouw fase — zonder uurtjes tellen.</p>
+        <p>Bij Fortly werken we bewust met vaste, transparante pakketten: <strong>Instap (€85)</strong>, <strong>Groei (€145)</strong> en <strong>BV/DGA (€200)</strong> per maand, exclusief btw. Zo betaal je een eerlijke prijs die past bij jouw fase, zonder uurtjes tellen.</p>
 
         <h2 id="wat-krijg-je">Wat zit er in die prijs?</h2>
         <p>"Goedkoop" zegt weinig zolang je niet weet wat je krijgt. Een compleet pakket voor een ZZP'er bevat doorgaans:</p>
         <ul>
-          <li><strong>Verwerking van je administratie</strong> — facturen, bonnetjes en bankmutaties.</li>
-          <li><strong>Kwartaal btw-aangifte</strong> — op tijd ingediend bij de Belastingdienst.</li>
-          <li><strong>Jaarlijkse IB-aangifte</strong> — inclusief zelfstandigen- en startersaftrek.</li>
-          <li><strong>Een vaste aanspreekpersoon</strong> — geen callcenter, maar iemand die jou en je zaak kent.</li>
-          <li><strong>Proactief advies</strong> — een controller die meedenkt en op tijd aan de bel trekt.</li>
+          <li><strong>Verwerking van je administratie</strong>, facturen, bonnetjes en bankmutaties.</li>
+          <li><strong>Kwartaal btw-aangifte</strong>, op tijd ingediend bij de Belastingdienst.</li>
+          <li><strong>Jaarlijkse IB-aangifte</strong>, inclusief zelfstandigen- en startersaftrek.</li>
+          <li><strong>Een vaste aanspreekpersoon</strong>, geen callcenter, maar iemand die jou en je zaak kent.</li>
+          <li><strong>Proactief advies</strong>, een controller die meedenkt en op tijd aan de bel trekt.</li>
         </ul>
         <p>Let goed op dat laatste punt. Het verschil tussen een boekhouder die alleen "de cijfers doet" en één die actief meedenkt, levert je vaak veel meer op dan het prijsverschil. Lees ook onze gids over <a href="/blog/boekhouding-starten-als-zzp.html">boekhouding starten als ZZP'er</a>.</p>
 
@@ -457,7 +463,7 @@
         <h2 id="besparen">Zo bespaar je op je boekhouding</h2>
         <p>Je hoeft niet te bezuinigen op kwaliteit om slim met je geld om te gaan. Drie praktische manieren:</p>
         <ul>
-          <li><strong>Lever ordelijk aan.</strong> Hoe netter je administratie binnenkomt, hoe minder tijd (en dus geld) er in de verwerking gaat zitten — zeker bij een uurtarief.</li>
+          <li><strong>Lever ordelijk aan.</strong> Hoe netter je administratie binnenkomt, hoe minder tijd (en dus geld) er in de verwerking gaat zitten, zeker bij een uurtarief.</li>
           <li><strong>Kies een pakket dat past.</strong> Betaal niet voor loonadministratie als je geen personeel hebt. Een vast pakket op maat voorkomt dat.</li>
           <li><strong>Voorkom boetes.</strong> Een te late btw-aangifte kost zomaar honderden euro's. Een boekhouder die op tijd indient, verdient zichzelf snel terug.</li>
         </ul>
@@ -466,7 +472,7 @@
         <div class="my-10 rounded-2xl overflow-hidden" style="background:var(--color-primary-deep-dark);">
           <div class="relative p-8 sm:p-10 text-center" style="background:radial-gradient(ellipse 70% 90% at 50% 0%, rgba(0,122,255,0.16) 0%, transparent 70%);">
             <h3 class="text-white" style="font-size:1.5rem;">Benieuwd wat jóuw boekhouding kost?</h3>
-            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Plan een gratis kennismaking van 20 minuten. Geen verkoopverhaal — gewoon een eerlijk beeld van wat je nodig hebt en wat het kost.</p>
+            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Plan een gratis kennismaking van 20 minuten. Geen verkoopverhaal, gewoon een eerlijk beeld van wat je nodig hebt en wat het kost.</p>
             <a href="/aanmelden.html" class="btn btn-white">Nu starten</a>
           </div>
         </div>

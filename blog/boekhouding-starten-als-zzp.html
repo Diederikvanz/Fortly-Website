@@ -19,7 +19,7 @@
   <meta name="description" content="Boekhouding starten als ZZP'er? In 7 stappen leg je vanaf dag één een foutloze basis: zakelijke rekening, factuureisen, bonnetjes bewaren en geld apart zetten." />
   <meta name="keywords" content="boekhouding starten ZZP, administratie starter, zakelijke rekening ZZP, bonnetjes bewaren, factuureisen, starten als ondernemer, boekhouding voor beginners" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Fortly — Indufort Consulting" />
+  <meta name="author" content="Fortly, onderdeel van Indufort Consulting" />
   <meta name="geo.region" content="NL-NH" />
   <meta name="geo.placename" content="Amsterdam" />
   <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/boekhouding-starten-als-zzp.html" />
@@ -227,6 +227,10 @@
     .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
     .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-blue); }
+  
+    /* Voorkom horizontale overflow: lange NL-samenstellingen breken; tabellen scrollen via .table-scroll; clip als vangnet. */
+    body { overflow-x: clip; }
+    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
   </style>
 
   <!-- Structured Data: BlogPosting -->
@@ -313,7 +317,7 @@
   <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
       <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly — Online boekhouder voor ZZP'ers in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
+        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
       </a>
       <div class="hidden md:flex items-center">
         <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
@@ -363,7 +367,7 @@
       <span class="tag" style="background:rgba(0,122,255,0.15);">Starten als ZZP'er</span>
       <h1 class="text-white mt-5" style="font-size:clamp(2rem,4.5vw,3rem);">Boekhouding starten als ZZP'er: 7 dingen die je vanaf dag één goed regelt</h1>
       <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:300;">
-        Net ingeschreven bij de KVK? Gefeliciteerd! Met deze zeven stappen leg je vanaf dag één een stevige, foutloze financiële basis — zonder ingewikkelde jargon, gewoon stap voor stap.
+        Net ingeschreven bij de KVK? Gefeliciteerd! Met deze zeven stappen leg je vanaf dag één een stevige, foutloze financiële basis, zonder ingewikkelde jargon, gewoon stap voor stap.
       </p>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 text-sm" style="color:var(--color-text-muted-on-dark);">
         <span>Door <strong style="color:white;font-weight:600;">Team Fortly</strong></span>
@@ -399,7 +403,7 @@
           <span class="callout-label">Kort antwoord</span>
           <p>Regel vanaf dag één: een aparte zakelijke rekening, je KVK- en btw-inschrijving, een vaste manier om je administratie bij te houden, het bewaren van alle bonnetjes en facturen (7 jaar bewaarplicht), geld apart zetten voor de belasting (± 35%) en correcte facturen versturen. Schakel op tijd een boekhouder in om fouten te voorkomen.</p>
         </div>
-        <p>De sprong is gemaakt: je bent officieel ondernemer. Spannend! En na de eerste euforie duikt bijna altijd dezelfde vraag op — <strong>hoe begin ik nu aan mijn boekhouding?</strong> Goed nieuws: het hoeft helemaal niet ingewikkeld te zijn. Als je vanaf dag één een paar basisdingen goed inricht, voorkom je een hoop gedoe (en boetes) later. In deze gids lopen we samen zeven concrete stappen door waarmee je je administratie meteen goed neerzet. Rustig aan, we nemen je stap voor stap mee.</p>
+        <p>De sprong is gemaakt: je bent officieel ondernemer. Spannend! En na de eerste euforie duikt bijna altijd dezelfde vraag op, <strong>hoe begin ik nu aan mijn boekhouding?</strong> Goed nieuws: het hoeft helemaal niet ingewikkeld te zijn. Als je vanaf dag één een paar basisdingen goed inricht, voorkom je een hoop gedoe (en boetes) later. In deze gids lopen we samen zeven concrete stappen door waarmee je je administratie meteen goed neerzet. Rustig aan, we nemen je stap voor stap mee.</p>
 
         <h2 id="zakelijke-rekening">1. Open een aparte zakelijke rekening</h2>
         <p>Dit is misschien wel de belangrijkste stap voor een soepele start. Voor een eenmanszaak is een zakelijke rekening niet wettelijk verplicht, maar wel enorm verstandig. Door je zakelijke geld strikt gescheiden te houden van je privégeld, hou je overzicht en wordt je administratie een stuk simpeler.</p>
@@ -407,24 +411,24 @@
 
         <h2 id="inschrijving">2. Regel je inschrijving: KVK en btw-id</h2>
         <p>Waarschijnlijk heb je dit al gedaan, maar het hoort in elk startersrijtje thuis. Zodra je je inschrijft bij de <strong>Kamer van Koophandel (KVK)</strong>, geeft de KVK je gegevens automatisch door aan de Belastingdienst. Die beoordeelt of je btw-ondernemer bent en stuurt je een <strong>btw-identificatienummer (btw-id)</strong> en een omzetbelastingnummer toe.</p>
-        <p>Bewaar deze nummers goed: je hebt ze straks nodig op elke factuur die je verstuurt. Je btw-id mag je veilig op je facturen en website vermelden — het is speciaal bedoeld voor extern gebruik en beschermt je privéburgerservicenummer.</p>
+        <p>Bewaar deze nummers goed: je hebt ze straks nodig op elke factuur die je verstuurt. Je btw-id mag je veilig op je facturen en website vermelden, het is speciaal bedoeld voor extern gebruik en beschermt je privéburgerservicenummer.</p>
 
         <h2 id="administratie-bijhouden">3. Kies hoe je je administratie bijhoudt</h2>
         <p>Nu de basis staat, is de volgende vraag: hoe ga je je cijfers bijhouden? Grofweg heb je drie opties, elk met eigen voor- en nadelen.</p>
         <h3>Boekhoudsoftware</h3>
-        <p><strong>Voordeel:</strong> facturen maken, bonnetjes inscannen en btw-overzichten gaan grotendeels automatisch. <strong>Nadeel:</strong> je betaalt een maandbedrag en je moet zelf de knopjes leren kennen — én zelf beoordelen of je alles fiscaal juist boekt.</p>
+        <p><strong>Voordeel:</strong> facturen maken, bonnetjes inscannen en btw-overzichten gaan grotendeels automatisch. <strong>Nadeel:</strong> je betaalt een maandbedrag en je moet zelf de knopjes leren kennen, én zelf beoordelen of je alles fiscaal juist boekt.</p>
         <h3>Excel of een spreadsheet</h3>
         <p><strong>Voordeel:</strong> gratis en volledig naar eigen inzicht. <strong>Nadeel:</strong> foutgevoelig, tijdrovend en er zit geen enkele controle in. Bij een handvol facturen per jaar werkt het; groei je, dan loop je er snel tegenaan.</p>
         <h3>Een boekhouder</h3>
-        <p><strong>Voordeel:</strong> je administratie én aangiftes worden voor je verzorgd, iemand denkt met je mee en je maakt geen fiscale fouten. <strong>Nadeel:</strong> er zijn maandelijkse kosten aan verbonden — al zijn die volledig aftrekbaar. Wil je weten wat dat kost? Lees dan onze gids over <a href="/blog/wat-kost-een-boekhouder-zzp.html">wat een boekhouder voor een ZZP'er kost</a>.</p>
+        <p><strong>Voordeel:</strong> je administratie én aangiftes worden voor je verzorgd, iemand denkt met je mee en je maakt geen fiscale fouten. <strong>Nadeel:</strong> er zijn maandelijkse kosten aan verbonden, al zijn die volledig aftrekbaar. Wil je weten wat dat kost? Lees dan onze gids over <a href="/blog/wat-kost-een-boekhouder-zzp.html">wat een boekhouder voor een ZZP'er kost</a>.</p>
 
         <h2 id="bonnetjes-bewaren">4. Bewaar al je bonnetjes en facturen</h2>
-        <p>Elke zakelijke uitgave kan een aftrekpost zijn — maar alleen als je het kunt aantonen. Bewaar daarom vanaf de eerste dag <strong>alle</strong> bonnetjes, facturen en bankafschriften. Dat tankbonnetje, die laptop, de kilometers naar een klant: het telt allemaal mee, mits je het bewijs hebt.</p>
-        <p>Belangrijk om te weten: de Belastingdienst kent een <strong>fiscale bewaarplicht van 7 jaar</strong>. Je moet je administratie dus zeven jaar lang bewaren. Voor gegevens over onroerend goed geldt zelfs een langere termijn van <strong>10 jaar</strong>. Digitaal bewaren mag, zolang alles compleet en leesbaar blijft — maak dus meteen een gewoonte van het inscannen of fotograferen van elk bonnetje.</p>
+        <p>Elke zakelijke uitgave kan een aftrekpost zijn, maar alleen als je het kunt aantonen. Bewaar daarom vanaf de eerste dag <strong>alle</strong> bonnetjes, facturen en bankafschriften. Dat tankbonnetje, die laptop, de kilometers naar een klant: het telt allemaal mee, mits je het bewijs hebt.</p>
+        <p>Belangrijk om te weten: de Belastingdienst kent een <strong>fiscale bewaarplicht van 7 jaar</strong>. Je moet je administratie dus zeven jaar lang bewaren. Voor gegevens over onroerend goed geldt zelfs een langere termijn van <strong>10 jaar</strong>. Digitaal bewaren mag, zolang alles compleet en leesbaar blijft, maak dus meteen een gewoonte van het inscannen of fotograferen van elk bonnetje.</p>
 
         <div class="callout">
           <span class="callout-label">Tip van Fortly</span>
-          <p>Fotografeer een bonnetje meteen bij de kassa en zet het in één vaste map of app. Papieren bonnetjes vervagen namelijk. Een onleesbaar bonnetje is voor de Belastingdienst hetzelfde als geen bonnetje — en dus een aftrekpost die je misloopt.</p>
+          <p>Fotografeer een bonnetje meteen bij de kassa en zet het in één vaste map of app. Papieren bonnetjes vervagen namelijk. Een onleesbaar bonnetje is voor de Belastingdienst hetzelfde als geen bonnetje, en dus een aftrekpost die je misloopt.</p>
         </div>
 
         <h2 id="geld-apart">5. Zet vanaf euro één geld apart voor de belasting</h2>
@@ -433,7 +437,7 @@
 
         <div class="callout">
           <span class="callout-label">De 35%-regel</span>
-          <p>Een handige vuistregel voor starters: zet ongeveer <strong>30 tot 40% van je omzet</strong> opzij voor btw en inkomstenbelasting. Hou je 35% aan, dan zit je meestal goed. Verwacht je een omzet onder de <strong>€20.000</strong> per jaar? Dan kun je mogelijk gebruikmaken van de <strong>kleineondernemersregeling (KOR)</strong>: je bent dan vrijgesteld van btw, brengt geen btw in rekening en doet meestal geen btw-aangifte. Handig, maar reken goed door of het bij jou past — je kunt namelijk ook geen btw meer terugvragen.</p>
+          <p>Een handige vuistregel voor starters: zet ongeveer <strong>30 tot 40% van je omzet</strong> opzij voor btw en inkomstenbelasting. Hou je 35% aan, dan zit je meestal goed. Verwacht je een omzet onder de <strong>€20.000</strong> per jaar? Dan kun je mogelijk gebruikmaken van de <strong>kleineondernemersregeling (KOR)</strong>: je bent dan vrijgesteld van btw, brengt geen btw in rekening en doet meestal geen btw-aangifte. Handig, maar reken goed door of het bij jou past, je kunt namelijk ook geen btw meer terugvragen.</p>
         </div>
 
         <h2 id="correcte-facturen">6. Stuur correcte facturen</h2>
@@ -462,8 +466,8 @@
         </div>
 
         <h2 id="hulp-inschakelen">7. Schakel op tijd hulp in</h2>
-        <p>Je hoeft het niet allemaal alleen te doen — en dat is geen zwaktebod, maar slim ondernemen. De eerste maanden leg je de fundamenten waarop de rest van je administratie voortbouwt. Zit daar een fout in, dan moet je die soms met terugwerkende kracht herstellen, en dat is bijna altijd duurder en vervelender dan het meteen goed doen.</p>
-        <p>Een boekhouder die vanaf de start meekijkt, zorgt dat je aangiftes op tijd de deur uit gaan, dat je geen aftrekposten misloopt en dat je de juiste keuzes maakt — bijvoorbeeld rond de KOR of de zelfstandigenaftrek. Zo kun jij je richten op waar je écht goed in bent: ondernemen. Benieuwd welke <a href="/#pakketten">pakketten</a> bij jouw startfase passen? We denken graag met je mee.</p>
+        <p>Je hoeft het niet allemaal alleen te doen, en dat is geen zwaktebod, maar slim ondernemen. De eerste maanden leg je de fundamenten waarop de rest van je administratie voortbouwt. Zit daar een fout in, dan moet je die soms met terugwerkende kracht herstellen, en dat is bijna altijd duurder en vervelender dan het meteen goed doen.</p>
+        <p>Een boekhouder die vanaf de start meekijkt, zorgt dat je aangiftes op tijd de deur uit gaan, dat je geen aftrekposten misloopt en dat je de juiste keuzes maakt, bijvoorbeeld rond de KOR of de zelfstandigenaftrek. Zo kun jij je richten op waar je écht goed in bent: ondernemen. Benieuwd welke <a href="/#pakketten">pakketten</a> bij jouw startfase passen? We denken graag met je mee.</p>
 
         <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
         <div class="mt-4">
@@ -495,7 +499,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center reveal">
       <span class="section-label">Klaar om te starten?</span>
       <h2 style="font-size:2rem;">Begin je onderneming met een boekhouding die klopt</h2>
-      <p class="mt-3 mb-8 text-lg" style="color:var(--color-text-medium);">Fortly verzorgt de complete boekhouding voor startende ZZP'ers vanaf €85 per maand. Vaste prijs, vaste contactpersoon en altijd antwoord binnen één werkdag — zodat jij vanaf dag één zorgeloos kunt ondernemen.</p>
+      <p class="mt-3 mb-8 text-lg" style="color:var(--color-text-medium);">Fortly verzorgt de complete boekhouding voor startende ZZP'ers vanaf €85 per maand. Vaste prijs, vaste contactpersoon en altijd antwoord binnen één werkdag, zodat jij vanaf dag één zorgeloos kunt ondernemen.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="/aanmelden.html" class="btn btn-accent">Nu starten</a>
         <a href="/#pakketten" class="btn" style="background:transparent;color:var(--color-accent-blue);border-color:var(--color-accent-blue);border-radius:0.625rem;">Bekijk de pakketten</a>
