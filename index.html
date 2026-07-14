@@ -408,35 +408,10 @@
         }
       ]
     },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Lisa van den Berg"},
-        "reviewBody": "Eindelijk een boekhouder die gewoon opneemt als ik bel. Mijn administratie is nu helder en ik weet precies waar ik sta. Ik hoef me nergens zorgen over te maken.",
-        "datePublished": "2025-11-01"
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Tom Jacobs"},
-        "reviewBody": "Als starter wist ik niet wat ik nodig had. Ze legden alles stap voor stap uit en ik hoef me nergens zorgen over te maken. Precies wat ik zocht.",
-        "datePublished": "2025-12-15"
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Marieke de Vries"},
-        "reviewBody": "Ik betaalde jarenlang voor een boekhouder die ik nauwelijks zag. Bij Fortly heb ik echt het gevoel dat iemand meedenkt. De proactieve tips van de controllers zijn goud waard.",
-        "datePublished": "2026-01-20"
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "2",
-      "bestRating": "5",
-      "worstRating": "1"
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "KvK",
+      "value": "42002566"
     },
     "slogan": "Administratie. Inzicht. Zekerheid. Ontzorging.",
     "knowsAbout": [
@@ -562,7 +537,7 @@
     ],
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": ["#voor-wie", "#diensten", "#pakketten", "#werkwijze", "#testimonials"]
+      "cssSelector": ["#voor-wie", "#diensten", "#pakketten", "#werkwijze", "#faq"]
     },
     "significantLink": "https://www.fortly.nl/aanmelden.html"
   }
@@ -1173,60 +1148,85 @@
   <!-- ═══════════════════════════════════════════
        TESTIMONIALS — exact indufort layout
   ═══════════════════════════════════════════ -->
-  <section id="testimonials" class="section-padding" style="background:var(--color-background-main);" aria-labelledby="testimonials-heading">
+  <section id="zekerheid" class="section-padding" style="background:var(--color-background-main);" aria-labelledby="zekerheid-heading">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 max-w-3xl mx-auto reveal">
-        <span class="section-label">Succesverhalen van klanten</span>
-        <h2 id="testimonials-heading" style="color:var(--color-primary-dark);">Hoor het van onze klanten</h2>
+        <span class="section-label">Waarom Fortly</span>
+        <h2 id="zekerheid-heading" style="color:var(--color-primary-dark);">Zo weet je dat je goed zit</h2>
         <p class="font-body text-lg md:text-xl leading-relaxed mt-3" style="color:var(--color-text-medium);">
-          Hoor rechtstreeks van ondernemers waarmee we samenwerken om hun administratie te ontzorgen en hun bedrijf te laten groeien.
+          Geen loze beloftes, maar concrete afspraken waar je ons aan mag houden.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card reveal" itemscope itemtype="https://schema.org/Review">
-          <div class="text-5xl font-serif mb-4 leading-none" style="color:var(--color-accent-text);opacity:0.2;">"</div>
-          <p class="font-body text-base leading-relaxed italic flex-1" style="color:var(--color-text-medium);" itemprop="reviewBody">
-            "Eindelijk een boekhouder die gewoon opneemt als ik bel. Mijn administratie is nu helder en ik weet precies waar ik sta. Ik hoef me nergens zorgen over te maken."
-          </p>
-          <div class="mt-6 pt-5 border-t flex items-center gap-3" style="border-color:var(--color-border-light);">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-header font-bold" style="background:rgba(0,122,255,0.1);color:var(--color-accent-text);">L</div>
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="font-header font-bold text-sm" style="color:var(--color-primary-dark);" itemprop="name">Lisa van den Berg</div>
-              <div class="font-body text-xs" style="color:var(--color-text-medium);">Freelance designer</div>
-            </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div class="service-card reveal">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(0,122,255,0.08);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
+          <h3 class="font-header font-bold text-lg mb-3" style="color:var(--color-primary-dark);">Vaste maandprijs</h3>
+          <p class="font-body text-sm leading-relaxed" style="color:var(--color-text-medium);">Je weet vooraf precies wat je betaalt. Geen uurtarief, geen naheffingen, geen verrassingen achteraf.</p>
         </div>
-
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card reveal" itemscope itemtype="https://schema.org/Review">
-          <div class="text-5xl font-serif mb-4 leading-none" style="color:var(--color-accent-text);opacity:0.2;">"</div>
-          <p class="font-body text-base leading-relaxed italic flex-1" style="color:var(--color-text-medium);" itemprop="reviewBody">
-            "Als starter wist ik niet wat ik nodig had. Ze legden alles stap voor stap uit en ik hoef me nergens zorgen over te maken. Precies wat ik zocht."
-          </p>
-          <div class="mt-6 pt-5 border-t flex items-center gap-3" style="border-color:var(--color-border-light);">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-header font-bold" style="background:rgba(0,122,255,0.1);color:var(--color-accent-text);">T</div>
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="font-header font-bold text-sm" style="color:var(--color-primary-dark);" itemprop="name">Tom Jacobs</div>
-              <div class="font-body text-xs" style="color:var(--color-text-medium);">IT-consultant, Starter klant</div>
-            </div>
+        <div class="service-card reveal">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(0,122,255,0.08);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
+          <h3 class="font-header font-bold text-lg mb-3" style="color:var(--color-primary-dark);">Altijd dezelfde boekhouder</h3>
+          <p class="font-body text-sm leading-relaxed" style="color:var(--color-text-medium);">Een vast aanspreekpunt dat jou en je cijfers kent. Geen callcenter en geen wisselende gezichten.</p>
         </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card reveal" itemscope itemtype="https://schema.org/Review">
-          <div class="text-5xl font-serif mb-4 leading-none" style="color:var(--color-accent-text);opacity:0.2;">"</div>
-          <p class="font-body text-base leading-relaxed italic flex-1" style="color:var(--color-text-medium);" itemprop="reviewBody">
-            "Ik betaalde jarenlang voor een boekhouder die ik nauwelijks zag. Bij Fortly heb ik echt het gevoel dat iemand meedenkt. De proactieve tips van de controllers zijn goud waard."
-          </p>
-          <div class="mt-6 pt-5 border-t flex items-center gap-3" style="border-color:var(--color-border-light);">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-header font-bold" style="background:rgba(0,122,255,0.1);color:var(--color-accent-text);">M</div>
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="font-header font-bold text-sm" style="color:var(--color-primary-dark);" itemprop="name">Marieke de Vries</div>
-              <div class="font-body text-xs" style="color:var(--color-text-medium);">Marketingconsultant, ZZP klant</div>
-            </div>
+        <div class="service-card reveal">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(0,122,255,0.08);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
           </div>
+          <h3 class="font-header font-bold text-lg mb-3" style="color:var(--color-primary-dark);">Reactie binnen één werkdag</h3>
+          <p class="font-body text-sm leading-relaxed" style="color:var(--color-text-medium);">Een vraag? Je krijgt gegarandeerd binnen één werkdag antwoord, in gewone taal en zonder jargon.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(0,122,255,0.08);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3 class="font-header font-bold text-lg mb-3" style="color:var(--color-primary-dark);">Zorgeloos overstappen</h3>
+          <p class="font-body text-sm leading-relaxed" style="color:var(--color-text-medium);">Wij nemen je bestaande administratie volledig over en regelen alles met de Belastingdienst. Jij hoeft niets te doen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ — zichtbaar (spiegelt het FAQPage-schema)
+  ═══════════════════════════════════════════ -->
+  <section id="faq" class="section-padding" style="background:var(--color-background-light);" aria-labelledby="faq-heading">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 max-w-3xl mx-auto reveal">
+        <span class="section-label">Veelgestelde vragen</span>
+        <h2 id="faq-heading" style="color:var(--color-primary-dark);">Antwoord op de vragen die je nu hebt</h2>
+      </div>
+      <div class="max-w-3xl mx-auto reveal">
+        <div style="border-top:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Wat kost een boekhouder bij Fortly?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">Je betaalt een vaste maandprijs: €85 voor Instap, €145 voor Groei of €200 voor MKB &amp; BV / DGA, telkens exclusief btw. Geen uurtarief en geen verrassingen achteraf. Welk pakket past hangt af van je rechtsvorm en het aantal boekingen.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Kan ik overstappen van mijn huidige boekhouder of accountant?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">Ja, en dat kan op elk moment van het jaar. Fortly neemt je bestaande administratie volledig over en regelt de communicatie met je vorige kantoor en de Belastingdienst. Jij hoeft zelf niets te doen.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Verzorgen jullie ook loonadministratie voor personeel?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">Ja. Voor MKB-bedrijven met personeel verzorgen we de loonstroken, de loonaangifte bij de Belastingdienst, de werkkostenregeling en het DGA-salaris. Dit valt onder het MKB &amp; BV / DGA-pakket. Bekijk onze <a href="/boekhouder-mkb.html" style="color:var(--color-accent-text);font-weight:600;">boekhouding voor het MKB</a>.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Wat is het verschil tussen een boekhouder en een accountant?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">Een boekhouder verzorgt je dagelijkse administratie, btw-aangiften en jaarstukken. Een accountant is bevoegd voor wettelijke controles (accountantsverklaringen), wat vooral voor grotere bedrijven verplicht is. Voor de meeste ZZP'ers en het MKB is een boekhouder alles wat je nodig hebt.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Moet ik als ZZP'er btw afdragen?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">In de meeste gevallen wel: draai je meer dan €20.000 omzet per jaar, dan doe je meestal per kwartaal btw-aangifte. Onder die grens kun je kiezen voor de kleineondernemersregeling (KOR). Fortly verzorgt de btw-aangifte voor je en houdt de deadlines in de gaten.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);padding:1.75rem 0;">
+          <h3 class="font-header font-bold" style="font-size:1.125rem;color:var(--color-primary-dark);margin-bottom:0.5rem;">Hoe snel krijg ik antwoord op een vraag?</h3>
+          <p class="font-body" style="color:var(--color-text-medium);">Altijd binnen één werkdag, van je eigen vaste boekhouder. We zijn bereikbaar op werkdagen van 9:00 tot 17:30 via contact@fortly.nl of +31 6 230 71 852.</p>
+        </div>
+        <div class="text-center mt-12">
+          <a href="aanmelden.html" class="btn btn-accent">Plan een gratis kennismaking</a>
         </div>
       </div>
     </div>
@@ -1345,13 +1345,16 @@
         <a href="/boekhouder-mkb.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Boekhouder MKB</a>
         <a href="#pakketten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Prijzen</a>
         <a href="#werkwijze" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Werkwijze</a>
-        <a href="#testimonials" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Ervaringen</a>
+        <a href="#faq" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Veelgestelde vragen</a>
+        <a href="/over-ons.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Over ons</a>
         <a href="/blog/" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Blog</a>
         <a href="#contact" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Contact</a>
       </nav>
 
+      <!-- NAW + KvK -->
+      <p class="font-body text-xs" style="color:rgba(255,255,255,0.5);">Joan Muyskenweg 82, 1114 AN Amsterdam · KvK 42002566 · contact@fortly.nl · +31 6 230 71 852</p>
       <!-- Copyright -->
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
+      <p class="font-body text-xs mt-4" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
       <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.2);">
         Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Indufort Consulting</a>
       </p>

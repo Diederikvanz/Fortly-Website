@@ -16,6 +16,13 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.fortly.nl/over-ons.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/over-ons.html"/>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.fortly.nl/boekhouder-mkb.html</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/boekhouder-mkb.html"/>
     <lastmod>2026-07-13</lastmod>
