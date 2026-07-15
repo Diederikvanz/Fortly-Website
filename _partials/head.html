@@ -1,0 +1,51 @@
+<!-- CANONIEK BLOK — <head> van het Fortly designsysteem.
+     Kopieer dit naar elke pagina en vul ALLEEN de PAGINA-SPECIFIEK gemarkeerde regels in.
+     De SEO-blokken (title, description, canonical, og/twitter, JSON-LD) komen ONGEWIJZIGD
+     uit de oude pagina mee. Nooit weglaten of herschrijven. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    // Verberg de fade-content alleen als we 'm ook weer kunnen tonen.
+    // Laadt assets/fortly.js niet, dan halen we 'js' terug weg en is alles gewoon zichtbaar.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__fortlyFade) document.documentElement.classList.remove('js');
+    }, 2500);
+  </script>
+
+<!-- GEDEELD & VERPLICHT: Google Analytics + Google Ads. Mag op GEEN enkele pagina ontbreken. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XT407991C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1XT407991C');
+  gtag('config', 'AW-18076485002');
+</script>
+
+
+<!-- PAGINA-SPECIFIEK: overnemen uit de oude pagina -->
+<title>...</title>
+<meta name="description" content="..." />
+<link rel="canonical" href="..." />
+<!-- + og:/twitter: tags en ALLE <script type="application/ld+json"> blokken uit de oude pagina -->
+
+<link rel="icon" href="/favicon.jpg" type="image/jpeg">
+
+<!-- GEDEELD: designsysteem, exact deze volgorde -->
+<link rel="stylesheet" href="/assets/tailwind.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fortly.css">
+
+<!-- body: <body class="font-body antialiased">
+     skip-link + header partial + <main id="hoofdinhoud"> ... </main> + footer partial
+     en vlak voor </body>:  <script src="/assets/fortly.js"></script> -->
+
+<!-- LET OP, pagina-specifiek:
+     - CTA-links mogen een ?pakket=-parameter dragen (boekhouder-mkb.html gebruikt
+       /aanmelden.html?pakket=bv om het juiste pakket voor te selecteren). Niet weghalen.
+     - Pagina's met een formulier (index, aanmelden) hebben eigen conversie-JS:
+       gtag('event','conversion',{send_to:'AW-18076485002/hUd8CJefsJkcEIqLxatD'}). Behouden.
+-->

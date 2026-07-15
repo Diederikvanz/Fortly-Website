@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="nl" dir="auto">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Verberg de fade-content alleen als we 'm ook weer kunnen tonen.
+    // Laadt assets/fortly.js niet, dan halen we 'js' terug weg en is alles gewoon zichtbaar.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__fortlyFade) document.documentElement.classList.remove('js');
+    }, 2500);
+  </script>
+
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XT407991C"></script>
   <script>
@@ -11,10 +22,7 @@
     gtag('config', 'AW-18076485002');
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaarrekening deponeren bij de KVK: de verplichtingen voor je BV | Fortly</title>
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.fortly.nl/blog/jaarrekening-deponeren-kvk.html" />
   <meta name="description" content="Jaarrekening deponeren bij de KVK: elke BV is verplicht. Ontdek de bedrijfsklassen, wat je moet deponeren, de deadlines en de risico's van te laat." />
   <meta name="keywords" content="jaarrekening deponeren, KVK deponeren, jaarrekening BV, publicatieplicht, deponeren deadline, bedrijfsklasse micro klein, bestuurdersaansprakelijkheid" />
@@ -43,203 +51,15 @@
   <meta name="twitter:description" content="Elke BV moet zijn jaarrekening deponeren bij de KVK. Ontdek de bedrijfsklassen, de deadlines en de risico's van te laat deponeren." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
 
-  <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Open Sans', 'sans-serif'],
-            header: ['Montserrat', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
 
-    :root {
-      --color-primary-dark: #1D1D1F;
-      --color-primary-deep-dark: #0A192F;
-      --color-accent-blue: #007AFF; --color-accent-text: #0064CC;
-      --color-text-light: #FFFFFF;
-      --color-text-dark: #1D1D1F;
-      --color-text-medium: #58585b;
-      --color-text-on-dark: #F5F5F7;
-      --color-text-muted-on-dark: #B4B4BC;
-      --color-background-light: #FFFFFF;
-      --color-background-main: #F5F5F7;
-      --color-background-medium: #E8E8ED;
-      --color-border-light: #D2D2D7;
-    }
-
-    ::selection { background-color: var(--color-accent-blue); color: #fff; }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--color-text-dark);
-      -webkit-font-smoothing: antialiased;
-      background-color: var(--color-background-light);
-      font-size: 17px;
-      line-height: 1.7;
-      letter-spacing: -0.012em;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--color-primary-dark);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 0.7em;
-      letter-spacing: -0.02em;
-    }
-
-    h1 { font-size: 2.4rem; }
-    @media (min-width: 768px) { h1 { font-size: 3rem; } }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      padding: 0.875rem 2rem;
-      border-radius: 0.625rem;
-      transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-      text-align: center;
-      font-size: 0.875rem;
-      cursor: pointer;
-      border: 2px solid transparent;
-      text-decoration: none;
-      line-height: 1.3;
-    }
-    .btn-white { background: white; color: var(--color-primary-dark); border-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-    .btn-white:hover { background: #F0F0F0; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
-    .btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,0.7); }
-    .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-    .btn-accent { background: var(--color-accent-blue); color: white; border-color: var(--color-accent-blue); border-radius: 0.625rem; }
-    .btn-accent:hover { background: #0069D9; transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0,122,255,0.25); }
-
-    /* Nav */
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--color-text-muted-on-dark);
-      text-decoration: none;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-link:hover { color: white; background: rgba(255,255,255,0.1); }
-    .nav-link.active { color: white; }
-
-    .section-label {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-accent-text);
-      margin-bottom: 1rem;
-    }
-
-    /* Mobile menu */
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: block; }
-
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── Article typography ── */
-    .article-body { font-size: 1.075rem; line-height: 1.7; color: #2c2c2e; max-width: 42rem; margin-left: auto; margin-right: auto; }
-    .article-body h2 {
-      font-size: 1.75rem; margin-top: 2.6rem; margin-bottom: 1rem;
-      scroll-margin-top: 120px;
-    }
-    .article-body h3 { font-size: 1.3rem; margin-top: 1.9rem; margin-bottom: 0.7rem; }
-    .article-body p { margin-bottom: 1.3rem; }
-    .article-body ul, .article-body ol { margin: 0 0 1.5rem 0; padding-left: 1.4rem; }
-    .article-body li { margin-bottom: 0.6rem; }
-    .article-body ul li { list-style: none; position: relative; padding-left: 1.6rem; }
-    .article-body ul li::before {
-      content: ''; position: absolute; left: 0; top: 0.68em;
-      width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent-blue);
-    }
-    .article-body ol { counter-reset: item; padding-left: 0; }
-    .article-body ol > li { list-style: none; position: relative; padding-left: 2.6rem; counter-increment: item; margin-bottom: 0.9rem; }
-    .article-body ol > li::before {
-      content: counter(item); position: absolute; left: 0; top: 0.15em;
-      width: 1.7rem; height: 1.7rem; border-radius: 50%;
-      background: rgba(0,122,255,0.1); color: var(--color-accent-text);
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .article-body a { color: var(--color-accent-text); text-decoration: underline; text-underline-offset: 2px; }
-    .article-body a:hover { color: #0069D9; }
-    .article-body strong { color: var(--color-primary-dark); font-weight: 700; }
-    .article-body blockquote {
-      border-left: 3px solid var(--color-accent-blue);
-      padding: 0.4rem 0 0.4rem 1.4rem; margin: 1.8rem 0;
-      font-family: 'Merriweather', serif; font-style: italic; color: var(--color-text-medium);
-    }
-
-    /* Tables */
-    .article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.97rem; }
-    .article-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.8rem 0; }
-    .article-body .table-scroll table { margin: 0; }
-    .article-body thead { background: var(--color-primary-deep-dark); }
-    .article-body th { color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; }
-    .article-body td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-border-light); }
-    .article-body tbody tr:nth-child(even) { background: var(--color-background-main); }
-
-    /* Callout */
-    .callout {
-      background: rgba(0,122,255,0.05); border: 1px solid rgba(0,122,255,0.18);
-      border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 2rem 0;
-    }
-    .callout .callout-label {
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.72rem;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-text);
-      margin-bottom: 0.5rem; display: block;
-    }
-    .callout p:last-child { margin-bottom: 0; }
-
-    /* Table of contents */
-    .toc { max-width: 42rem; margin-left: auto; margin-right: auto; background: var(--color-background-main); border: 1px solid var(--color-border-light); border-radius: 1rem; padding: 1.5rem 1.75rem; }
-    .toc a { color: var(--color-text-medium); text-decoration: none; transition: color 0.2s; }
-    .toc a:hover { color: var(--color-accent-text); }
-
-    /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--color-border-light); }
-    .faq-item summary { cursor: pointer; list-style: none; padding: 1.25rem 0; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--color-primary-dark); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--color-accent-text); font-weight: 400; flex-shrink: 0; transition: transform 0.2s; }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item .faq-answer { padding-bottom: 1.25rem; color: var(--color-text-medium); }
-
-    .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
-    .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
-    .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-text); }
-  
-    /* Voorkom horizontale overflow: lange NL-samenstellingen mogen afbreken; tabellen scrollen via .table-scroll; clip als vangnet (breekt de sticky header niet). */
-    body { overflow-x: clip; }
-    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
-  
-    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
-    a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .service-card:focus-visible, .plan-card:focus-visible, .article-card:focus-visible, [tabindex]:focus-visible {
-      outline: 2px solid var(--color-accent-blue);
-      outline-offset: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/fortly.css">
 
   <!-- Structured Data: BlogPosting -->
   <script type="application/ld+json">
@@ -319,301 +139,427 @@
   }
   </script>
 </head>
-<body class="antialiased">
 
-  <!-- ═══ HEADER ═══ -->
-  <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-      <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP'ers in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
-      </a>
-      <div class="hidden md:flex items-center">
-        <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
-          <a href="/#voor-wie" class="nav-link">Voor wie</a>
-          <a href="/#diensten" class="nav-link">Diensten</a>
-          <a href="/boekhouder-mkb.html" class="nav-link">MKB</a>
-          <a href="/#pakketten" class="nav-link">Prijzen</a>
-          <a href="/#werkwijze" class="nav-link">Werkwijze</a>
-          <a href="/blog/" class="nav-link active">Blog</a>
-        </nav>
-        <div class="ml-5 pl-4 border-l border-gray-700/60">
-          <a href="/aanmelden.html" class="btn btn-accent" style="padding:0.65rem 1.4rem;font-size:0.82rem;border-radius:8px;">Nu starten</a>
-        </div>
-      </div>
-      <button id="hamburger" class="md:hidden p-2.5 rounded-md text-white hover:bg-white/10 transition-colors" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="5" x2="19" y2="5"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="17" x2="19" y2="17"/>
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
         </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.08);">
-      <nav class="px-4 py-4 flex flex-col gap-1">
-        <a href="/#voor-wie" class="nav-link block">Voor wie</a>
-        <a href="/#diensten" class="nav-link block">Diensten</a>
-        <a href="/boekhouder-mkb.html" class="nav-link block">MKB</a>
-        <a href="/#pakketten" class="nav-link block">Prijzen</a>
-        <a href="/#werkwijze" class="nav-link block">Werkwijze</a>
-        <a href="/blog/" class="nav-link block active">Blog</a>
-        <a href="/aanmelden.html" class="btn btn-accent text-center mt-3">Nu starten</a>
-      </nav>
-    </div>
-  </header>
+      </a>
 
-  <!-- ═══ ARTICLE HERO ═══ -->
-  <article>
-  <header class="relative overflow-hidden" style="background:var(--color-primary-deep-dark);padding:3.5rem 0 3rem;">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 70% at 65% 35%, rgba(0,122,255,0.14) 0%, transparent 65%);"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-3xl">
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
+    </div>
+    <a href="/aanmelden.html" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
+
+<main id="hoofdinhoud">
+<article>
+
+  <!-- ================= ARTIKEL-HERO ================= -->
+  <section class="relative overflow-hidden pt-[120px] pb-14 lg:pt-[140px] lg:pb-16">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, #070F1E 0%, #14243A 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 70% at 60% 40%, rgba(0,122,255,0.16) 0%, transparent 65%);"></div>
+      <div class="glow" style="width:36rem;height:36rem;top:-14rem;left:-10rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.35;"></div>
+      <div class="glow" style="width:32rem;height:32rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.28;"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 fade">
       <!-- Breadcrumb -->
-      <nav aria-label="Kruimelpad" class="mb-6">
-        <ol class="flex flex-wrap items-center gap-2 text-xs" style="color:var(--color-text-muted-on-dark);font-family:'Montserrat',sans-serif;">
-          <li><a href="/" style="color:var(--color-text-muted-on-dark);text-decoration:none;">Home</a></li>
-          <li aria-hidden="true">›</li>
-          <li><a href="/blog/" style="color:var(--color-text-muted-on-dark);text-decoration:none;">Blog</a></li>
-          <li aria-hidden="true">›</li>
-          <li style="color:var(--color-accent-text);">MKB &amp; Verplichtingen</li>
+      <nav aria-label="Kruimelpad">
+        <ol class="flex flex-wrap items-center gap-2 font-display text-xs text-slate-300">
+          <li><a href="/" class="hover:text-cyan transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li><a href="/blog/" class="hover:text-cyan transition-colors">Blog</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li class="text-cyan">MKB &amp; Verplichtingen</li>
         </ol>
       </nav>
-      <span class="tag" style="background:rgba(0,122,255,0.15);">MKB &amp; Verplichtingen</span>
-      <h1 class="text-white mt-5" style="font-size:clamp(2rem,4.5vw,3rem);">Jaarrekening deponeren bij de KVK: de verplichtingen voor je BV</h1>
-      <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:400;">
+
+      <span class="mt-6 inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">MKB &amp; Verplichtingen</span>
+
+      <h1 class="mt-5 font-display font-bold text-white leading-[1.1] tracking-tight text-[2.1rem] sm:text-4xl lg:text-5xl">
+        Jaarrekening deponeren bij de KVK: de verplichtingen voor je BV
+      </h1>
+
+      <p class="mt-5 text-lg text-slate-300 leading-relaxed">
         Elke BV moet elk jaar zijn jaarrekening deponeren bij de KVK. Klinkt als een formaliteit, maar te laat zijn kan je persoonlijk raken. We leggen rustig uit wat je moet deponeren, wanneer, en wat er op het spel staat.
       </p>
-      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 text-sm" style="color:var(--color-text-muted-on-dark);">
-        <span>Door <strong style="color:white;font-weight:600;">Team Fortly</strong></span>
-        <span aria-hidden="true">•</span>
+
+      <div class="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-300">
+        <span>Door <strong class="font-semibold text-white">Team Fortly</strong></span>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
         <time datetime="2026-07-07">7 juli 2026</time>
-        <span aria-hidden="true">•</span>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
         <span>7 min leestijd</span>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- ═══ ARTICLE BODY ═══ -->
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8" style="padding-top:3.5rem;padding-bottom:4rem;">
-    <div class="max-w-3xl mx-auto">
+  <!-- ================= ARTIKEL-BODY ================= -->
+  <section class="relative bg-ink py-16 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;right:-16rem;top:8rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
 
-      <!-- TOC -->
-      <nav class="toc mb-10" aria-label="Inhoudsopgave">
-        <span class="section-label" style="margin-bottom:0.75rem;">In dit artikel</span>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#wat-en-wie">Wat is de jaarrekening en de publicatieplicht?</a></li>
-          <li><a href="#wie-moet">Wie moet deponeren bij de KVK?</a></li>
-          <li><a href="#bedrijfsklassen">De bedrijfsklassen: micro, klein, middelgroot en groot</a></li>
-          <li><a href="#wat-deponeren">Wat moet je precies deponeren?</a></li>
-          <li><a href="#deadlines">De deadlines: wanneer moet het gebeuren?</a></li>
-          <li><a href="#risicos">Te laat of niet deponeren: de risico's</a></li>
-          <li><a href="#uit-handen">Zo houd je het simpel</a></li>
-          <li><a href="#veelgestelde-vragen">Veelgestelde vragen</a></li>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Inhoudsopgave -->
+      <nav class="fade glass rounded-2xl p-6 sm:p-7" aria-label="Inhoudsopgave">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">In dit artikel</p>
+        <ul class="mt-4 space-y-2.5 text-[15px] text-slate-300">
+          <li><a href="#wat-en-wie" class="hover:text-cyan transition-colors">Wat is de jaarrekening en de publicatieplicht?</a></li>
+          <li><a href="#wie-moet" class="hover:text-cyan transition-colors">Wie moet deponeren bij de KVK?</a></li>
+          <li><a href="#bedrijfsklassen" class="hover:text-cyan transition-colors">De bedrijfsklassen: micro, klein, middelgroot en groot</a></li>
+          <li><a href="#wat-deponeren" class="hover:text-cyan transition-colors">Wat moet je precies deponeren?</a></li>
+          <li><a href="#deadlines" class="hover:text-cyan transition-colors">De deadlines: wanneer moet het gebeuren?</a></li>
+          <li><a href="#risicos" class="hover:text-cyan transition-colors">Te laat of niet deponeren: de risico&#39;s</a></li>
+          <li><a href="#uit-handen" class="hover:text-cyan transition-colors">Zo houd je het simpel</a></li>
+          <li><a href="#veelgestelde-vragen" class="hover:text-cyan transition-colors">Veelgestelde vragen</a></li>
         </ul>
       </nav>
 
-      <div class="article-body">
-        <div class="callout" style="background:rgba(0,122,255,0.06);border-left:4px solid var(--color-accent-blue);">
-          <span class="callout-label">Kort antwoord</span>
-          <p>Elke BV is wettelijk verplicht om jaarlijks een jaarrekening te deponeren bij het Handelsregister van de KVK, ook zonder omzet of activiteiten. Je deponeert uiterlijk 8 dagen na de vaststelling door de aandeelhouders, met een uiterste termijn van 12 maanden na het einde van het boekjaar. Kleine en micro-BV's mogen een beperkte, verkorte jaarrekening deponeren. Te laat of niet deponeren is een economisch delict en kan bij een faillissement leiden tot persoonlijke bestuurdersaansprakelijkheid.</p>
-        </div>
-        <p>Voor veel MKB-ondernemers voelt het <strong>deponeren van de jaarrekening</strong> als een bureaucratische verplichting die er nog even bij komt. Toch is het een van de weinige administratieve plichten waar het echt fout kan gaan met persoonlijke gevolgen. In deze gids leggen we uit wat de jaarrekening en de publicatieplicht precies inhouden, in welke <strong>bedrijfsklasse</strong> je BV valt, hoeveel je moet deponeren, wat de <strong>deadlines</strong> zijn en waarom te laat zijn je meer kan kosten dan alleen een boete.</p>
+      <!-- Kort antwoord -->
+      <div class="fade mt-10 rounded-2xl border border-cyan/20 border-l-2 border-l-cyan bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Kort antwoord</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Elke BV is wettelijk verplicht om jaarlijks een jaarrekening te deponeren bij het Handelsregister van de KVK, ook zonder omzet of activiteiten. Je deponeert uiterlijk 8 dagen na de vaststelling door de aandeelhouders, met een uiterste termijn van 12 maanden na het einde van het boekjaar. Kleine en micro-BV&#39;s mogen een beperkte, verkorte jaarrekening deponeren. Te laat of niet deponeren is een economisch delict en kan bij een faillissement leiden tot persoonlijke bestuurdersaansprakelijkheid.</p>
+      </div>
 
-        <h2 id="wat-en-wie">Wat is de jaarrekening en de publicatieplicht?</h2>
-        <p>De <strong>jaarrekening</strong> is het financiële eindverslag van je onderneming over een boekjaar. Hij bestaat in de kern uit een <strong>balans</strong> (wat bezit en wat is de BV schuldig op de laatste dag van het jaar), een <strong>winst-en-verliesrekening</strong> (wat is er verdiend en uitgegeven) en een <strong>toelichting</strong> op die cijfers. De jaarrekening geeft een getrouw beeld van de financiële positie van de onderneming.</p>
-        <p>Voor een BV blijft het niet bij het opstellen. Er geldt ook een <strong>publicatieplicht</strong>: je moet (een deel van) die jaarrekening openbaar maken door hem te <strong>deponeren</strong> bij het Handelsregister van de KVK. Zo kan iedereen, van leveranciers tot mogelijke klanten, een basisbeeld krijgen van de financiële gezondheid van je BV. Dat is de prijs van de beperkte aansprakelijkheid die een BV je biedt: in ruil voor die bescherming ben je transparant over je cijfers.</p>
+      <p class="fade mt-8 text-slate-300 text-[17px] leading-[1.8]">Voor veel MKB-ondernemers voelt het <strong class="font-semibold text-white">deponeren van de jaarrekening</strong> als een bureaucratische verplichting die er nog even bij komt. Toch is het een van de weinige administratieve plichten waar het echt fout kan gaan met persoonlijke gevolgen. In deze gids leggen we uit wat de jaarrekening en de publicatieplicht precies inhouden, in welke <strong class="font-semibold text-white">bedrijfsklasse</strong> je BV valt, hoeveel je moet deponeren, wat de <strong class="font-semibold text-white">deadlines</strong> zijn en waarom te laat zijn je meer kan kosten dan alleen een boete.</p>
 
-        <h2 id="wie-moet">Wie moet deponeren bij de KVK?</h2>
-        <p>De publicatieplicht geldt voor rechtspersonen. Concreet betekent dit dat <strong>elke BV moet deponeren</strong> bij de KVK, net als NV's, coöperaties en de meeste stichtingen en verenigingen met een onderneming. Belangrijk om te weten:</p>
-        <ul>
-          <li><strong>Ook zonder activiteiten.</strong> Heb je een slapende BV of had je dit jaar geen omzet? Dan geldt de plicht nog steeds. Er is geen ondergrens of omzetdrempel.</li>
-          <li><strong>Ook in je eerste jaar.</strong> Vanaf het moment dat je BV bestaat, loopt de verplichting. Het eerste (soms verlengde) boekjaar telt gewoon mee.</li>
-          <li><strong>Niet voor eenmanszaken en VOF's.</strong> Heb je geen rechtspersoon maar een eenmanszaak of vennootschap onder firma, dan hoef je niets te deponeren. Twijfel je nog over de rechtsvorm? Lees dan <a href="/blog/eenmanszaak-naar-bv-wanneer.html">wanneer de stap van eenmanszaak naar BV fiscaal voordelig is</a>.</li>
-        </ul>
+      <!-- ── H2: Wat en wie ── -->
+      <h2 id="wat-en-wie" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Wat is de jaarrekening en de publicatieplicht?</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De <strong class="font-semibold text-white">jaarrekening</strong> is het financi&euml;le eindverslag van je onderneming over een boekjaar. Hij bestaat in de kern uit een <strong class="font-semibold text-white">balans</strong> (wat bezit en wat is de BV schuldig op de laatste dag van het jaar), een <strong class="font-semibold text-white">winst-en-verliesrekening</strong> (wat is er verdiend en uitgegeven) en een <strong class="font-semibold text-white">toelichting</strong> op die cijfers. De jaarrekening geeft een getrouw beeld van de financi&euml;le positie van de onderneming.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Voor een BV blijft het niet bij het opstellen. Er geldt ook een <strong class="font-semibold text-white">publicatieplicht</strong>: je moet (een deel van) die jaarrekening openbaar maken door hem te <strong class="font-semibold text-white">deponeren</strong> bij het Handelsregister van de KVK. Zo kan iedereen, van leveranciers tot mogelijke klanten, een basisbeeld krijgen van de financi&euml;le gezondheid van je BV. Dat is de prijs van de beperkte aansprakelijkheid die een BV je biedt: in ruil voor die bescherming ben je transparant over je cijfers.</p>
 
-        <div class="callout">
-          <span class="callout-label">Let op</span>
-          <p>Een veelgemaakte denkfout: "geen omzet, dus niets te deponeren." Dat klopt niet. Zelfs een lege BV moet elk jaar een (verkorte) jaarrekening deponeren. Vergeet je dat, dan loop je precies dezelfde risico's als een actieve onderneming.</p>
-        </div>
+      <!-- ── H2: Wie moet ── -->
+      <h2 id="wie-moet" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Wie moet deponeren bij de KVK?</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De publicatieplicht geldt voor rechtspersonen. Concreet betekent dit dat <strong class="font-semibold text-white">elke BV moet deponeren</strong> bij de KVK, net als NV&#39;s, co&ouml;peraties en de meeste stichtingen en verenigingen met een onderneming. Belangrijk om te weten:</p>
 
-        <h2 id="bedrijfsklassen">De bedrijfsklassen: micro, klein, middelgroot en groot</h2>
-        <p>Hoeveel je moet deponeren, hangt af van de grootte van je onderneming. De wet kent vier <strong>bedrijfsklassen</strong>. In welke klasse je valt, bepaal je aan de hand van drie criteria: de <strong>waarde van de activa</strong> (het balanstotaal), de <strong>netto-omzet</strong> en het <strong>gemiddeld aantal werknemers</strong>. De vuistregel: je valt in een klasse als je op twee opeenvolgende balansdata aan minstens twee van de drie grenswaarden voldoet.</p>
-        <p>De onderstaande grenswaarden geven de gangbare indeling weer. Ze worden periodiek herzien, dus controleer bij twijfel de actuele bedragen op de website van de KVK of de Rijksoverheid.</p>
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Ook zonder activiteiten.</strong> Heb je een slapende BV of had je dit jaar geen omzet? Dan geldt de plicht nog steeds. Er is geen ondergrens of omzetdrempel.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Ook in je eerste jaar.</strong> Vanaf het moment dat je BV bestaat, loopt de verplichting. Het eerste (soms verlengde) boekjaar telt gewoon mee.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Niet voor eenmanszaken en VOF&#39;s.</strong> Heb je geen rechtspersoon maar een eenmanszaak of vennootschap onder firma, dan hoef je niets te deponeren. Twijfel je nog over de rechtsvorm? Lees dan <a href="/blog/eenmanszaak-naar-bv-wanneer.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">wanneer de stap van eenmanszaak naar BV fiscaal voordelig is</a>.</span>
+        </li>
+      </ul>
 
-        <div class="table-scroll"><table>
-          <thead>
-            <tr><th>Klasse</th><th>Balanstotaal (indicatief)</th><th>Netto-omzet (indicatief)</th><th>Werknemers</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Micro</strong></td><td>tot circa €450.000</td><td>tot circa €900.000</td><td>minder dan 10</td></tr>
-            <tr><td><strong>Klein</strong></td><td>tot circa €7,5 miljoen</td><td>tot circa €15 miljoen</td><td>minder dan 50</td></tr>
-            <tr><td><strong>Middelgroot</strong></td><td>tot circa €25 miljoen</td><td>tot circa €50 miljoen</td><td>minder dan 250</td></tr>
-            <tr><td><strong>Groot</strong></td><td>meer dan circa €25 miljoen</td><td>meer dan circa €50 miljoen</td><td>250 of meer</td></tr>
-          </tbody>
-        </table></div>
+      <!-- Callout: Let op -->
+      <div class="fade mt-8 rounded-2xl border border-cyan/20 bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Let op</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Een veelgemaakte denkfout: &quot;geen omzet, dus niets te deponeren.&quot; Dat klopt niet. Zelfs een lege BV moet elk jaar een (verkorte) jaarrekening deponeren. Vergeet je dat, dan loop je precies dezelfde risico&#39;s als een actieve onderneming.</p>
+      </div>
 
-        <p>De overgrote meerderheid van de MKB-BV's valt in de klasse <strong>micro</strong> of <strong>klein</strong>. En dat is goed nieuws, want juist die klassen mogen volstaan met een sterk vereenvoudigde jaarrekening. Hoe kleiner je onderneming, hoe minder je hoeft prijs te geven aan het publiek.</p>
+      <!-- ── H2: Bedrijfsklassen ── -->
+      <h2 id="bedrijfsklassen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">De bedrijfsklassen: micro, klein, middelgroot en groot</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Hoeveel je moet deponeren, hangt af van de grootte van je onderneming. De wet kent vier <strong class="font-semibold text-white">bedrijfsklassen</strong>. In welke klasse je valt, bepaal je aan de hand van drie criteria: de <strong class="font-semibold text-white">waarde van de activa</strong> (het balanstotaal), de <strong class="font-semibold text-white">netto-omzet</strong> en het <strong class="font-semibold text-white">gemiddeld aantal werknemers</strong>. De vuistregel: je valt in een klasse als je op twee opeenvolgende balansdata aan minstens twee van de drie grenswaarden voldoet.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De onderstaande grenswaarden geven de gangbare indeling weer. Ze worden periodiek herzien, dus controleer bij twijfel de actuele bedragen op de website van de KVK of de Rijksoverheid.</p>
 
-        <h2 id="wat-deponeren">Wat moet je precies deponeren?</h2>
-        <p>Je deponeert niet altijd de volledige jaarrekening. Kleinere BV's mogen een <strong>beperkte (verkorte) jaarrekening</strong> deponeren, waarin bijvoorbeeld je winst-en-verliesrekening niet openbaar wordt. Grofweg ziet het er zo uit:</p>
-        <ol>
-          <li><strong>Micro-BV.</strong> Een sterk verkorte balans met slechts een handvol regels. Geen toelichting van betekenis en geen openbare winst-en-verliesrekening. De minimale variant.</li>
-          <li><strong>Kleine BV.</strong> Een verkorte balans met een beperkte toelichting. Ook hier hoef je de winst-en-verliesrekening niet openbaar te maken. Verreweg de meest voorkomende situatie in het MKB.</li>
-          <li><strong>Middelgrote BV.</strong> Een uitgebreidere balans en winst-en-verliesrekening, met toelichting en meestal een controleverklaring van een accountant.</li>
-          <li><strong>Grote BV.</strong> De volledige jaarrekening met alle toelichtingen, een bestuursverslag en een verplichte accountantscontrole.</li>
-        </ol>
-        <p>Deponeren gaat digitaal. Kleine, micro- en middelgrote rechtspersonen zijn verplicht om <strong>elektronisch te deponeren</strong> via Standard Business Reporting (SBR) of via de online invoerservice van de KVK. Je boekhouder of accountant regelt dit doorgaans rechtstreeks vanuit de boekhoudsoftware.</p>
-
-        <div class="callout">
-          <span class="callout-label">Tip van Fortly</span>
-          <p>Omdat een kleine of micro-BV geen winst-en-verliesrekening hoeft te publiceren, blijven je omzet en marge uit het zicht van concurrenten. Zorg dus dat je BV correct in de juiste klasse wordt ingedeeld: een onnodig uitgebreide deponering geeft meer prijs dan wettelijk vereist is. Een goede boekhouder let hier standaard op.</p>
-        </div>
-
-        <h2 id="deadlines">De deadlines: wanneer moet het gebeuren?</h2>
-        <p>Hier gaat het in de praktijk het vaakst mis, dus let goed op. Er zijn twee momenten die er toe doen: het <strong>opmaken en vaststellen</strong> van de jaarrekening en het <strong>deponeren</strong> ervan.</p>
-        <p>De hoofdregel is dat je de vastgestelde jaarrekening <strong>uiterlijk 8 dagen na de vaststelling</strong> deponeert. Daarnaast geldt een harde bovengrens: de jaarrekening moet in elk geval <strong>binnen 12 maanden na afloop van het boekjaar</strong> zijn gedeponeerd. Voor de meeste BV's, waarvan het boekjaar gelijkloopt met het kalenderjaar, komt het hier op neer:</p>
-        <ul>
-          <li><strong>Boekjaar 2025 (kalenderjaar):</strong> uiterste depondeerdatum is <strong>31 december 2026</strong>.</li>
-          <li><strong>In de praktijk eerder:</strong> heeft de algemene vergadering de jaarrekening bijvoorbeeld in mei vastgesteld, dan moet hij binnen 8 dagen daarna gedeponeerd zijn, dus ruim vóór die uiterste datum.</li>
-        </ul>
-        <p>Let op een bijzonderheid bij de veelvoorkomende situatie waarin je als DGA zowel bestuurder als enig aandeelhouder bent: in dat geval geldt het <strong>opmaken</strong> van de jaarrekening in veel gevallen meteen als <strong>vaststellen</strong>. Daardoor kan de termijn korter uitpakken dan je denkt. Kom je er niet uit? Vraag dan tijdig advies, want de precieze termijn hangt af van de statuten en de datum van opmaken. Blijf in elk geval ruim binnen de 12-maandsgrens.</p>
-
-        <h2 id="risicos">Te laat of niet deponeren: de risico's</h2>
-        <p>Het niet of te laat deponeren van de jaarrekening is geen bagatel. De wet ziet het als een <strong>economisch delict</strong>. Op de korte termijn kan dat een boete opleveren. Maar het echte risico ligt ergens anders, en dat onderschatten veel ondernemers.</p>
-        <p>Het grootste gevaar is <strong>bestuurdersaansprakelijkheid</strong>. Gaat je BV binnen <strong>drie jaar failliet</strong> en had je de jaarrekening niet op tijd gedeponeerd, dan geldt dat wettelijk als <strong>onbehoorlijk bestuur</strong>. Sterker nog: er ontstaat dan een <strong>wettelijk vermoeden</strong> dat dit onbehoorlijke bestuur een belangrijke oorzaak van het faillissement is. Als bestuurder moet je dat vermoeden zien te weerleggen, wat in de praktijk erg lastig is. Slaag je daar niet in, dan kun je <strong>persoonlijk aansprakelijk</strong> worden gesteld voor het tekort in de failliete boedel. Dan raakt het dus je privévermogen, precies de bescherming die een BV eigenlijk zou moeten bieden.</p>
-
-        <blockquote>Te laat deponeren lijkt een detail, maar bij een faillissement kan het het verschil zijn tussen beperkte aansprakelijkheid en persoonlijke aansprakelijkheid voor de hele schuld.</blockquote>
-
-        <p>Daar komt bij dat een niet-gedeponeerde jaarrekening je zakelijk kan schaden. Kredietbeoordelaars en potentiële afnemers zien een lege of ontbrekende deponering vaak als een signaal dat er iets niet in orde is. Op tijd deponeren is dus niet alleen een juridische, maar ook een zakelijke hygiënemaatregel.</p>
-
-        <!-- Mid-article CTA -->
-        <div class="my-10 rounded-2xl overflow-hidden" style="background:var(--color-primary-deep-dark);">
-          <div class="relative p-8 sm:p-10 text-center" style="background:radial-gradient(ellipse 70% 90% at 50% 0%, rgba(0,122,255,0.16) 0%, transparent 70%);">
-            <h3 class="text-white" style="font-size:1.5rem;">Je jaarrekening op tijd en foutloos gedeponeerd?</h3>
-            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Fortly stelt de jaarrekening op, deelt je BV in de juiste klasse in en deponeert altijd binnen de termijn bij de KVK. Zo blijft je privévermogen beschermd. Bekijk onze <a href="/boekhouder-mkb.html" style="color:#fff;text-decoration:underline;">boekhouding voor het MKB</a> of meld je direct aan.</p>
-            <a href="/aanmelden.html?pakket=bv" class="btn btn-white">Start met het BV-pakket</a>
-          </div>
-        </div>
-
-        <h2 id="uit-handen">Zo houd je het simpel</h2>
-        <p>De jaarrekening en de deponering hangen direct samen met je hele boekhouding. Is je administratie het jaar rond op orde, dan is de jaarrekening aan het eind grotendeels een kwestie van afronden en indienen. Loopt je boekhouding achter, dan wordt het jaarwerk een stresstoestand met deadlines in het vizier. Een paar praktische richtlijnen:</p>
-        <ul>
-          <li><strong>Houd je administratie actueel.</strong> Verwerk facturen en bankmutaties maandelijks, niet pas in december van het jaar erna.</li>
-          <li><strong>Zet de deadline in je agenda.</strong> Noteer de uiterste depondeerdatum ruim van tevoren, met een herinnering een paar maanden eerder.</li>
-          <li><strong>Laat de klasse-indeling controleren.</strong> Zo deponeer je precies wat nodig is, niet meer.</li>
-          <li><strong>Geef het jaarwerk uit handen.</strong> Voor de meeste DGA's is het opstellen én tijdig deponeren van de jaarrekening precies de reden om een vaste boekhouder te hebben.</li>
-        </ul>
-        <p>Groeit je onderneming en denk je aan personeel of een holdingstructuur? Dan komen er meer verplichtingen bij. Lees bijvoorbeeld <a href="/blog/loonadministratie-eerste-medewerker-kosten.html">wat loonadministratie kost als je je eerste medewerker aanneemt</a> of <a href="/blog/holdingstructuur-management-bv.html">wanneer een holdingstructuur met management-BV loont</a>.</p>
-
-        <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
-        <div class="mt-4">
-          <details class="faq-item">
-            <summary>Moet elke BV de jaarrekening deponeren bij de KVK?</summary>
-            <div class="faq-answer">Ja. Iedere besloten vennootschap (BV) heeft een wettelijke publicatieplicht en moet elk boekjaar een jaarrekening deponeren bij het Handelsregister van de KVK. Dat geldt ook als je een slapende BV hebt of geen activiteiten had; er is geen omzetdrempel. Hoeveel informatie je moet deponeren, hangt af van de grootte van je onderneming: kleine en micro-BV's mogen een beperkte (verkorte) jaarrekening deponeren.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Wat is de deadline om de jaarrekening te deponeren?</summary>
-            <div class="faq-answer">Je deponeert de vastgestelde jaarrekening uiterlijk 8 dagen nadat de algemene vergadering hem heeft vastgesteld. Er geldt daarnaast een uiterste termijn: de jaarrekening moet in elk geval binnen 12 maanden na afloop van het boekjaar bij de KVK zijn gedeponeerd. Voor een boekjaar dat gelijkloopt met het kalenderjaar 2025 is de absolute uiterste datum dus 31 december 2026. Wacht niet tot het laatste moment, want te laat deponeren heeft gevolgen.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Wat zijn de bedrijfsklassen micro, klein, middelgroot en groot?</summary>
-            <div class="faq-answer">De wet deelt ondernemingen in vier grootteklassen in op basis van drie criteria: de waarde van de activa (balanstotaal), de netto-omzet en het gemiddeld aantal werknemers. Voldoe je twee jaar op rij aan minstens twee van de drie grenzen van een klasse, dan val je in die klasse. Hoe kleiner de klasse, hoe minder je hoeft te deponeren: een micro- of kleine BV mag volstaan met een beperkte, verkorte jaarrekening waarin bijvoorbeeld geen winst-en-verliesrekening openbaar wordt.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Wat gebeurt er als ik te laat of niet deponeer?</summary>
-            <div class="faq-answer">Te laat of niet deponeren is een economisch delict en kan een boete opleveren. Het grootste risico is echter bestuurdersaansprakelijkheid: gaat de BV binnen drie jaar failliet, dan geldt het niet tijdig deponeren als onbehoorlijk bestuur en wordt vermoed dat dit een belangrijke oorzaak van het faillissement is. De bestuurder kan dan persoonlijk aansprakelijk worden gesteld voor het tekort in de boedel. Op tijd deponeren beschermt dus je privévermogen.</div>
-          </details>
+      <div class="fade mt-7 glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
+            <thead>
+              <tr class="bg-white/[0.04]">
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Klasse</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Balanstotaal (indicatief)</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Netto-omzet (indicatief)</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Werknemers</th>
+              </tr>
+            </thead>
+            <tbody class="text-[15px] text-slate-300">
+              <tr class="border-t border-white/10">
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Micro</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;450.000</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;900.000</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 10</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Klein</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;7,5 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;15 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 50</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Middelgroot</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;25 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;50 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 250</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Groot</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">meer dan circa &euro;25 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">meer dan circa &euro;50 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">250 of meer</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-    </div>
-  </div>
-  </article>
+      <p class="fade mt-7 text-slate-300 text-[17px] leading-[1.8]">De overgrote meerderheid van de MKB-BV&#39;s valt in de klasse <strong class="font-semibold text-white">micro</strong> of <strong class="font-semibold text-white">klein</strong>. En dat is goed nieuws, want juist die klassen mogen volstaan met een sterk vereenvoudigde jaarrekening. Hoe kleiner je onderneming, hoe minder je hoeft prijs te geven aan het publiek.</p>
 
-  <!-- ═══ END CTA ═══ -->
-  <section class="section-padding" style="background:var(--color-background-main);padding-top:4.5rem;padding-bottom:4.5rem;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center reveal">
-      <span class="section-label">Boekhouding voor het MKB</span>
-      <h2 style="font-size:2rem;">Jaarrekening, deponering en aangiften: alles geregeld</h2>
-      <p class="mt-3 mb-8 text-lg" style="color:var(--color-text-medium);">Fortly verzorgt de complete boekhouding voor BV's en DGA's vanaf €200 per maand (excl. btw): je jaarrekening, de tijdige deponering bij de KVK, de vennootschapsbelasting en je loonadministratie. Vaste prijs, vaste controller, altijd antwoord binnen één werkdag.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/aanmelden.html?pakket=bv" class="btn btn-accent">Start met het BV-pakket</a>
-        <a href="/boekhouder-mkb.html" class="btn" style="background:transparent;color:var(--color-accent-text);border-color:var(--color-accent-blue);border-radius:0.625rem;">Bekijk de MKB-pagina</a>
+      <!-- ── H2: Wat deponeren ── -->
+      <h2 id="wat-deponeren" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Wat moet je precies deponeren?</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Je deponeert niet altijd de volledige jaarrekening. Kleinere BV&#39;s mogen een <strong class="font-semibold text-white">beperkte (verkorte) jaarrekening</strong> deponeren, waarin bijvoorbeeld je winst-en-verliesrekening niet openbaar wordt. Grofweg ziet het er zo uit:</p>
+
+      <ol class="fade mt-6 list-none space-y-5">
+        <li class="flex gap-4">
+          <span class="grid place-items-center shrink-0 w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 font-display text-xs font-semibold text-cyan" aria-hidden="true">1</span>
+          <span class="text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Micro-BV.</strong> Een sterk verkorte balans met slechts een handvol regels. Geen toelichting van betekenis en geen openbare winst-en-verliesrekening. De minimale variant.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="grid place-items-center shrink-0 w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 font-display text-xs font-semibold text-cyan" aria-hidden="true">2</span>
+          <span class="text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Kleine BV.</strong> Een verkorte balans met een beperkte toelichting. Ook hier hoef je de winst-en-verliesrekening niet openbaar te maken. Verreweg de meest voorkomende situatie in het MKB.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="grid place-items-center shrink-0 w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 font-display text-xs font-semibold text-cyan" aria-hidden="true">3</span>
+          <span class="text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Middelgrote BV.</strong> Een uitgebreidere balans en winst-en-verliesrekening, met toelichting en meestal een controleverklaring van een accountant.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="grid place-items-center shrink-0 w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 font-display text-xs font-semibold text-cyan" aria-hidden="true">4</span>
+          <span class="text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Grote BV.</strong> De volledige jaarrekening met alle toelichtingen, een bestuursverslag en een verplichte accountantscontrole.</span>
+        </li>
+      </ol>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Deponeren gaat digitaal. Kleine, micro- en middelgrote rechtspersonen zijn verplicht om <strong class="font-semibold text-white">elektronisch te deponeren</strong> via Standard Business Reporting (SBR) of via de online invoerservice van de KVK. Je boekhouder of accountant regelt dit doorgaans rechtstreeks vanuit de boekhoudsoftware.</p>
+
+      <!-- Callout: Tip van Fortly -->
+      <div class="fade mt-8 rounded-2xl border border-cyan/20 bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Tip van Fortly</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Omdat een kleine of micro-BV geen winst-en-verliesrekening hoeft te publiceren, blijven je omzet en marge uit het zicht van concurrenten. Zorg dus dat je BV correct in de juiste klasse wordt ingedeeld: een onnodig uitgebreide deponering geeft meer prijs dan wettelijk vereist is. Een goede boekhouder let hier standaard op.</p>
       </div>
+
+      <!-- ── H2: Deadlines ── -->
+      <h2 id="deadlines" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">De deadlines: wanneer moet het gebeuren?</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Hier gaat het in de praktijk het vaakst mis, dus let goed op. Er zijn twee momenten die er toe doen: het <strong class="font-semibold text-white">opmaken en vaststellen</strong> van de jaarrekening en het <strong class="font-semibold text-white">deponeren</strong> ervan.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De hoofdregel is dat je de vastgestelde jaarrekening <strong class="font-semibold text-white">uiterlijk 8 dagen na de vaststelling</strong> deponeert. Daarnaast geldt een harde bovengrens: de jaarrekening moet in elk geval <strong class="font-semibold text-white">binnen 12 maanden na afloop van het boekjaar</strong> zijn gedeponeerd. Voor de meeste BV&#39;s, waarvan het boekjaar gelijkloopt met het kalenderjaar, komt het hier op neer:</p>
+
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Boekjaar 2025 (kalenderjaar):</strong> uiterste depondeerdatum is <strong class="font-semibold text-white">31 december 2026</strong>.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">In de praktijk eerder:</strong> heeft de algemene vergadering de jaarrekening bijvoorbeeld in mei vastgesteld, dan moet hij binnen 8 dagen daarna gedeponeerd zijn, dus ruim v&oacute;&oacute;r die uiterste datum.</span>
+        </li>
+      </ul>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Let op een bijzonderheid bij de veelvoorkomende situatie waarin je als DGA zowel bestuurder als enig aandeelhouder bent: in dat geval geldt het <strong class="font-semibold text-white">opmaken</strong> van de jaarrekening in veel gevallen meteen als <strong class="font-semibold text-white">vaststellen</strong>. Daardoor kan de termijn korter uitpakken dan je denkt. Kom je er niet uit? Vraag dan tijdig advies, want de precieze termijn hangt af van de statuten en de datum van opmaken. Blijf in elk geval ruim binnen de 12-maandsgrens.</p>
+
+      <!-- ── H2: Risico's ── -->
+      <h2 id="risicos" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Te laat of niet deponeren: de risico&#39;s</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Het niet of te laat deponeren van de jaarrekening is geen bagatel. De wet ziet het als een <strong class="font-semibold text-white">economisch delict</strong>. Op de korte termijn kan dat een boete opleveren. Maar het echte risico ligt ergens anders, en dat onderschatten veel ondernemers.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Het grootste gevaar is <strong class="font-semibold text-white">bestuurdersaansprakelijkheid</strong>. Gaat je BV binnen <strong class="font-semibold text-white">drie jaar failliet</strong> en had je de jaarrekening niet op tijd gedeponeerd, dan geldt dat wettelijk als <strong class="font-semibold text-white">onbehoorlijk bestuur</strong>. Sterker nog: er ontstaat dan een <strong class="font-semibold text-white">wettelijk vermoeden</strong> dat dit onbehoorlijke bestuur een belangrijke oorzaak van het faillissement is. Als bestuurder moet je dat vermoeden zien te weerleggen, wat in de praktijk erg lastig is. Slaag je daar niet in, dan kun je <strong class="font-semibold text-white">persoonlijk aansprakelijk</strong> worden gesteld voor het tekort in de failliete boedel. Dan raakt het dus je priv&eacute;vermogen, precies de bescherming die een BV eigenlijk zou moeten bieden.</p>
+
+      <blockquote class="fade my-8 border-l-2 border-cyan pl-5 font-serif italic text-slate-300 text-lg leading-relaxed">Te laat deponeren lijkt een detail, maar bij een faillissement kan het het verschil zijn tussen beperkte aansprakelijkheid en persoonlijke aansprakelijkheid voor de hele schuld.</blockquote>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Daar komt bij dat een niet-gedeponeerde jaarrekening je zakelijk kan schaden. Kredietbeoordelaars en potenti&euml;le afnemers zien een lege of ontbrekende deponering vaak als een signaal dat er iets niet in orde is. Op tijd deponeren is dus niet alleen een juridische, maar ook een zakelijke hygi&euml;nemaatregel.</p>
+
+      <!-- Mid-article CTA -->
+      <div class="fade my-12 glass-strong rounded-3xl p-8 sm:p-10 text-center">
+        <h3 class="font-display font-bold text-white text-2xl tracking-tight">Je jaarrekening op tijd en foutloos gedeponeerd?</h3>
+        <p class="mt-3 text-slate-300 text-[15px] leading-relaxed">Fortly stelt de jaarrekening op, deelt je BV in de juiste klasse in en deponeert altijd binnen de termijn bij de KVK. Zo blijft je priv&eacute;vermogen beschermd. Bekijk onze <a href="/boekhouder-mkb.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">boekhouding voor het MKB</a> of meld je direct aan.</p>
+        <a href="/aanmelden.html?pakket=bv" class="mt-7 inline-flex justify-center items-center rounded-full px-7 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">Start met het BV-pakket</a>
+      </div>
+
+      <!-- ── H2: Uit handen ── -->
+      <h2 id="uit-handen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Zo houd je het simpel</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De jaarrekening en de deponering hangen direct samen met je hele boekhouding. Is je administratie het jaar rond op orde, dan is de jaarrekening aan het eind grotendeels een kwestie van afronden en indienen. Loopt je boekhouding achter, dan wordt het jaarwerk een stresstoestand met deadlines in het vizier. Een paar praktische richtlijnen:</p>
+
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Houd je administratie actueel.</strong> Verwerk facturen en bankmutaties maandelijks, niet pas in december van het jaar erna.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Zet de deadline in je agenda.</strong> Noteer de uiterste depondeerdatum ruim van tevoren, met een herinnering een paar maanden eerder.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Laat de klasse-indeling controleren.</strong> Zo deponeer je precies wat nodig is, niet meer.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Geef het jaarwerk uit handen.</strong> Voor de meeste DGA&#39;s is het opstellen &eacute;n tijdig deponeren van de jaarrekening precies de reden om een vaste boekhouder te hebben.</span>
+        </li>
+      </ul>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Groeit je onderneming en denk je aan personeel of een holdingstructuur? Dan komen er meer verplichtingen bij. Lees bijvoorbeeld <a href="/blog/loonadministratie-eerste-medewerker-kosten.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">wat loonadministratie kost als je je eerste medewerker aanneemt</a> of <a href="/blog/holdingstructuur-management-bv.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">wanneer een holdingstructuur met management-BV loont</a>.</p>
+
+      <!-- ── H2: FAQ ── -->
+      <h2 id="veelgestelde-vragen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Veelgestelde vragen</h2>
+
+      <div class="mt-8 border-t border-white/10">
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Moet elke BV de jaarrekening deponeren bij de KVK?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Ja. Iedere besloten vennootschap (BV) heeft een wettelijke publicatieplicht en moet elk boekjaar een jaarrekening deponeren bij het Handelsregister van de KVK. Dat geldt ook als je een slapende BV hebt of geen activiteiten had; er is geen omzetdrempel. Hoeveel informatie je moet deponeren, hangt af van de grootte van je onderneming: kleine en micro-BV&#39;s mogen een beperkte (verkorte) jaarrekening deponeren.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wat is de deadline om de jaarrekening te deponeren?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Je deponeert de vastgestelde jaarrekening uiterlijk 8 dagen nadat de algemene vergadering hem heeft vastgesteld. Er geldt daarnaast een uiterste termijn: de jaarrekening moet in elk geval binnen 12 maanden na afloop van het boekjaar bij de KVK zijn gedeponeerd. Voor een boekjaar dat gelijkloopt met het kalenderjaar 2025 is de absolute uiterste datum dus 31 december 2026. Wacht niet tot het laatste moment, want te laat deponeren heeft gevolgen.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wat zijn de bedrijfsklassen micro, klein, middelgroot en groot?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">De wet deelt ondernemingen in vier grootteklassen in op basis van drie criteria: de waarde van de activa (balanstotaal), de netto-omzet en het gemiddeld aantal werknemers. Voldoe je twee jaar op rij aan minstens twee van de drie grenzen van een klasse, dan val je in die klasse. Hoe kleiner de klasse, hoe minder je hoeft te deponeren: een micro- of kleine BV mag volstaan met een beperkte, verkorte jaarrekening waarin bijvoorbeeld geen winst-en-verliesrekening openbaar wordt.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wat gebeurt er als ik te laat of niet deponeer?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Te laat of niet deponeren is een economisch delict en kan een boete opleveren. Het grootste risico is echter bestuurdersaansprakelijkheid: gaat de BV binnen drie jaar failliet, dan geldt het niet tijdig deponeren als onbehoorlijk bestuur en wordt vermoed dat dit een belangrijke oorzaak van het faillissement is. De bestuurder kan dan persoonlijk aansprakelijk worden gesteld voor het tekort in de boedel. Op tijd deponeren beschermt dus je priv&eacute;vermogen.</p></div>
+        </details>
+      </div>
+
     </div>
   </section>
+</article>
 
-  <!-- ═══ RELATED ═══ -->
-  <section class="section-padding" style="padding-top:4.5rem;padding-bottom:5rem;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <span class="section-label">Lees ook</span>
-        <h2 class="mb-10" style="font-size:1.9rem;">Meer over ondernemen met een BV</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
-          <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">MKB &amp; Belasting</span>
-              <h3 style="font-size:1.15rem;">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Welke tarieven gelden er en waar bespaar je op als BV?</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-          <a href="/blog/holdingstructuur-management-bv.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">Holding &amp; Structuur</span>
-              <h3 style="font-size:1.15rem;">Holdingstructuur opzetten: wanneer loont een management-BV?</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Wanneer is een holding de moeite waard, en wat kost het?</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-          <a href="/blog/eenmanszaak-naar-bv-wanneer.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">Ondernemen &amp; Groei</span>
-              <h3 style="font-size:1.15rem;">Van eenmanszaak naar BV: wanneer is het fiscaal voordelig?</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Bij welke winst wordt de overstap naar een BV interessant?</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.07);padding:5rem 0 3rem;" data-nosnippet>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="mb-8">
-        <a href="/" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;background:white;border-radius:4px;display:flex;align-items:center;justify-content:center;">
-            <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:16px;color:var(--color-primary-deep-dark);">F</span>
-          </div>
-          <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.1em;text-transform:uppercase;color:white;">Fortly</span>
+  <!-- ================= EIND-CTA ================= -->
+  <section id="contact" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:40rem;height:40rem;left:-16rem;top:-6rem;background:radial-gradient(circle,rgba(0,122,255,0.28),transparent 66%);opacity:0.2;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center fade">
+      <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Boekhouding voor het MKB</p>
+      <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Jaarrekening, deponering en aangiften: alles <span class="gradient-text">geregeld</span></h2>
+      <p class="mt-5 text-slate-300 text-lg leading-relaxed">Fortly verzorgt de complete boekhouding voor BV&#39;s en DGA&#39;s vanaf &euro;200 per maand (excl. btw): je jaarrekening, de tijdige deponering bij de KVK, de vennootschapsbelasting en je loonadministratie. Vaste prijs, vaste controller, altijd antwoord binnen &eacute;&eacute;n werkdag.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center">
+        <a href="/aanmelden.html?pakket=bv" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start met het BV-pakket
+        </a>
+        <a href="/boekhouder-mkb.html" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+          Bekijk de MKB-pagina
         </a>
       </div>
-      <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 mb-10" aria-label="Footernavigatie">
-        <a href="/#voor-wie" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Voor wie</a>
-        <a href="/#diensten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Diensten</a>
-        <a href="/#pakketten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Prijzen</a>
-        <a href="/over-ons.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Over ons</a>
-        <a href="/blog/" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Blog</a>
-        <a href="/#contact" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Contact</a>
-      </nav>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.5);">Joan Muyskenweg 82, 1114 AN Amsterdam · KvK 42002566 · contact@fortly.nl · +31 6 230 71 852</p>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
-      <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.2);">
-        Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,0.25);text-decoration:none;">Indufort Consulting</a>
-      </p>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  <!-- ================= GERELATEERDE ARTIKELEN ================= -->
+  <section class="relative bg-ink py-20 overflow-hidden" aria-labelledby="lees-ook-heading">
+    <div class="glow" style="width:34rem;height:34rem;right:-14rem;top:2rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-violet">Lees ook</p>
+        <h2 id="lees-ook-heading" class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Meer over ondernemen met een BV</h2>
+      </div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">MKB &amp; Belasting</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Welke tarieven gelden er en waar bespaar je op als BV?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/holdingstructuur-management-bv.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="1">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Holding &amp; Structuur</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Holdingstructuur opzetten: wanneer loont een management-BV?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Wanneer is een holding de moeite waard, en wat kost het?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/eenmanszaak-naar-bv-wanneer.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="2">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Ondernemen &amp; Groei</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Van eenmanszaak naar BV: wanneer is het fiscaal voordelig?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Bij welke winst wordt de overstap naar een BV interessant?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
+
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-300">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31613036183" class="hover:text-cyan transition-colors">+31 6 13036183</a></p>
+      <p class="text-xs text-slate-400">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-300 transition-colors">Indufort Consulting</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/fortly.js"></script>
 </body>
 </html>

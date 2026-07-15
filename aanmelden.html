@@ -13,6 +13,14 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Verberg de fade-content alleen als we 'm ook weer kunnen tonen.
+    // Laadt assets/fortly.js niet, dan halen we 'js' terug weg en is alles gewoon zichtbaar.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__fortlyFade) document.documentElement.classList.remove('js');
+    }, 2500);
+  </script>
   <title>Aanmelden | Fortly, Boekhouder voor ZZP &amp; MKB vanaf €85/maand</title>
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.fortly.nl/aanmelden.html" />
@@ -34,72 +42,11 @@
   <meta property="og:image" content="https://www.fortly.nl/fortly_logo_kort.png" />
   <meta property="og:locale" content="nl_NL" />
 
-  <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Open Sans', 'sans-serif'],
-            header: ['Montserrat', 'sans-serif'],
-          },
-          keyframes: {
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-          },
-          animation: { 'fade-in-up': 'fadeInUp 0.6s ease-out forwards' },
-        },
-      },
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --blue: #007AFF; --blue-text: #0064CC;
-      --dark: #0A192F;
-      --text: #1D1D1F;
-      --muted: #58585b;
-      --bg: #F5F5F7;
-      --border: #D2D2D7;
-    }
-    * { box-sizing: border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
-    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
-
-    .section-label { font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--blue-text); display: inline-block; margin-bottom: .75rem; }
-
-    /* Pakket cards */
-    .pakket-card { border: 2px solid var(--border); border-radius: 1rem; padding: 1.25rem 1rem; cursor: pointer; transition: all .2s; background: white; position: relative; text-align: center; }
-    .pakket-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-    .pakket-card.selected { border-color: var(--blue); background: rgba(0,122,255,0.04); box-shadow: 0 0 0 3px rgba(0,122,255,0.15); }
-    .pakket-card .popular-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; font-family: 'Montserrat', sans-serif; font-size: .65rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
-    .pakket-card input[type=radio] { display: none; }
-
-    /* Form */
-    .form-group { margin-bottom: 1.25rem; }
-    .form-label { display: block; font-family: 'Montserrat', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
-    .form-input { width: 100%; border: 1.5px solid var(--border); border-radius: .625rem; padding: .8rem 1rem; font-family: 'Open Sans', sans-serif; font-size: .9rem; color: var(--text); background: white; transition: border-color .2s, box-shadow .2s; outline: none; }
-    .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,122,255,0.12); }
-    .form-input::placeholder { color: #b0b0b5; }
-    select.form-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2358585b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
-
-    /* Submit button */
-    .btn-submit { width: 100%; background: var(--blue); color: white; border: none; border-radius: .625rem; padding: 1rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all .2s; letter-spacing: -.01em; }
-    .btn-submit:hover { background: #0069D9; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,122,255,0.3); }
-
-    /* Trust block */
-    .trust-item { display: flex; gap: .75rem; align-items: flex-start; margin-bottom: 1.25rem; }
-
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .afu { animation: fadeInUp .6s ease-out forwards; opacity: 0; }
-    .d1 { animation-delay: .1s; } .d2 { animation-delay: .2s; } .d3 { animation-delay: .3s; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fortly.css">
 
   <!-- Structured Data: BreadcrumbList -->
   <script type="application/ld+json">
@@ -134,290 +81,356 @@
   }
   </script>
 </head>
-<body>
 
-  <!-- HEADER -->
-  <header style="background:var(--dark);height:80px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full" style="max-width:1100px;">
-      <a href="https://www.fortly.nl" style="text-decoration:none;">
-        <img src="fortly_logo_outlined.svg" alt="Fortly, boekhouder voor ZZP en MKB" width="120" height="120" style="width:120px;height:120px;">
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+        </svg>
       </a>
-      <a href="https://www.fortly.nl" style="font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">
-        ← Terug naar website
-      </a>
+
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
     </div>
-  </header>
+    <a href="/aanmelden.html" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <div style="background:var(--dark);padding:3.5rem 0 4rem;position:relative;overflow:hidden;">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 80% at 60% 50%, rgba(0,122,255,0.1) 0%, transparent 65%);"></div>
-    <div class="container mx-auto px-4 sm:px-6 text-center relative" style="max-width:700px;">
-      <p class="afu d1 section-label" style="color:#60a5fa;">Direct starten</p>
-      <h1 class="afu d2 text-white" style="font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;">
-        Meld je aan bij Fortly
+<main id="hoofdinhoud">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative overflow-hidden pt-[120px] pb-16 lg:pt-[150px] lg:pb-20">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, #0C1524 0%, #14243A 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 62% 60% at 52% 34%, rgba(0,122,255,0.16) 0%, transparent 66%);"></div>
+      <div class="glow" style="width:38rem;height:38rem;top:-14rem;left:-10rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.34;"></div>
+      <div class="glow" style="width:32rem;height:32rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.28;"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center fade">
+      <span class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm text-slate-300 max-w-full">
+        <span class="h-2 w-2 rounded-full bg-cyan shrink-0"></span>
+        Direct starten
+      </span>
+
+      <h1 class="mt-6 font-display font-bold text-white leading-[1.07] tracking-tight text-[2.4rem] sm:text-5xl">
+        Meld je aan bij <span class="gradient-text">Fortly</span>
       </h1>
-      <p class="afu d3" style="color:rgba(255,255,255,.65);font-size:1.05rem;font-weight:400;line-height:1.7;">
-        Kies je pakket, vul je gegevens in en wij nemen binnen één werkdag contact op.
+
+      <p class="mt-5 text-lg text-slate-300 leading-relaxed">
+        Kies je pakket, vul je gegevens in en wij nemen binnen &eacute;&eacute;n werkdag contact op.
         Geen gedoe, geen verrassingen.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- MAIN -->
-  <main>
-  <div class="container mx-auto px-4 sm:px-6 py-12" style="max-width:1100px;">
-    <div class="grid gap-10" style="grid-template-columns:1fr; align-items:start;">
+  <!-- ================= AANMELDEN ================= -->
+  <section class="relative bg-navy pb-24 overflow-hidden">
+    <div class="glow" style="width:34rem;height:34rem;right:-14rem;top:10rem;background:radial-gradient(circle,rgba(139,92,246,0.28),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
 
-      <!-- Op grote schermen: 2 kolommen -->
-      <style>
-        @media(min-width:900px){
-          .main-grid { grid-template-columns: 1fr 340px !important; }
-        }
-        /* Pakketkaarten: gestapeld op telefoon, naast elkaar vanaf 480px */
-        #pakketGrid { grid-template-columns: 1fr; }
-        @media(min-width:480px){
-          #pakketGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        }
-      
-    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
-    a:focus-visible, button:focus-visible, .btn-submit:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .pakket-card:focus-within {
-      outline: 2px solid var(--blue);
-      outline-offset: 2px;
-    }
-  </style>
-      <div class="grid gap-10 main-grid" style="grid-template-columns:1fr;align-items:start;">
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px] items-start">
 
-        <!-- FORMULIER -->
-        <div style="background:white;border-radius:1.5rem;padding:2.5rem;box-shadow:0 2px 20px rgba(0,0,0,.07);">
+        <!-- ---------- FORMULIERKAART ---------- -->
+        <div class="fade glass-strong rounded-3xl p-6 sm:p-9">
 
-          <!-- Pakketkeuze -->
-          <div style="margin-bottom:2rem;">
-            <p class="section-label">Stap 1: Kies je pakket</p>
-            <div style="display:grid;gap:.75rem;" id="pakketGrid">
+          <!-- Stap 1: pakketkeuze -->
+          <div>
+            <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Stap 1: Kies je pakket</p>
 
-              <label class="pakket-card" id="card-instap" onclick="selectPakket('instap')">
-                <input type="radio" name="pakket" value="Instap, €85/maand">
-                <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Instap</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€85</div>
-                <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
-                <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">tot 200 boekingen</div>
+            <div class="mt-5 grid gap-3 sm:grid-cols-3" id="pakketGrid" role="radiogroup" aria-label="Kies je pakket">
+
+              <label id="card-instap" class="pakket-card relative block cursor-pointer rounded-2xl glass p-5 text-center transition-all hover:border-cyan/30 focus-within:ring-2 focus-within:ring-cyan">
+                <input type="radio" name="pakket" value="Instap, €85/maand" class="sr-only">
+                <span class="block font-display font-semibold uppercase tracking-[0.12em] text-[11px] text-slate-300">Instap</span>
+                <span class="mt-2 block font-display font-bold text-3xl text-white">&euro;85</span>
+                <span class="mt-1 block text-xs text-slate-300">/maand excl. btw</span>
+                <span class="mt-2 block text-xs text-slate-300">tot 200 boekingen</span>
               </label>
 
-              <label class="pakket-card selected" id="card-groei" onclick="selectPakket('groei')">
-                <div class="popular-badge">Meest gekozen</div>
-                <input type="radio" name="pakket" value="Groei, €145/maand" checked>
-                <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">Groei</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€145</div>
-                <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
-                <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">tot 500 boekingen</div>
+              <label id="card-groei" class="pakket-card relative block cursor-pointer rounded-2xl glass p-5 text-center transition-all hover:border-cyan/30 focus-within:ring-2 focus-within:ring-cyan ring-2 ring-cyan">
+                <span class="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-accent to-violet px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">Meest gekozen</span>
+                <input type="radio" name="pakket" value="Groei, €145/maand" class="sr-only" checked>
+                <span class="block font-display font-semibold uppercase tracking-[0.12em] text-[11px] text-slate-300">Groei</span>
+                <span class="mt-2 block font-display font-bold text-3xl gradient-text">&euro;145</span>
+                <span class="mt-1 block text-xs text-slate-300">/maand excl. btw</span>
+                <span class="mt-2 block text-xs text-slate-300">tot 500 boekingen</span>
               </label>
 
-              <label class="pakket-card" id="card-bv" onclick="selectPakket('bv')">
-                <input type="radio" name="pakket" value="MKB &amp; BV / DGA, €200/maand">
-                <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">MKB &amp; BV</div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue-text);letter-spacing:-.03em;">€200</div>
-                <div style="font-size:.72rem;color:var(--muted);">/maand excl. btw</div>
-                <div style="font-size:.72rem;color:var(--muted);margin-top:.4rem;">onbeperkt</div>
+              <label id="card-bv" class="pakket-card relative block cursor-pointer rounded-2xl glass p-5 text-center transition-all hover:border-violet/30 focus-within:ring-2 focus-within:ring-cyan">
+                <input type="radio" name="pakket" value="MKB &amp; BV / DGA, €200/maand" class="sr-only">
+                <span class="block font-display font-semibold uppercase tracking-[0.12em] text-[11px] text-slate-300">MKB &amp; BV</span>
+                <span class="mt-2 block font-display font-bold text-3xl text-white">&euro;200</span>
+                <span class="mt-1 block text-xs text-slate-300">/maand excl. btw</span>
+                <span class="mt-2 block text-xs text-slate-300">onbeperkt</span>
               </label>
 
             </div>
-            <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;text-align:center;">
-              Twijfel je? Geen zorgen, we bespreken het samen. <a href="https://www.fortly.nl#pakketten" style="color:var(--blue-text);font-weight:600;">Vergelijk pakketten →</a>
+
+            <p class="mt-4 text-center text-sm text-slate-300">
+              Twijfel je? Geen zorgen, we bespreken het samen.
+              <a href="/#pakketten" class="font-semibold text-cyan hover:text-white transition-colors">Vergelijk pakketten &rarr;</a>
             </p>
           </div>
 
-          <!-- Gegevens -->
-          <p class="section-label">Stap 2: Jouw gegevens</p>
-          <form id="aanmeld-form" action="https://formspree.io/f/xkoaqnaz" method="POST">
+          <!-- Stap 2: gegevens -->
+          <p class="mt-10 font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Stap 2: Jouw gegevens</p>
+
+          <form id="aanmeld-form" action="https://formspree.io/f/xkoaqnaz" method="POST" class="mt-5">
             <!-- Hidden velden -->
             <input type="hidden" name="_subject" value="Nieuwe aanmelding via fortly.nl/aanmelden">
             <input type="hidden" name="pakket" id="pakket-hidden" value="Groei, €145/maand">
 
-            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
-              <div class="form-group">
-                <label class="form-label" for="naam">Naam *</label>
-                <input class="form-input" id="naam" name="naam" type="text" placeholder="Jan de Vries" autocomplete="name" required>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="naam">Naam *</label>
+                <input class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="naam" name="naam" type="text" placeholder="Jan de Vries" autocomplete="name" required>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="bedrijfsnaam">Bedrijfsnaam *</label>
-                <input class="form-input" id="bedrijfsnaam" name="bedrijfsnaam" type="text" placeholder="De Vries Advies" autocomplete="organization" required>
-              </div>
-            </div>
-
-            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
-              <div class="form-group">
-                <label class="form-label" for="email">E-mailadres *</label>
-                <input class="form-input" id="email" name="email" type="email" placeholder="jan@bedrijf.nl" autocomplete="email" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="telefoon">Telefoonnummer *</label>
-                <input class="form-input" id="telefoon" name="telefoon" type="tel" placeholder="+31 6 12 34 56 78" autocomplete="tel" required>
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="bedrijfsnaam">Bedrijfsnaam *</label>
+                <input class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="bedrijfsnaam" name="bedrijfsnaam" type="text" placeholder="De Vries Advies" autocomplete="organization" required>
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;">
-              <div class="form-group">
-                <label class="form-label" for="rechtsvorm">Rechtsvorm *</label>
-                <select class="form-input" id="rechtsvorm" name="rechtsvorm" required>
-                  <option value="">Kies…</option>
-                  <option>Eenmanszaak</option>
-                  <option>ZZP</option>
-                  <option>VOF</option>
-                  <option>BV</option>
-                  <option>Nog niet ingeschreven</option>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="email">E-mailadres *</label>
+                <input class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="email" name="email" type="email" placeholder="jan@bedrijf.nl" autocomplete="email" required>
+              </div>
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="telefoon">Telefoonnummer *</label>
+                <input class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="telefoon" name="telefoon" type="tel" placeholder="+31 6 12 34 56 78" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="rechtsvorm">Rechtsvorm *</label>
+                <select class="w-full appearance-none rounded-xl bg-white/5 border border-white/10 px-4 py-3 pr-10 text-[15px] text-white focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="rechtsvorm" name="rechtsvorm" required style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 1rem center;">
+                  <option value="" class="bg-navy">Kies…</option>
+                  <option class="bg-navy">Eenmanszaak</option>
+                  <option class="bg-navy">ZZP</option>
+                  <option class="bg-navy">VOF</option>
+                  <option class="bg-navy">BV</option>
+                  <option class="bg-navy">Nog niet ingeschreven</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="kvk">KVK-nummer <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
-                <input class="form-input" id="kvk" name="kvk" type="text" placeholder="12345678">
+              <div>
+                <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="kvk">KVK-nummer <span class="font-body font-normal normal-case tracking-normal text-slate-400">(optioneel)</span></label>
+                <input class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="kvk" name="kvk" type="text" placeholder="12345678">
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="huidige_boekhouder">Heb je al een boekhouder?</label>
-              <select class="form-input" id="huidige_boekhouder" name="huidige_boekhouder">
-                <option value="">Kies…</option>
-                <option>Nee, ik begin net</option>
-                <option>Ja, ik wil overstappen</option>
-                <option>Ik doe het nu zelf</option>
+            <div class="mt-4">
+              <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="huidige_boekhouder">Heb je al een boekhouder?</label>
+              <select class="w-full appearance-none rounded-xl bg-white/5 border border-white/10 px-4 py-3 pr-10 text-[15px] text-white focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="huidige_boekhouder" name="huidige_boekhouder" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 1rem center;">
+                <option value="" class="bg-navy">Kies…</option>
+                <option class="bg-navy">Nee, ik begin net</option>
+                <option class="bg-navy">Ja, ik wil overstappen</option>
+                <option class="bg-navy">Ik doe het nu zelf</option>
               </select>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="opmerkingen">Opmerkingen <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optioneel)</span></label>
-              <textarea class="form-input" id="opmerkingen" name="opmerkingen" rows="3" placeholder="Vertel kort over je situatie of stel een vraag…" style="resize:vertical;"></textarea>
+            <div class="mt-4">
+              <label class="block font-display font-semibold uppercase tracking-[0.1em] text-[11px] text-slate-300 mb-1.5" for="opmerkingen">Opmerkingen <span class="font-body font-normal normal-case tracking-normal text-slate-400">(optioneel)</span></label>
+              <textarea class="w-full resize-y rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[15px] text-white placeholder:text-slate-400 focus:outline-none focus:border-cyan/50 focus:ring-2 focus:ring-cyan/25 transition-all" id="opmerkingen" name="opmerkingen" rows="3" placeholder="Vertel kort over je situatie of stel een vraag…"></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">
-              Aanmelden bij Fortly →
+            <button type="submit" class="btn-submit mt-7 inline-flex w-full justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all disabled:opacity-60">
+              Aanmelden bij Fortly &rarr;
             </button>
 
-            <p style="font-size:.78rem;color:var(--muted);text-align:center;margin-top:.9rem;">
-              Je zit nergens aan vast. We nemen binnen één werkdag contact op.
+            <p class="mt-4 text-center text-sm text-slate-300">
+              Je zit nergens aan vast. We nemen binnen &eacute;&eacute;n werkdag contact op.
             </p>
           </form>
 
           <!-- Succes state -->
-          <div id="succes" style="display:none;text-align:center;padding:3rem 1rem;">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(0,122,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <h3 style="font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.5rem;">Aanmelding ontvangen!</h3>
-            <p style="color:var(--muted);font-size:.95rem;line-height:1.7;">We nemen binnen één werkdag contact met je op.<br>Welkom bij Fortly!</p>
-            <a href="https://www.fortly.nl" style="display:inline-block;margin-top:1.5rem;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.85rem;color:var(--blue-text);text-decoration:none;">← Terug naar de website</a>
+          <div id="succes" class="hidden text-center py-12 px-2">
+            <span class="grid place-items-center w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent to-violet text-white">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <h2 class="mt-5 font-display font-bold text-white text-2xl tracking-tight">Aanmelding ontvangen!</h2>
+            <p class="mt-2 text-slate-300 leading-relaxed">We nemen binnen &eacute;&eacute;n werkdag contact met je op.<br>Welkom bij Fortly!</p>
+            <a href="/" class="mt-7 inline-flex justify-center items-center rounded-full glass px-6 py-3 font-semibold text-white hover:border-cyan/30 transition-all">&larr; Terug naar de website</a>
           </div>
         </div>
 
-        <!-- SIDEBAR -->
-        <div style="display:flex;flex-direction:column;gap:1rem;">
+        <!-- ---------- SIDEBAR ---------- -->
+        <aside class="flex flex-col gap-5">
 
-          <!-- Wat krijg je -->
-          <div style="background:white;border-radius:1.25rem;padding:1.75rem;box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <h4 style="font-size:1rem;margin-bottom:1.25rem;color:var(--text);">Wat je krijgt bij Fortly</h4>
-            <div class="trust-item">
-              <div style="flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(0,122,255,.08);display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </div>
-              <div>
-                <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);">Vaste boekhouder</div>
-                <div style="font-size:.8rem;color:var(--muted);">Altijd dezelfde persoon, geen callcenter</div>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div style="flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(0,122,255,.08);display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);">Reactie &lt; 1 werkdag</div>
-                <div style="font-size:.8rem;color:var(--muted);">Gewone taal, geen jargon</div>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div style="flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(0,122,255,.08);display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              </div>
-              <div>
-                <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);">Vaste maandprijs</div>
-                <div style="font-size:.8rem;color:var(--muted);">Geen verrassingen achteraf</div>
-              </div>
-            </div>
-            <div class="trust-item" style="margin-bottom:0;">
-              <div style="flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(0,122,255,.08);display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);">Alles geregeld</div>
-                <div style="font-size:.8rem;color:var(--muted);">Btw, aangifte, jaarrekening, wij doen het</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quote -->
-          <div style="background:var(--dark);border-radius:1.25rem;padding:1.75rem;">
-            <div style="font-size:2.5rem;font-family:'Merriweather',serif;color:rgba(0,122,255,.4);line-height:1;margin-bottom:.5rem;">"</div>
-            <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:1rem;">
-              "Ik betaalde jarenlang voor een boekhouder die ik nauwelijks zag. Bij Fortly heb ik echt het gevoel dat iemand meedenkt."
-            </p>
-            <div style="display:flex;align-items:center;gap:.6rem;">
-              <div style="width:32px;height:32px;border-radius:50%;background:rgba(0,122,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:#60a5fa;">M</div>
-              <div>
-                <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:white;">Marieke de Vries</div>
-                <div style="font-size:.72rem;color:rgba(255,255,255,.45);">Marketingconsultant</div>
-              </div>
-            </div>
+          <!-- Wat je krijgt -->
+          <div class="fade glass rounded-2xl p-6" data-delay="1">
+            <h2 class="font-display font-semibold text-white text-lg">Wat je krijgt bij Fortly</h2>
+            <ul class="mt-5 space-y-4">
+              <li class="flex gap-3 items-start">
+                <span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan shrink-0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 21a7 7 0 0 1 14 0"/></svg></span>
+                <span class="pt-0.5">
+                  <span class="block font-display font-semibold text-white text-[15px]">Vaste boekhouder</span>
+                  <span class="block text-sm text-slate-300">Altijd dezelfde persoon, geen callcenter</span>
+                </span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan shrink-0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                <span class="pt-0.5">
+                  <span class="block font-display font-semibold text-white text-[15px]">Reactie &lt; 1 werkdag</span>
+                  <span class="block text-sm text-slate-300">Gewone taal, geen jargon</span>
+                </span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan shrink-0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                <span class="pt-0.5">
+                  <span class="block font-display font-semibold text-white text-[15px]">Vaste maandprijs</span>
+                  <span class="block text-sm text-slate-300">Geen verrassingen achteraf</span>
+                </span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan shrink-0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="pt-0.5">
+                  <span class="block font-display font-semibold text-white text-[15px]">Alles geregeld</span>
+                  <span class="block text-sm text-slate-300">Btw, aangifte, jaarrekening, wij doen het</span>
+                </span>
+              </li>
+            </ul>
           </div>
 
           <!-- Contact -->
-          <div style="background:white;border-radius:1.25rem;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:center;">
-            <p style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem;">Liever even bellen?</p>
-            <a href="tel:+31623071852" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue-text);text-decoration:none;">+31 6 230 71 852</a>
-            <p style="font-size:.72rem;color:var(--muted);margin-top:.3rem;">Bereikbaar op werkdagen 9:00–17:30</p>
+          <div class="fade glass rounded-2xl p-6 text-center" data-delay="2">
+            <p class="text-sm text-slate-300">Liever even bellen?</p>
+            <a href="tel:+31613036183" class="mt-2 inline-block font-display font-bold text-lg text-cyan hover:text-white transition-colors">+31 6 13036183</a>
+            <p class="mt-1.5 text-xs text-slate-400">Bereikbaar op werkdagen 9:00&ndash;17:30</p>
+            <p class="mt-4 border-t border-white/10 pt-4 text-xs text-slate-400">
+              Fortly, onderdeel van Indufort Consulting<br>
+              Joan Muyskenweg 82, 1114 AN Amsterdam<br>
+              KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a>
+            </p>
           </div>
 
-        </div>
+        </aside>
       </div>
     </div>
-  </div>
+  </section>
+</main>
 
-  </main>
+<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
 
-  <!-- FOOTER -->
-  <footer style="background:var(--dark);padding:2.5rem 0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.07);">
-    <div style="text-align:center;">
-      <p style="font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.45);">Joan Muyskenweg 82, 1114 AN Amsterdam · KvK 42002566 · contact@fortly.nl</p>
-      <p style="font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.6rem;">© 2026 Fortly, onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,.3);text-decoration:none;">Indufort Consulting</a></p>
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-300">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31613036183" class="hover:text-cyan transition-colors">+31 6 13036183</a></p>
+      <p class="text-xs text-slate-400">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-300 transition-colors">Indufort Consulting</a></p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    // Pakket selectie
-    function selectPakket(p) {
-      ['instap','groei','bv'].forEach(id => {
-        document.getElementById('card-'+id).classList.remove('selected');
-        document.querySelector('#card-'+id+' input').checked = false;
-      });
-      document.getElementById('card-'+p).classList.add('selected');
-      document.querySelector('#card-'+p+' input').checked = true;
+<script>
+  // Pakket selectie
+  const pakketWaarden = {
+    instap: 'Instap, €85/maand',
+    groei: 'Groei, €145/maand',
+    bv: 'MKB & BV / DGA, €200/maand',
+  };
 
-      const waarden = { instap: 'Instap, €85/maand', groei: 'Groei, €145/maand', bv: 'MKB & BV / DGA, €200/maand' };
-      document.getElementById('pakket-hidden').value = waarden[p];
-    }
+  function selectPakket(p) {
+    Object.keys(pakketWaarden).forEach(function (id) {
+      const kaart = document.getElementById('card-' + id);
+      const radio = kaart.querySelector('input');
+      const actief = id === p;
+      radio.checked = actief;
+      kaart.classList.toggle('ring-2', actief);
+      kaart.classList.toggle('ring-cyan', actief);
+    });
+    document.getElementById('pakket-hidden').value = pakketWaarden[p];
+  }
 
-    // Pre-selecteer pakket via URL parameter (?pakket=instap / groei / bv)
-    const params = new URLSearchParams(window.location.search);
-    const voorgeselecteerd = params.get('pakket');
-    if (voorgeselecteerd && ['instap','groei','bv'].includes(voorgeselecteerd)) {
-      selectPakket(voorgeselecteerd);
-    }
+  // Klik of toetsenbordselectie op een pakketkaart
+  Object.keys(pakketWaarden).forEach(function (id) {
+    document.querySelector('#card-' + id + ' input').addEventListener('change', function () {
+      selectPakket(id);
+    });
+  });
 
-    // Formulier submit
-    const form = document.getElementById('aanmeld-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.btn-submit');
-      btn.textContent = 'Bezig…';
-      btn.disabled = true;
+  // Pre-selecteer pakket via URL parameter (?pakket=instap / groei / bv)
+  const params = new URLSearchParams(window.location.search);
+  const voorgeselecteerd = params.get('pakket');
+  if (voorgeselecteerd && ['instap', 'groei', 'bv'].includes(voorgeselecteerd)) {
+    selectPakket(voorgeselecteerd);
+  }
 
+  // Formulier submit
+  const form = document.getElementById('aanmeld-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Bezig…';
+    btn.disabled = true;
+
+    try {
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
@@ -426,14 +439,20 @@
 
       if (res.ok) {
         form.style.display = 'none';
-        document.getElementById('succes').style.display = 'block';
+        document.getElementById('succes').classList.remove('hidden');
         gtag('event', 'conversion', { send_to: 'AW-18076485002/hUd8CJefsJkcEIqLxatD' });
       } else {
         btn.textContent = 'Aanmelden bij Fortly →';
         btn.disabled = false;
         alert('Er is iets misgegaan. Probeer het opnieuw of bel ons.');
       }
-    });
-  </script>
+    } catch (err) {
+      btn.textContent = 'Aanmelden bij Fortly →';
+      btn.disabled = false;
+      alert('Er is iets misgegaan. Probeer het opnieuw of bel ons.');
+    }
+  });
+</script>
+<script src="/assets/fortly.js"></script>
 </body>
 </html>

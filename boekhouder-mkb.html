@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="nl" dir="auto">
 <head>
-  <!-- Google tag -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Verberg de fade-content alleen als we 'm ook weer kunnen tonen.
+    // Laadt assets/fortly.js niet, dan halen we 'js' terug weg en is alles gewoon zichtbaar.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__fortlyFade) document.documentElement.classList.remove('js');
+    }, 2500);
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XT407991C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,11 +19,7 @@
     gtag('config', 'G-1XT407991C');
     gtag('config', 'AW-18076485002');
   </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boekhouder voor het MKB in Amsterdam | Fortly, Vaste Prijs</title>
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.fortly.nl/boekhouder-mkb.html" />
   <meta name="description" content="Administratiekantoor en boekhouder voor het MKB in Amsterdam. Loonadministratie voor personeel, VPB, jaarrekening, DGA-salaris en holdingstructuur. Vaste maandprijs, geen uurtarieven. Onderdeel van Indufort." />
   <meta name="keywords" content="boekhouder MKB, administratiekantoor MKB Amsterdam, boekhouder met personeel, loonadministratie MKB, boekhouder BV, holdingstructuur boekhouder, management-BV, VPB-aangifte MKB, overstappen accountant, jaarrekening deponeren" />
@@ -41,87 +46,15 @@
   <meta name="twitter:description" content="Boekhouder en administratiekantoor voor het MKB. Loonadministratie, VPB, jaarrekening, DGA-salaris en holdingstructuur." />
   <meta name="twitter:image" content="https://www.fortly.nl/fortly_logo_kort.png" />
   <meta name="twitter:image:alt" content="Fortly, boekhouder voor het MKB in Amsterdam" />
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = { theme: { extend: { fontFamily: {
-      sans: ['Open Sans', 'sans-serif'], header: ['Montserrat', 'sans-serif'], serif: ['Merriweather', 'serif'],
-    } } } };
-  </script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
-    :root {
-      --color-primary-dark: #1D1D1F;
-      --color-primary-deep-dark: #0A192F;
-      --color-accent-blue: #007AFF; --color-accent-text: #0064CC;
-      --color-text-light: #FFFFFF;
-      --color-text-dark: #1D1D1F;
-      --color-text-medium: #58585b;
-      --color-text-on-dark: #F5F5F7;
-      --color-text-muted-on-dark: #B4B4BC;
-      --color-background-light: #FFFFFF;
-      --color-background-main: #F5F5F7;
-      --color-border-light: #D2D2D7;
-    }
-    ::selection { background-color: var(--color-accent-blue); color: #fff; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--color-text-dark); -webkit-font-smoothing: antialiased; background-color: #fff; font-size: 17px; line-height: 1.7; letter-spacing: -0.012em; }
-    /* Specificiteit bewust hoger dan Tailwind preflight (die h1-h6 naar inherit reset).
-       Kleur bewust NIET hier: die komt van .text-white op donkere secties, anders overschrijven we die. */
-    body h1, body h2, body h3, body h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.25; margin-bottom: 0.7em; letter-spacing: -0.02em; }
-    body h1 { font-size: 2.625rem; }
-    body h2 { font-size: 2.125rem; }
-    body h3 { font-size: 1.375rem; }
-    @media (min-width: 768px) { body h1 { font-size: 3.25rem; } body h2 { font-size: 2.75rem; } body h3 { font-size: 1.625rem; } }
 
-    .section-padding { padding-top: 5.5rem; padding-bottom: 5.5rem; }
-    @media (min-width: 768px) { .section-padding { padding-top: 7.5rem; padding-bottom: 7.5rem; } }
-
-    .btn { display: inline-block; font-family: 'Montserrat', sans-serif; font-weight: 600; padding: 0.875rem 2rem; border-radius: 0.625rem; transition: all 0.2s cubic-bezier(0.25,0.1,0.25,1); text-align: center; font-size: 0.875rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; line-height: 1.3; }
-    .btn-white { background: white; color: var(--color-primary-dark); border-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-    .btn-white:hover { background: #F0F0F0; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
-    .btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,0.7); }
-    .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-    .btn-accent { background: var(--color-accent-blue); color: white; border-color: var(--color-accent-blue); border-radius: 0.625rem; }
-    .btn-accent:hover { background: #0069D9; transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0,122,255,0.25); }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    .nav-link { font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 500; color: var(--color-text-muted-on-dark); text-decoration: none; padding: 0.75rem 1rem; border-radius: 6px; transition: color 0.2s, background 0.2s; }
-    .nav-link:hover { color: white; background: rgba(255,255,255,0.1); }
-    .nav-link.active { color: white; }
-
-    .service-card { background: white; border-radius: 1.25rem; padding: 2.25rem; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
-
-    .section-label { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent-text); margin-bottom: 1rem; }
-
-    .tag { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-background-main); color: var(--color-text-medium); border: 1px solid var(--color-border-light); }
-
-    /* Callout */
-    .callout { background: rgba(0,122,255,0.05); border: 1px solid rgba(0,122,255,0.18); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 0 auto; max-width: 820px; }
-    .callout .callout-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-text); margin-bottom: 0.5rem; display: block; }
-    .callout p:last-child { margin-bottom: 0; }
-
-    /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--color-border-light); padding: 1.75rem 0; }
-    .faq-item:first-child { border-top: 1px solid var(--color-border-light); }
-    .faq-item h3 { margin-bottom: 0.6rem; font-size: 1.125rem; }
-
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: block; }
-  
-    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
-    a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .service-card:focus-visible, .plan-card:focus-visible, .article-card:focus-visible, [tabindex]:focus-visible {
-      outline: 2px solid var(--color-accent-blue);
-      outline-offset: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/fortly.css">
 
   <!-- Structured Data: BreadcrumbList -->
   <script type="application/ld+json">
@@ -171,7 +104,7 @@
       "name": "Fortly",
       "@id": "https://www.fortly.nl/#organization",
       "url": "https://www.fortly.nl/",
-      "telephone": "+31623071852",
+      "telephone": "+31613036183",
       "email": "contact@fortly.nl",
       "address": {
         "@type": "PostalAddress",
@@ -242,320 +175,414 @@
   }
   </script>
 </head>
-<body class="antialiased">
 
-  <!-- HEADER -->
-  <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-      <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
-      </a>
-      <div class="hidden md:flex items-center">
-        <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
-          <a href="/#voor-wie" class="nav-link">Voor wie</a>
-          <a href="/#diensten" class="nav-link">Diensten</a>
-          <a href="/boekhouder-mkb.html" class="nav-link active">MKB</a>
-          <a href="/#pakketten" class="nav-link">Prijzen</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-        </nav>
-        <div class="ml-5 pl-4 border-l border-gray-700/60">
-          <a href="aanmelden.html?pakket=bv" class="btn btn-accent" style="padding:0.65rem 1.4rem;font-size:0.82rem;border-radius:0.625rem;">Nu starten</a>
-        </div>
-      </div>
-      <button id="hamburger" class="md:hidden p-2.5 rounded-md text-white hover:bg-white/10 transition-colors" aria-label="Menu">
-        <svg id="ham-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="5" x2="19" y2="5"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="17" x2="19" y2="17"/>
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
         </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.08);">
-      <nav class="px-4 py-4 flex flex-col gap-1">
-        <a href="/#voor-wie" class="nav-link block">Voor wie</a>
-        <a href="/#diensten" class="nav-link block">Diensten</a>
-        <a href="/boekhouder-mkb.html" class="nav-link block active">MKB</a>
-        <a href="/#pakketten" class="nav-link block">Prijzen</a>
-        <a href="/blog/" class="nav-link block">Blog</a>
-        <a href="aanmelden.html?pakket=bv" class="btn btn-accent text-center mt-3">Nu starten</a>
-      </nav>
-    </div>
-  </header>
+      </a>
 
-  <!-- HERO -->
-  <section class="section-padding relative overflow-hidden text-white" style="background:var(--color-primary-deep-dark);">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 60% at 55% 35%, rgba(0,122,255,0.14) 0%, transparent 65%);"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <span class="section-label">Boekhouder voor het MKB</span>
-        <h1 class="text-white">Boekhouder en administratiekantoor voor het MKB in Amsterdam</h1>
-        <p class="font-body text-lg md:text-xl leading-relaxed mt-4" style="color:var(--color-text-muted-on-dark);font-weight:400;">
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html?pakket=bv" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
+    </div>
+    <a href="/aanmelden.html?pakket=bv" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
+
+<main id="hoofdinhoud">
+  <span id="top"></span>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative overflow-hidden pt-[130px] pb-20 lg:pt-[160px] lg:pb-28">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&fit=crop&w=1920&q=70&fm=webp');"></div>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,21,34,0.68) 0%, rgba(14,25,42,0.82) 55%, #14243A 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 62% 55% at 52% 34%, rgba(0,122,255,0.16) 0%, transparent 66%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 62% 55% at 52% 34%, rgba(0,122,255,0.16) 0%, transparent 66%);"></div>
+      <div class="glow" style="width:40rem;height:40rem;top:-16rem;left:-10rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.4;"></div>
+      <div class="glow" style="width:34rem;height:34rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.32;"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl fade min-w-0">
+        <span class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm text-slate-300 max-w-full">
+          <span class="h-2 w-2 rounded-full bg-cyan shrink-0"></span>
+          Boekhouder voor het MKB
+        </span>
+
+        <h1 class="mt-6 font-display font-bold text-white leading-[1.07] tracking-tight text-[2.4rem] sm:text-5xl lg:text-[3.4rem]">
+          Boekhouder en administratiekantoor voor het <span class="gradient-text">MKB in Amsterdam</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">
           Personeel in dienst, een BV of een holdingstructuur? Fortly regelt je loonadministratie, vennootschapsbelasting, jaarrekening en DGA-salaris tegen een vaste maandprijs. Geen uurtarieven, geen verrassingen, altijd dezelfde vaste aanspreekpersoon.
         </p>
-        <div class="mt-9 flex flex-col sm:flex-row gap-4">
-          <a href="aanmelden.html?pakket=bv" class="btn btn-accent">Plan een gratis kennismaking</a>
-          <a href="/#pakketten" class="btn btn-outline-white">Bekijk de pakketten</a>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3.5">
+          <a href="/aanmelden.html?pakket=bv" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+            Plan een gratis kennismaking
+          </a>
+          <a href="/#pakketten" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+            Bekijk de pakketten
+          </a>
         </div>
-        <div class="flex flex-wrap gap-x-7 gap-y-2 mt-9 font-body text-sm" style="color:var(--color-text-muted-on-dark);">
-          <span>✓ Vaste maandprijs vanaf €200</span>
-          <span>✓ Reactie binnen één werkdag</span>
-          <span>✓ Volledige overname van je administratie</span>
-        </div>
+
+        <ul class="mt-10 grid gap-3 sm:grid-cols-3 max-w-3xl border-t border-white/10 pt-8 text-[15px] text-slate-300">
+          <li class="flex items-start gap-2.5">
+            <span class="text-cyan mt-0.5 shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            Vaste maandprijs vanaf &euro;200
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-cyan mt-0.5 shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            Reactie binnen &eacute;&eacute;n werkdag
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-cyan mt-0.5 shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            Volledige overname van je administratie
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- KORT ANTWOORD -->
-  <section class="section-padding" style="background:var(--color-background-light);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="callout reveal">
-        <span class="callout-label">Kort antwoord</span>
-        <p class="font-body" style="color:var(--color-text-medium);">
-          Fortly is een boekhouder en administratiekantoor voor het MKB in Amsterdam en heel Nederland. Voor bedrijven met personeel, een BV of een holding verzorgen we de loonadministratie (loonstroken, loonaangifte, WKR), de vennootschapsbelasting (VPB), de jaarrekening en het DGA-salaris. Je betaalt een vaste maandprijs vanaf €200 (excl. btw) via het MKB &amp; BV / DGA-pakket, met onbeperkte boekingen en een vaste persoonlijke aanspreekpersoon. Overstappen van je huidige accountant kan op elk moment; wij nemen je administratie volledig over.
+  <!-- ================= KORT ANTWOORD ================= -->
+  <section class="relative bg-navy pt-2 pb-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="callout fade glass-strong rounded-3xl px-6 sm:px-10 py-8 -mt-6 relative shadow-2xl shadow-black/40">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Kort antwoord</p>
+        <p class="mt-3 text-slate-300 text-[15px] sm:text-base leading-relaxed">
+          Fortly is een boekhouder en administratiekantoor voor het MKB in Amsterdam en heel Nederland. Voor bedrijven met personeel, een BV of een holding verzorgen we de loonadministratie (loonstroken, loonaangifte, WKR), de vennootschapsbelasting (VPB), de jaarrekening en het DGA-salaris. Je betaalt een vaste maandprijs vanaf &euro;200 (excl. btw) via het MKB &amp; BV / DGA-pakket, met onbeperkte boekingen en een vaste persoonlijke aanspreekpersoon. Overstappen van je huidige accountant kan op elk moment; wij nemen je administratie volledig over.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- VOOR WELK MKB -->
-  <section id="voor-welk-mkb" class="section-padding" style="background:var(--color-background-main);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 max-w-3xl mx-auto reveal">
-        <span class="section-label">Voor welk MKB</span>
-        <h2>Herken jij je bedrijf hierin?</h2>
-        <p class="font-body text-lg md:text-xl leading-relaxed mt-3" style="color:var(--color-text-medium);">
-          Fortly werkt voor uiteenlopende MKB-ondernemers. Deze vier situaties komen het vaakst voor.
-        </p>
+  <!-- ================= VOOR WELK MKB ================= -->
+  <section id="voor-welk-mkb" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;left:-14rem;top:4rem;background:radial-gradient(circle,rgba(34,211,238,0.28),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Voor welk MKB</p>
+        <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Herken jij je bedrijf hierin?</h2>
+        <p class="mt-3 text-slate-300">Fortly werkt voor uiteenlopende MKB-ondernemers. Deze vier situaties komen het vaakst voor.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
-        <div class="service-card reveal">
-          <h3>BV met personeel</h3>
-          <p class="font-body text-base leading-relaxed mb-4" style="color:var(--color-text-medium);">Je hebt medewerkers in dienst of neemt je eerste medewerker aan. Wij verzorgen de loonstroken, loonaangifte, werkkostenregeling en zorgen dat je aan alle werkgeversverplichtingen voldoet.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">Loonadministratie</span>
-            <span class="tag">WKR</span>
-            <span class="tag">Loonaangifte</span>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2">
+        <article class="fade card-hover glass rounded-2xl p-6">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">BV met personeel</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Je hebt medewerkers in dienst of neemt je eerste medewerker aan. Wij verzorgen de loonstroken, loonaangifte, werkkostenregeling en zorgen dat je aan alle werkgeversverplichtingen voldoet.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Loonadministratie</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">WKR</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Loonaangifte</span>
           </div>
-        </div>
-        <div class="service-card reveal">
-          <h3>Holding of BV-structuur</h3>
-          <p class="font-body text-base leading-relaxed mb-4" style="color:var(--color-text-medium);">Je hebt een holding met een werk-BV, of overweegt een management-BV. Wij doen de VPB en jaarrekening per entiteit en adviseren over een fiscaal optimaal DGA-salaris en je structuur.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">VPB</span>
-            <span class="tag">Jaarrekening</span>
-            <span class="tag">DGA-salaris</span>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="1">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Holding of BV-structuur</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Je hebt een holding met een werk-BV, of overweegt een management-BV. Wij doen de VPB en jaarrekening per entiteit en adviseren over een fiscaal optimaal DGA-salaris en je structuur.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">VPB</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Jaarrekening</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">DGA-salaris</span>
           </div>
-        </div>
-        <div class="service-card reveal">
-          <h3>Groeiende eenmanszaak naar BV</h3>
-          <p class="font-body text-base leading-relaxed mb-4" style="color:var(--color-text-medium);">Je eenmanszaak groeit hard en je twijfelt of een BV fiscaal voordeliger is. Wij rekenen het omslagpunt voor je door en begeleiden de volledige overstap, van oprichting tot overdracht.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">Omslagpunt</span>
-            <span class="tag">Oprichting BV</span>
-            <span class="tag">Advies</span>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="2">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Groeiende eenmanszaak naar BV</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Je eenmanszaak groeit hard en je twijfelt of een BV fiscaal voordeliger is. Wij rekenen het omslagpunt voor je door en begeleiden de volledige overstap, van oprichting tot overdracht.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Omslagpunt</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Oprichting BV</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Advies</span>
           </div>
-        </div>
-        <div class="service-card reveal">
-          <h3>Overstappen van je accountant</h3>
-          <p class="font-body text-base leading-relaxed mb-4" style="color:var(--color-text-medium);">Je betaalt te veel bij een groot kantoor of mist persoonlijk contact. Wij nemen je bestaande administratie volledig over en regelen de communicatie met je vorige accountant en de Belastingdienst.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">Volledige overname</span>
-            <span class="tag">Vaste prijs</span>
-            <span class="tag">Persoonlijk</span>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="3">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4M21 6H9a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h12a4 4 0 0 0 4-4v-1"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Overstappen van je accountant</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Je betaalt te veel bij een groot kantoor of mist persoonlijk contact. Wij nemen je bestaande administratie volledig over en regelen de communicatie met je vorige accountant en de Belastingdienst.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Volledige overname</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Vaste prijs</span>
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">Persoonlijk</span>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- WAT FORTLY DOET -->
-  <section class="section-padding" style="background:var(--color-background-light);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 max-w-3xl mx-auto reveal">
-        <span class="section-label">Wat wij regelen</span>
-        <h2>Complete ontzorging voor je MKB-administratie</h2>
-        <p class="font-body text-lg md:text-xl leading-relaxed mt-3" style="color:var(--color-text-medium);">
-          Alles onder één dak, met vaste controllers die proactief meedenken over je cijfers en fiscale kansen.
-        </p>
+  <!-- ================= WAT WIJ REGELEN ================= -->
+  <section id="wat-wij-regelen" class="relative bg-ink py-24 overflow-hidden">
+    <div class="glow" style="width:40rem;height:40rem;right:-16rem;top:-4rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.16;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-violet">Wat wij regelen</p>
+        <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Complete ontzorging voor je MKB-administratie</h2>
+        <p class="mt-3 text-slate-300">Alles onder &eacute;&eacute;n dak, met vaste controllers die proactief meedenken over je cijfers en fiscale kansen.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-        <div class="service-card reveal">
-          <h3 class="text-xl">Loonadministratie &amp; personeel</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Maandelijkse loonstroken, loonaangifte, werkkostenregeling en de aanmelding van nieuwe medewerkers. Ook het DGA-salaris fiscaal correct verwerkt.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3 class="text-xl">VPB &amp; jaarrekening</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Vennootschapsbelasting en jaarrekening per BV, op tijd en foutloos, inclusief het deponeren bij de KVK. Je weet altijd waar je aan toe bent.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3 class="text-xl">Holding &amp; structuuradvies</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Advies over een holding, management-BV en de opbouw van je structuur, zodat je fiscaal en juridisch goed zit voor de lange termijn.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3 class="text-xl">Btw &amp; administratie</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Verwerking van je facturen en bonnen en de maandelijkse of kwartaal btw-aangifte. Onbeperkte boekingen, dus je groeit zonder meerkosten.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3 class="text-xl">Rapportage &amp; cashflow</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Maandelijkse rapportage en inzicht in je cashflow, zodat je op basis van actuele cijfers kunt sturen en beslissen.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3 class="text-xl">Overstapservice</h3>
-          <p class="font-body text-base leading-relaxed" style="color:var(--color-text-medium);">Volledige overname van je bestaande administratie, inclusief contact met je vorige accountant en de Belastingdienst. Jij hoeft nergens omkijken naar te hebben.</p>
-        </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="fade card-hover glass rounded-2xl p-6">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Loonadministratie &amp; personeel</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Maandelijkse loonstroken, loonaangifte, werkkostenregeling en de aanmelding van nieuwe medewerkers. Ook het DGA-salaris fiscaal correct verwerkt.</p>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="1">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">VPB &amp; jaarrekening</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Vennootschapsbelasting en jaarrekening per BV, op tijd en foutloos, inclusief het deponeren bij de KVK. Je weet altijd waar je aan toe bent.</p>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="2">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Holding &amp; structuuradvies</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Advies over een holding, management-BV en de opbouw van je structuur, zodat je fiscaal en juridisch goed zit voor de lange termijn.</p>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Btw &amp; administratie</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Verwerking van je facturen en bonnen en de maandelijkse of kwartaal btw-aangifte. Onbeperkte boekingen, dus je groeit zonder meerkosten.</p>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="1">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Rapportage &amp; cashflow</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Maandelijkse rapportage en inzicht in je cashflow, zodat je op basis van actuele cijfers kunt sturen en beslissen.</p>
+        </article>
+
+        <article class="fade card-hover glass rounded-2xl p-6" data-delay="2">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4M21 6H9a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h12a4 4 0 0 0 4-4v-1"/></svg></span>
+          <h3 class="font-display font-semibold text-white text-lg">Overstapservice</h3>
+          <p class="mt-1.5 text-slate-300 text-[15px] leading-relaxed">Volledige overname van je bestaande administratie, inclusief contact met je vorige accountant en de Belastingdienst. Jij hoeft nergens omkijken naar te hebben.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- PRIJS / CTA -->
-  <section class="section-padding relative overflow-hidden" style="background:var(--color-primary-deep-dark);">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(0,122,255,0.1) 0%, transparent 65%);"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center reveal">
-        <span class="section-label">Transparante prijs</span>
-        <h2 class="text-white">Het MKB &amp; BV / DGA-pakket</h2>
-        <div class="flex items-baseline justify-center gap-2 mt-4">
-          <span class="font-header font-black text-white" style="font-size:3rem;letter-spacing:-0.03em;">€200</span>
-          <span class="font-body text-base" style="color:var(--color-text-muted-on-dark);">/maand excl. btw</span>
-        </div>
-        <p class="font-body text-lg leading-relaxed mt-4" style="color:var(--color-text-muted-on-dark);font-weight:400;">
-          Onbeperkte boekingen, maandelijkse btw-aangifte, VPB, jaarrekening, loonadministratie, WKR en DGA-salaris. Inclusief een vaste aanspreekpersoon en proactieve heads-ups van onze controllers.
-        </p>
-        <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="aanmelden.html?pakket=bv" class="btn btn-accent">Aanmelden voor het MKB-pakket</a>
-          <a href="/#pakketten" class="btn btn-outline-white">Vergelijk alle pakketten</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ================= PRIJS / CTA ================= -->
+  <section id="prijs" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:40rem;height:40rem;left:-16rem;top:-6rem;background:radial-gradient(circle,rgba(0,122,255,0.28),transparent 66%);opacity:0.2;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center fade">
+      <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Transparante prijs</p>
+      <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Het MKB &amp; BV / DGA-pakket</h2>
 
-  <!-- FAQ -->
-  <section class="section-padding" style="background:var(--color-background-light);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <span class="section-label">Veelgestelde vragen</span>
-          <h2>Boekhouding voor het MKB, uitgelegd</h2>
-        </div>
-        <div class="reveal">
-          <div class="faq-item">
-            <h3>Kan Fortly de loonadministratie voor mijn MKB-personeel verzorgen?</h3>
-            <p class="font-body" style="color:var(--color-text-medium);">Ja. Fortly verzorgt de volledige loonadministratie voor MKB-bedrijven met personeel: maandelijkse loonstroken, loonaangifte bij de Belastingdienst, de werkkostenregeling (WKR) en het DGA-salaris. Dit valt onder het MKB &amp; BV / DGA-pakket vanaf €200 per maand (excl. btw). Neem je je eerste medewerker aan, dan regelen wij de aanmelding en alle bijbehorende verplichtingen.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Wat kost een boekhouder voor het MKB in Amsterdam?</h3>
-            <p class="font-body" style="color:var(--color-text-medium);">Voor MKB-bedrijven met personeel, een BV of een holdingstructuur reken je een vaste maandprijs vanaf €200 (excl. btw) voor het MKB &amp; BV / DGA-pakket. Dit is inclusief onbeperkte boekingen, maandelijkse btw-aangifte, VPB-aangifte, jaarrekening, loonadministratie en DGA-salaris. Geen uurtarieven en geen verrassingen achteraf.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Doet Fortly ook boekhouding voor een holding- of BV-structuur?</h3>
-            <p class="font-body" style="color:var(--color-text-medium);">Ja. Fortly verzorgt de boekhouding voor MKB-bedrijven met een holdingstructuur of meerdere BV's. We doen de VPB-aangifte en jaarrekening per entiteit, adviseren over een management-BV en een fiscaal optimaal DGA-salaris, en denken mee over de opbouw van je structuur. Dit valt onder het MKB &amp; BV / DGA-pakket met onbeperkte boekingen.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Wanneer is het slim om van eenmanszaak naar een BV over te stappen?</h3>
-            <p class="font-body" style="color:var(--color-text-medium);">Grofweg wordt een BV fiscaal interessant vanaf een structurele winst van ongeveer €80.000 tot €100.000 per jaar, omdat je dan voordeel hebt van het lagere VPB-tarief en box 2. Het exacte omslagpunt hangt af van je winst, je privé-opnames en je plannen. Fortly rekent het omslagpunt voor je door en begeleidt de volledige overstap, inclusief de oprichting en de overdracht van je administratie. Lees ook onze blog <a href="/blog/eenmanszaak-naar-bv-wanneer.html" style="color:var(--color-accent-text);font-weight:600;">Van eenmanszaak naar BV</a>.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Kan ik overstappen van mijn huidige accountant naar Fortly?</h3>
-            <p class="font-body" style="color:var(--color-text-medium);">Ja, en dat kan op elk moment van het jaar. Fortly neemt je bestaande administratie volledig over en regelt de communicatie met je vorige accountant en de Belastingdienst. Je hoeft zelf niets te doen. Veel MKB-ondernemers stappen over omdat ze bij een groot kantoor te veel betalen of te weinig persoonlijk contact hebben.</p>
-          </div>
-        </div>
-        <div class="text-center mt-12 reveal">
-          <a href="aanmelden.html?pakket=bv" class="btn btn-accent">Plan een gratis kennismaking</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KENNISBANK MKB -->
-  <section class="section-padding" style="background:var(--color-background-main);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14 max-w-3xl mx-auto reveal">
-        <span class="section-label">Kennisbank voor het MKB</span>
-        <h2>Verdiep je in de onderwerpen die spelen</h2>
-        <p class="font-body text-lg leading-relaxed mt-3" style="color:var(--color-text-medium);">
-          Praktische gidsen over personeel, structuur, belasting en overstappen, geschreven voor MKB-ondernemers.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-        <a href="/blog/loonadministratie-eerste-medewerker-kosten.html" class="service-card" style="text-decoration:none;display:block;">
-          <span class="tag" style="background:rgba(0,122,255,0.08);color:var(--color-accent-text);border-color:transparent;">MKB &amp; Personeel</span>
-          <h3 class="mt-4" style="font-size:1.2rem;">Eerste medewerker aannemen: wat kost loonadministratie in 2026?</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-medium);">Werkgeverslasten, loonheffing, de WKR en wat uitbesteden kost.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Lees verder →</span>
-        </a>
-        <a href="/blog/holdingstructuur-management-bv.html" class="service-card" style="text-decoration:none;display:block;">
-          <span class="tag" style="background:rgba(0,122,255,0.08);color:var(--color-accent-text);border-color:transparent;">Holding &amp; Structuur</span>
-          <h3 class="mt-4" style="font-size:1.2rem;">Holdingstructuur opzetten: wanneer loont een management-BV?</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-medium);">Wat een holding oplevert en wanneer het opweegt tegen de kosten.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Lees verder →</span>
-        </a>
-        <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="service-card" style="text-decoration:none;display:block;">
-          <span class="tag" style="background:rgba(0,122,255,0.08);color:var(--color-accent-text);border-color:transparent;">MKB &amp; Belasting</span>
-          <h3 class="mt-4" style="font-size:1.2rem;">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-medium);">De VPB-schijven, de belastbare winst en de aftrekposten voor je BV.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Lees verder →</span>
-        </a>
-        <a href="/blog/jaarrekening-deponeren-kvk.html" class="service-card" style="text-decoration:none;display:block;">
-          <span class="tag" style="background:rgba(0,122,255,0.08);color:var(--color-accent-text);border-color:transparent;">MKB &amp; Verplichtingen</span>
-          <h3 class="mt-4" style="font-size:1.2rem;">Jaarrekening deponeren bij de KVK: de verplichtingen voor je BV</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-medium);">De bedrijfsklassen, de deadlines en de risico's van te laat deponeren.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Lees verder →</span>
-        </a>
-        <a href="/blog/overstappen-van-accountant.html" class="service-card" style="text-decoration:none;display:block;">
-          <span class="tag" style="background:rgba(0,122,255,0.08);color:var(--color-accent-text);border-color:transparent;">MKB &amp; Overstappen</span>
-          <h3 class="mt-4" style="font-size:1.2rem;">Overstappen van accountant naar Fortly: hoe werkt dat en wat bespaar je?</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-medium);">Zo simpel verloopt de overstap, en dit bespaar je met een vaste prijs.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Lees verder →</span>
-        </a>
-        <a href="/blog/" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:var(--color-primary-deep-dark);border-color:transparent;">
-          <h3 class="mt-0" style="font-size:1.2rem;color:#fff;">Naar de volledige kennisbank</h3>
-          <p class="font-body text-sm leading-relaxed mt-2" style="color:var(--color-text-muted-on-dark);">Alle artikelen over boekhouding, belasting en ondernemen.</p>
-          <span class="font-header font-bold text-xs mt-4 inline-block" style="color:var(--color-accent-text);">Bekijk de blog →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.07);padding:5rem 0 3rem;" data-nosnippet>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="mb-8">
-        <a href="/" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;background:white;border-radius:4px;display:flex;align-items:center;justify-content:center;">
-            <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:16px;color:var(--color-primary-deep-dark);">F</span>
-          </div>
-          <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.1em;text-transform:uppercase;color:white;">Fortly</span>
-        </a>
-      </div>
-      <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 mb-10" aria-label="Footernavigatie">
-        <a href="/#voor-wie" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Voor wie</a>
-        <a href="/#diensten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Diensten</a>
-        <a href="/boekhouder-mkb.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Boekhouder MKB</a>
-        <a href="/#pakketten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Prijzen</a>
-        <a href="/over-ons.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Over ons</a>
-        <a href="/blog/" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Blog</a>
-        <a href="/#contact" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Contact</a>
-      </nav>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.5);">Joan Muyskenweg 82, 1114 AN Amsterdam · KvK 42002566 · contact@fortly.nl · +31 6 230 71 852</p>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
-      <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.2);">
-        Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,0.25);text-decoration:none;">Indufort Consulting</a>
+      <p class="mt-6 font-display font-bold leading-none">
+        <span class="text-5xl sm:text-6xl gradient-text">&euro;200</span>
+        <span class="text-base text-slate-300"> /maand excl. btw</span>
       </p>
+
+      <p class="mt-5 text-slate-300 text-lg leading-relaxed">
+        Onbeperkte boekingen, maandelijkse btw-aangifte, VPB, jaarrekening, loonadministratie, WKR en DGA-salaris. Inclusief een vaste aanspreekpersoon en proactieve heads-ups van onze controllers.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center">
+        <a href="/aanmelden.html?pakket=bv" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Aanmelden voor het MKB-pakket
+        </a>
+        <a href="/#pakketten" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+          Vergelijk alle pakketten
+        </a>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="relative bg-ink py-24 overflow-hidden" aria-labelledby="faq-heading">
+    <div class="glow" style="width:34rem;height:34rem;right:-14rem;top:4rem;background:radial-gradient(circle,rgba(139,92,246,0.28),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Veelgestelde vragen</p>
+        <h2 id="faq-heading" class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Boekhouding voor het MKB, uitgelegd</h2>
+      </div>
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+      <div class="mt-12 border-t border-white/10">
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Kan Fortly de loonadministratie voor mijn MKB-personeel verzorgen?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Ja. Fortly verzorgt de volledige loonadministratie voor MKB-bedrijven met personeel: maandelijkse loonstroken, loonaangifte bij de Belastingdienst, de werkkostenregeling (WKR) en het DGA-salaris. Dit valt onder het MKB &amp; BV / DGA-pakket vanaf &euro;200 per maand (excl. btw). Neem je je eerste medewerker aan, dan regelen wij de aanmelding en alle bijbehorende verplichtingen.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wat kost een boekhouder voor het MKB in Amsterdam?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Voor MKB-bedrijven met personeel, een BV of een holdingstructuur reken je een vaste maandprijs vanaf &euro;200 (excl. btw) voor het MKB &amp; BV / DGA-pakket. Dit is inclusief onbeperkte boekingen, maandelijkse btw-aangifte, VPB-aangifte, jaarrekening, loonadministratie en DGA-salaris. Geen uurtarieven en geen verrassingen achteraf.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Doet Fortly ook boekhouding voor een holding- of BV-structuur?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Ja. Fortly verzorgt de boekhouding voor MKB-bedrijven met een holdingstructuur of meerdere BV&#39;s. We doen de VPB-aangifte en jaarrekening per entiteit, adviseren over een management-BV en een fiscaal optimaal DGA-salaris, en denken mee over de opbouw van je structuur. Dit valt onder het MKB &amp; BV / DGA-pakket met onbeperkte boekingen.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wanneer is het slim om van eenmanszaak naar een BV over te stappen?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Grofweg wordt een BV fiscaal interessant vanaf een structurele winst van ongeveer &euro;80.000 tot &euro;100.000 per jaar, omdat je dan voordeel hebt van het lagere VPB-tarief en box 2. Het exacte omslagpunt hangt af van je winst, je priv&eacute;-opnames en je plannen. Fortly rekent het omslagpunt voor je door en begeleidt de volledige overstap, inclusief de oprichting en de overdracht van je administratie. Lees ook onze blog <a href="/blog/eenmanszaak-naar-bv-wanneer.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">Van eenmanszaak naar BV</a>.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Kan ik overstappen van mijn huidige accountant naar Fortly?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Ja, en dat kan op elk moment van het jaar. Fortly neemt je bestaande administratie volledig over en regelt de communicatie met je vorige accountant en de Belastingdienst. Je hoeft zelf niets te doen. Veel MKB-ondernemers stappen over omdat ze bij een groot kantoor te veel betalen of te weinig persoonlijk contact hebben.</p></div>
+        </details>
+      </div>
+
+      <div class="mt-12 text-center fade">
+        <a href="/aanmelden.html?pakket=bv" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Plan een gratis kennismaking
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KENNISBANK MKB ================= -->
+  <section id="kennisbank" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;left:-14rem;top:2rem;background:radial-gradient(circle,rgba(34,211,238,0.28),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Kennisbank voor het MKB</p>
+        <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Verdiep je in de onderwerpen die spelen</h2>
+        <p class="mt-3 text-slate-300">Praktische gidsen over personeel, structuur, belasting en overstappen, geschreven voor MKB-ondernemers.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="/blog/loonadministratie-eerste-medewerker-kosten.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col group">
+          <span class="self-start inline-flex items-center rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-semibold text-cyan">MKB &amp; Personeel</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Eerste medewerker aannemen: wat kost loonadministratie in 2026?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Werkgeverslasten, loonheffing, de WKR en wat uitbesteden kost.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/holdingstructuur-management-bv.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col group" data-delay="1">
+          <span class="self-start inline-flex items-center rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-semibold text-cyan">Holding &amp; Structuur</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Holdingstructuur opzetten: wanneer loont een management-BV?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Wat een holding oplevert en wanneer het opweegt tegen de kosten.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col group" data-delay="2">
+          <span class="self-start inline-flex items-center rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-semibold text-cyan">MKB &amp; Belasting</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">De VPB-schijven, de belastbare winst en de aftrekposten voor je BV.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/jaarrekening-deponeren-kvk.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col group">
+          <span class="self-start inline-flex items-center rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-semibold text-cyan">MKB &amp; Verplichtingen</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Jaarrekening deponeren bij de KVK: de verplichtingen voor je BV</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">De bedrijfsklassen, de deadlines en de risico&#39;s van te laat deponeren.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/overstappen-van-accountant.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col group" data-delay="1">
+          <span class="self-start inline-flex items-center rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-semibold text-cyan">MKB &amp; Overstappen</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Overstappen van accountant naar Fortly: hoe werkt dat en wat bespaar je?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Zo simpel verloopt de overstap, en dit bespaar je met een vaste prijs.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/" class="fade card-hover rounded-2xl p-6 flex flex-col justify-center group" data-delay="2" style="background:linear-gradient(135deg,rgba(0,122,255,0.14),rgba(139,92,246,0.14));border:1px solid rgba(34,211,238,0.22);">
+          <h3 class="font-display font-semibold text-white text-lg leading-snug">Naar de volledige kennisbank</h3>
+          <p class="mt-2 text-slate-200 text-[15px] leading-relaxed">Alle artikelen over boekhouding, belasting en ondernemen.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan group-hover:text-white transition-colors">
+            Bekijk de blog
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
+
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-300">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31613036183" class="hover:text-cyan transition-colors">+31 6 13036183</a></p>
+      <p class="text-xs text-slate-400">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-300 transition-colors">Indufort Consulting</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/fortly.js"></script>
 </body>
 </html>
