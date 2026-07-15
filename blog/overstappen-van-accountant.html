@@ -53,12 +53,11 @@
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <script src="/assets/fortly-theme.js"></script>
 
   <link rel="stylesheet" href="/assets/fortly.css">
 
@@ -363,7 +362,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Onderdeel</th>
@@ -372,24 +371,24 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Boekhouding</td>
-                <td class="px-5 py-3.5">Volledige online administratie, bankkoppeling en automatische verwerking van facturen en bonnen</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Onderdeel">Boekhouding</td>
+                <td class="px-5 py-3.5" data-label="Wat Fortly regelt">Volledige online administratie, bankkoppeling en automatische verwerking van facturen en bonnen</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Btw-aangifte</td>
-                <td class="px-5 py-3.5">Kwartaal- of maandaangifte, altijd op tijd ingediend</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Onderdeel">Btw-aangifte</td>
+                <td class="px-5 py-3.5" data-label="Wat Fortly regelt">Kwartaal- of maandaangifte, altijd op tijd ingediend</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Loonadministratie</td>
-                <td class="px-5 py-3.5">Salarisstroken en loonaangifte voor je personeel of je eigen DGA-salaris</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Onderdeel">Loonadministratie</td>
+                <td class="px-5 py-3.5" data-label="Wat Fortly regelt">Salarisstroken en loonaangifte voor je personeel of je eigen DGA-salaris</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Jaarrekening</td>
-                <td class="px-5 py-3.5">Opstellen en deponeren bij de KVK, plus de aangifte vennootschapsbelasting</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Onderdeel">Jaarrekening</td>
+                <td class="px-5 py-3.5" data-label="Wat Fortly regelt">Opstellen en deponeren bij de KVK, plus de aangifte vennootschapsbelasting</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Advies</td>
-                <td class="px-5 py-3.5">Meedenken over structuur, investeringen en belasting besparen, zonder de meter te zien lopen</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Onderdeel">Advies</td>
+                <td class="px-5 py-3.5" data-label="Wat Fortly regelt">Meedenken over structuur, investeringen en belasting besparen, zonder de meter te zien lopen</td>
               </tr>
             </tbody>
           </table>
@@ -415,7 +414,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Aspect</th>
@@ -425,29 +424,29 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Kosten vooraf bekend</td>
-                <td class="px-5 py-3.5">Nee, achteraf afrekenen</td>
-                <td class="px-5 py-3.5">Ja, vast bedrag per maand</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Aspect">Kosten vooraf bekend</td>
+                <td class="px-5 py-3.5" data-label="Traditioneel uurtarief">Nee, achteraf afrekenen</td>
+                <td class="px-5 py-3.5" data-label="Fortly: vaste maandprijs">Ja, vast bedrag per maand</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Vragen stellen</td>
-                <td class="px-5 py-3.5">Kost per keer geld</td>
-                <td class="px-5 py-3.5">Inbegrepen, altijd</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Aspect">Vragen stellen</td>
+                <td class="px-5 py-3.5" data-label="Traditioneel uurtarief">Kost per keer geld</td>
+                <td class="px-5 py-3.5" data-label="Fortly: vaste maandprijs">Inbegrepen, altijd</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Verrassingsfacturen</td>
-                <td class="px-5 py-3.5">Regelmatig</td>
-                <td class="px-5 py-3.5">Geen</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Aspect">Verrassingsfacturen</td>
+                <td class="px-5 py-3.5" data-label="Traditioneel uurtarief">Regelmatig</td>
+                <td class="px-5 py-3.5" data-label="Fortly: vaste maandprijs">Geen</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Advies gedurende het jaar</td>
-                <td class="px-5 py-3.5">Apart offerte</td>
-                <td class="px-5 py-3.5">Onderdeel van het pakket</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Aspect">Advies gedurende het jaar</td>
+                <td class="px-5 py-3.5" data-label="Traditioneel uurtarief">Apart offerte</td>
+                <td class="px-5 py-3.5" data-label="Fortly: vaste maandprijs">Onderdeel van het pakket</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Contact</td>
-                <td class="px-5 py-3.5">Wisselend</td>
-                <td class="px-5 py-3.5">Vaste contactpersoon</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Aspect">Contact</td>
+                <td class="px-5 py-3.5" data-label="Traditioneel uurtarief">Wisselend</td>
+                <td class="px-5 py-3.5" data-label="Fortly: vaste maandprijs">Vaste contactpersoon</td>
               </tr>
             </tbody>
           </table>

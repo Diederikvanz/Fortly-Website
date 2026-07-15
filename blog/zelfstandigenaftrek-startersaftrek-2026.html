@@ -53,12 +53,11 @@
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <script src="/assets/fortly-theme.js"></script>
 
   <link rel="stylesheet" href="/assets/fortly.css">
 
@@ -392,7 +391,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Stap</th>
@@ -401,28 +400,28 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Winst uit onderneming</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">&euro;50.000</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap">Winst uit onderneming</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag">&euro;50.000</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Af: zelfstandigenaftrek</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">&minus; &euro;1.200</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap">Af: zelfstandigenaftrek</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag">&minus; &euro;1.200</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Af: startersaftrek</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">&minus; &euro;2.123</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap">Af: startersaftrek</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag">&minus; &euro;2.123</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white"><strong class="font-semibold text-white">Winst na ondernemersaftrek</strong></td>
-                <td class="px-5 py-3.5 whitespace-nowrap"><strong class="font-semibold text-white">&euro;46.677</strong></td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap"><strong class="font-semibold text-white">Winst na ondernemersaftrek</strong></td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag"><strong class="font-semibold text-white">&euro;46.677</strong></td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Af: MKB-winstvrijstelling (12,70%)</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">&minus; &euro;5.928</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap">Af: MKB-winstvrijstelling (12,70%)</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag">&minus; &euro;5.928</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white"><strong class="font-semibold text-white">Belastbare winst</strong></td>
-                <td class="px-5 py-3.5 whitespace-nowrap"><strong class="font-semibold text-white">&euro;40.749</strong></td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Stap"><strong class="font-semibold text-white">Belastbare winst</strong></td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag"><strong class="font-semibold text-white">&euro;40.749</strong></td>
               </tr>
             </tbody>
           </table>

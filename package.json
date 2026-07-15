@@ -1,0 +1,8 @@
+{
+  "name": "fortly-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/tailwind.src.css -o ./assets/tailwind.css --minify"
+  },
+  "devDependencies": { "tailwindcss": "^3.4.17" }
+}

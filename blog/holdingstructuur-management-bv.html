@@ -53,12 +53,11 @@
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <script src="/assets/fortly-theme.js"></script>
 
   <link rel="stylesheet" href="/assets/fortly.css">
 
@@ -344,7 +343,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Situatie</th>
@@ -354,24 +353,24 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Je houdt structureel winst over boven je DGA-loon</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">Ja, meestal wel</td>
-                <td class="px-5 py-3.5">Je kunt die winst belastingvrij oppotten en dividend gespreid uitkeren</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Situatie">Je houdt structureel winst over boven je DGA-loon</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Holding zinvol?">Ja, meestal wel</td>
+                <td class="px-5 py-3.5" data-label="Waarom">Je kunt die winst belastingvrij oppotten en dividend gespreid uitkeren</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Je loopt serieus ondernemersrisico of hebt personeel</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">Ja</td>
-                <td class="px-5 py-3.5">Vermogen en pensioen staan veilig los van de risico&#39;s in de werk-BV</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Situatie">Je loopt serieus ondernemersrisico of hebt personeel</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Holding zinvol?">Ja</td>
+                <td class="px-5 py-3.5" data-label="Waarom">Vermogen en pensioen staan veilig los van de risico&#39;s in de werk-BV</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Je wilt je onderneming op termijn verkopen</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">Ja, sterk aan te raden</td>
-                <td class="px-5 py-3.5">Verkoopwinst valt onder de deelnemingsvrijstelling in de holding</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Situatie">Je wilt je onderneming op termijn verkopen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Holding zinvol?">Ja, sterk aan te raden</td>
+                <td class="px-5 py-3.5" data-label="Waarom">Verkoopwinst valt onder de deelnemingsvrijstelling in de holding</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Je maakt nauwelijks winst boven je salaris en hebt geen verkoopplannen</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">Vaak niet</td>
-                <td class="px-5 py-3.5">De extra kosten van twee jaarrekeningen wegen dan zwaarder dan het voordeel</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Situatie">Je maakt nauwelijks winst boven je salaris en hebt geen verkoopplannen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Holding zinvol?">Vaak niet</td>
+                <td class="px-5 py-3.5" data-label="Waarom">De extra kosten van twee jaarrekeningen wegen dan zwaarder dan het voordeel</td>
               </tr>
             </tbody>
           </table>

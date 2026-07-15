@@ -53,12 +53,11 @@
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <script src="/assets/fortly-theme.js"></script>
 
   <link rel="stylesheet" href="/assets/fortly.css">
 
@@ -283,7 +282,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Schijf</th>
@@ -293,14 +292,14 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">1e schijf (opstaptarief)</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot 200.000 euro</td>
-                <td class="px-5 py-3.5">19%</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Schijf">1e schijf (opstaptarief)</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Belastbare winst">tot 200.000 euro</td>
+                <td class="px-5 py-3.5" data-label="Tarief 2026">19%</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">2e schijf</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">boven 200.000 euro</td>
-                <td class="px-5 py-3.5">25,8%</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Schijf">2e schijf</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Belastbare winst">boven 200.000 euro</td>
+                <td class="px-5 py-3.5" data-label="Tarief 2026">25,8%</td>
               </tr>
             </tbody>
           </table>
@@ -404,7 +403,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Kenmerk</th>
@@ -414,24 +413,24 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Belasting over winst</td>
-                <td class="px-5 py-3.5">Inkomstenbelasting box 1</td>
-                <td class="px-5 py-3.5">Vennootschapsbelasting (19% / 25,8%)</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Kenmerk">Belasting over winst</td>
+                <td class="px-5 py-3.5" data-label="Eenmanszaak">Inkomstenbelasting box 1</td>
+                <td class="px-5 py-3.5" data-label="BV">Vennootschapsbelasting (19% / 25,8%)</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Ondernemersaftrek</td>
-                <td class="px-5 py-3.5">Ja (zelfstandigenaftrek, MKB-winstvrijstelling)</td>
-                <td class="px-5 py-3.5">Nee, maar wel zakelijke aftrekposten en KIA</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Kenmerk">Ondernemersaftrek</td>
+                <td class="px-5 py-3.5" data-label="Eenmanszaak">Ja (zelfstandigenaftrek, MKB-winstvrijstelling)</td>
+                <td class="px-5 py-3.5" data-label="BV">Nee, maar wel zakelijke aftrekposten en KIA</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Geld naar privé</td>
-                <td class="px-5 py-3.5">Winst is direct van jou</td>
-                <td class="px-5 py-3.5">Via DGA-loon (box 1) en dividend (box 2)</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Kenmerk">Geld naar privé</td>
+                <td class="px-5 py-3.5" data-label="Eenmanszaak">Winst is direct van jou</td>
+                <td class="px-5 py-3.5" data-label="BV">Via DGA-loon (box 1) en dividend (box 2)</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Aansprakelijkheid</td>
-                <td class="px-5 py-3.5">Privé aansprakelijk</td>
-                <td class="px-5 py-3.5">In beginsel beperkt tot de BV</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Kenmerk">Aansprakelijkheid</td>
+                <td class="px-5 py-3.5" data-label="Eenmanszaak">Privé aansprakelijk</td>
+                <td class="px-5 py-3.5" data-label="BV">In beginsel beperkt tot de BV</td>
               </tr>
             </tbody>
           </table>

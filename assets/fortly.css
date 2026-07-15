@@ -100,3 +100,51 @@ a:focus-visible, button:focus-visible {
   .card-hover { transition: none; }
   .float-soft { animation: none; }
 }
+
+/* ============================================================
+   Tabellen: op mobiel uitklappen naar leesbare blokken.
+   Elke <td> heeft een data-label met de kolomkop, zodat de rij
+   ook zonder tabelkop te begrijpen is. Geen horizontaal scrollen.
+   ============================================================ */
+@media (max-width: 640px) {
+  table.table-stack { min-width: 0 !important; display: block; }
+  table.table-stack thead { display: none; }
+  table.table-stack tbody { display: block; }
+
+  table.table-stack tr {
+    display: block;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: 0.75rem;
+    background: rgba(255,255,255,0.02);
+  }
+  table.table-stack tr:last-child { margin-bottom: 0; }
+
+  table.table-stack td {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 0.6rem 0 !important;
+    text-align: right;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    white-space: normal !important;
+  }
+  table.table-stack td:first-child { border-top: 0; }
+
+  /* de kolomkop als label voor de waarde */
+  table.table-stack td::before {
+    content: attr(data-label);
+    flex: 0 0 auto;
+    max-width: 55%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #22D3EE;
+  }
+  /* cellen zonder label (bv. een lege kolom) tonen alleen de waarde */
+  table.table-stack td[data-label=""]::before { content: none; }
+}

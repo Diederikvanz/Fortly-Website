@@ -53,12 +53,11 @@
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <script src="/assets/fortly-theme.js"></script>
 
   <link rel="stylesheet" href="/assets/fortly.css">
 
@@ -305,7 +304,7 @@
 
       <div class="fade mt-7 glass rounded-2xl overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[34rem] text-left border-collapse">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
             <thead>
               <tr class="bg-white/[0.04]">
                 <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Klasse</th>
@@ -316,28 +315,28 @@
             </thead>
             <tbody class="text-[15px] text-slate-300">
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Micro</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;450.000</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;900.000</td>
-                <td class="px-5 py-3.5">minder dan 10</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Micro</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;450.000</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;900.000</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 10</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Klein</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;7,5 miljoen</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;15 miljoen</td>
-                <td class="px-5 py-3.5">minder dan 50</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Klein</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;7,5 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;15 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 50</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Middelgroot</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;25 miljoen</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">tot circa &euro;50 miljoen</td>
-                <td class="px-5 py-3.5">minder dan 250</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Middelgroot</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">tot circa &euro;25 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">tot circa &euro;50 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">minder dan 250</td>
               </tr>
               <tr class="border-t border-white/10">
-                <td class="px-5 py-3.5 font-semibold text-white">Groot</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">meer dan circa &euro;25 miljoen</td>
-                <td class="px-5 py-3.5 whitespace-nowrap">meer dan circa &euro;50 miljoen</td>
-                <td class="px-5 py-3.5">250 of meer</td>
+                <td class="px-5 py-3.5 font-semibold text-white" data-label="Klasse">Groot</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Balanstotaal (indicatief)">meer dan circa &euro;25 miljoen</td>
+                <td class="px-5 py-3.5 whitespace-nowrap" data-label="Netto-omzet (indicatief)">meer dan circa &euro;50 miljoen</td>
+                <td class="px-5 py-3.5" data-label="Werknemers">250 of meer</td>
               </tr>
             </tbody>
           </table>

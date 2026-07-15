@@ -1,7 +1,6 @@
-/* Fortly design system — Tailwind theme tokens.
-   Load on every page, together with the Tailwind CDN. */
-window.tailwind = window.tailwind || {};
-window.tailwind.config = {
+/** Fortly — Tailwind build. Tokens gelijk aan assets/fortly-theme.js */
+module.exports = {
+  content: ['./*.html', './blog/*.html'],
   theme: {
     extend: {
       fontFamily: {
@@ -18,4 +17,5 @@ window.tailwind.config = {
       },
     },
   },
-};
+  plugins: [],
+}
