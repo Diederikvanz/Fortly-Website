@@ -154,6 +154,7 @@ a:focus-visible, button:focus-visible {
    en zonder JS. De antwoorden blijven in de HTML staan, zodat het
    FAQPage-schema geldig blijft (Google staat uitklapbare FAQ toe).
    ============================================================ */
+.faq-item > summary > h3 { margin: 0; }
 .faq-item > summary {
   list-style: none;
   cursor: pointer;
