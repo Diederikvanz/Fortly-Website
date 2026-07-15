@@ -25,6 +25,8 @@
   if (year) year.textContent = new Date().getFullYear();
 
   // Subtle fade-in on scroll (opacity only)
+  // Meld aan de failsafe in de head dat wij de reveal overnemen.
+  window.__fortlyFade = true;
   var fades = document.querySelectorAll('.fade');
   if (!fades.length) return;
   if ('IntersectionObserver' in window && !reduce) {
