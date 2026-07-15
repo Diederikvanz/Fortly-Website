@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="nl" dir="auto">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.classList.add('js');</script>
+
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XT407991C"></script>
   <script>
@@ -11,10 +15,7 @@
     gtag('config', 'AW-18076485002');
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boekhouding starten als ZZP'er: 7 dingen die je vanaf dag één goed regelt | Fortly</title>
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.fortly.nl/blog/boekhouding-starten-als-zzp.html" />
   <meta name="description" content="Boekhouding starten als ZZP'er? In 7 stappen leg je vanaf dag één een foutloze basis: zakelijke rekening, factuureisen, bonnetjes bewaren en geld apart zetten." />
   <meta name="keywords" content="boekhouding starten ZZP, administratie starter, zakelijke rekening ZZP, bonnetjes bewaren, factuureisen, starten als ondernemer, boekhouding voor beginners" />
@@ -43,201 +44,16 @@
   <meta name="twitter:description" content="Net ingeschreven bij de KVK? In 7 concrete stappen leg je vanaf dag één een foutloze financiële basis." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
 
-  <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Open Sans', 'sans-serif'],
-            header: ['Montserrat', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
+  <script src="/assets/fortly-theme.js"></script>
 
-    :root {
-      --color-primary-dark: #1D1D1F;
-      --color-primary-deep-dark: #0A192F;
-      --color-accent-blue: #007AFF; --color-accent-text: #0064CC;
-      --color-text-light: #FFFFFF;
-      --color-text-dark: #1D1D1F;
-      --color-text-medium: #58585b;
-      --color-text-on-dark: #F5F5F7;
-      --color-text-muted-on-dark: #B4B4BC;
-      --color-background-light: #FFFFFF;
-      --color-background-main: #F5F5F7;
-      --color-background-medium: #E8E8ED;
-      --color-border-light: #D2D2D7;
-    }
-
-    ::selection { background-color: var(--color-accent-blue); color: #fff; }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--color-text-dark);
-      -webkit-font-smoothing: antialiased;
-      background-color: var(--color-background-light);
-      font-size: 17px;
-      line-height: 1.7;
-      letter-spacing: -0.012em;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--color-primary-dark);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 0.7em;
-      letter-spacing: -0.02em;
-    }
-
-    h1 { font-size: 2.4rem; }
-    @media (min-width: 768px) { h1 { font-size: 3rem; } }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      padding: 0.875rem 2rem;
-      border-radius: 0.625rem;
-      transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-      text-align: center;
-      font-size: 0.875rem;
-      cursor: pointer;
-      border: 2px solid transparent;
-      text-decoration: none;
-      line-height: 1.3;
-    }
-    .btn-white { background: white; color: var(--color-primary-dark); border-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-    .btn-white:hover { background: #F0F0F0; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
-    .btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,0.7); }
-    .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-    .btn-accent { background: var(--color-accent-blue); color: white; border-color: var(--color-accent-blue); border-radius: 0.625rem; }
-    .btn-accent:hover { background: #0069D9; transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0,122,255,0.25); }
-
-    /* Nav */
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--color-text-muted-on-dark);
-      text-decoration: none;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-link:hover { color: white; background: rgba(255,255,255,0.1); }
-    .nav-link.active { color: white; }
-
-    .section-label {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-accent-text);
-      margin-bottom: 1rem;
-    }
-
-    /* Mobile menu */
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: block; }
-
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── Article typography ── */
-    .article-body { font-size: 1.075rem; line-height: 1.7; color: #2c2c2e; max-width: 42rem; margin-left: auto; margin-right: auto; }
-    .article-body h2 {
-      font-size: 1.75rem; margin-top: 2.6rem; margin-bottom: 1rem;
-      scroll-margin-top: 120px;
-    }
-    .article-body h3 { font-size: 1.3rem; margin-top: 1.9rem; margin-bottom: 0.7rem; }
-    .article-body p { margin-bottom: 1.3rem; }
-    .article-body ul, .article-body ol { margin: 0 0 1.5rem 0; padding-left: 1.4rem; }
-    .article-body li { margin-bottom: 0.6rem; }
-    .article-body ul li { list-style: none; position: relative; padding-left: 1.6rem; }
-    .article-body ul li::before {
-      content: ''; position: absolute; left: 0; top: 0.68em;
-      width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent-blue);
-    }
-    .article-body ol { counter-reset: item; padding-left: 0; }
-    .article-body ol > li { list-style: none; position: relative; padding-left: 2.6rem; counter-increment: item; margin-bottom: 0.9rem; }
-    .article-body ol > li::before {
-      content: counter(item); position: absolute; left: 0; top: 0.15em;
-      width: 1.7rem; height: 1.7rem; border-radius: 50%;
-      background: rgba(0,122,255,0.1); color: var(--color-accent-text);
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .article-body a { color: var(--color-accent-text); text-decoration: underline; text-underline-offset: 2px; }
-    .article-body a:hover { color: #0069D9; }
-    .article-body strong { color: var(--color-primary-dark); font-weight: 700; }
-    .article-body blockquote {
-      border-left: 3px solid var(--color-accent-blue);
-      padding: 0.4rem 0 0.4rem 1.4rem; margin: 1.8rem 0;
-      font-family: 'Merriweather', serif; font-style: italic; color: var(--color-text-medium);
-    }
-
-    /* Tables */
-    .article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.97rem; }
-    .article-body thead { background: var(--color-primary-deep-dark); }
-    .article-body th { color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; }
-    .article-body td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--color-border-light); }
-    .article-body tbody tr:nth-child(even) { background: var(--color-background-main); }
-
-    /* Callout */
-    .callout {
-      background: rgba(0,122,255,0.05); border: 1px solid rgba(0,122,255,0.18);
-      border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 2rem 0;
-    }
-    .callout .callout-label {
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.72rem;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-text);
-      margin-bottom: 0.5rem; display: block;
-    }
-    .callout p:last-child { margin-bottom: 0; }
-
-    /* Table of contents */
-    .toc { max-width: 42rem; margin-left: auto; margin-right: auto; background: var(--color-background-main); border: 1px solid var(--color-border-light); border-radius: 1rem; padding: 1.5rem 1.75rem; }
-    .toc a { color: var(--color-text-medium); text-decoration: none; transition: color 0.2s; }
-    .toc a:hover { color: var(--color-accent-text); }
-
-    /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--color-border-light); }
-    .faq-item summary { cursor: pointer; list-style: none; padding: 1.25rem 0; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--color-primary-dark); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--color-accent-text); font-weight: 400; flex-shrink: 0; transition: transform 0.2s; }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item .faq-answer { padding-bottom: 1.25rem; color: var(--color-text-medium); }
-
-    .article-card { background: white; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--color-border-light); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; height: 100%; display: flex; flex-direction: column; }
-    .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--color-accent-blue); }
-    .tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: rgba(0,122,255,0.08); color: var(--color-accent-text); }
-  
-    /* Voorkom horizontale overflow: lange NL-samenstellingen breken; tabellen scrollen via .table-scroll; clip als vangnet. */
-    body { overflow-x: clip; }
-    body, h1, h2, h3, h4, p, li, a, span, div { overflow-wrap: break-word; }
-  
-    /* Toegankelijkheid: zichtbare toetsenbord-focus (WCAG 2.4.7) */
-    a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .service-card:focus-visible, .plan-card:focus-visible, .article-card:focus-visible, [tabindex]:focus-visible {
-      outline: 2px solid var(--color-accent-blue);
-      outline-offset: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/fortly.css">
 
   <!-- Structured Data: BlogPosting -->
   <script type="application/ld+json">
@@ -317,277 +133,365 @@
   }
   </script>
 </head>
-<body class="antialiased">
 
-  <!-- ═══ HEADER ═══ -->
-  <header id="site-header" class="sticky top-0 z-50 shadow-lg" style="background:var(--color-primary-deep-dark);height:100px;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-      <a href="/" class="flex items-center gap-3 group focus:outline-none -ml-2 p-2" style="text-decoration:none;">
-        <img src="/fortly_logo_outlined.svg" alt="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" width="164" height="164" style="width:164px;height:164px;display:block;" />
-      </a>
-      <div class="hidden md:flex items-center">
-        <nav class="flex items-center space-x-1" aria-label="Hoofdnavigatie">
-          <a href="/#voor-wie" class="nav-link">Voor wie</a>
-          <a href="/#diensten" class="nav-link">Diensten</a>
-          <a href="/#pakketten" class="nav-link">Prijzen</a>
-          <a href="/#werkwijze" class="nav-link">Werkwijze</a>
-          <a href="/blog/" class="nav-link active">Blog</a>
-        </nav>
-        <div class="ml-5 pl-4 border-l border-gray-700/60">
-          <a href="/aanmelden.html" class="btn btn-accent" style="padding:0.65rem 1.4rem;font-size:0.82rem;border-radius:8px;">Nu starten</a>
-        </div>
-      </div>
-      <button id="hamburger" class="md:hidden p-2.5 rounded-md text-white hover:bg-white/10 transition-colors" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="5" x2="19" y2="5"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="17" x2="19" y2="17"/>
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
         </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.08);">
-      <nav class="px-4 py-4 flex flex-col gap-1">
-        <a href="/#voor-wie" class="nav-link block">Voor wie</a>
-        <a href="/#diensten" class="nav-link block">Diensten</a>
-        <a href="/#pakketten" class="nav-link block">Prijzen</a>
-        <a href="/#werkwijze" class="nav-link block">Werkwijze</a>
-        <a href="/blog/" class="nav-link block active">Blog</a>
-        <a href="/aanmelden.html" class="btn btn-accent text-center mt-3">Nu starten</a>
-      </nav>
-    </div>
-  </header>
+      </a>
 
-  <!-- ═══ ARTICLE HERO ═══ -->
-  <article>
-  <header class="relative overflow-hidden" style="background:var(--color-primary-deep-dark);padding:3.5rem 0 3rem;">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 70% at 65% 35%, rgba(0,122,255,0.14) 0%, transparent 65%);"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-3xl">
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
+    </div>
+    <a href="/aanmelden.html" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
+
+<main id="hoofdinhoud">
+<article>
+
+  <!-- ================= ARTIKEL-HERO ================= -->
+  <section class="relative overflow-hidden pt-[120px] pb-14 lg:pt-[140px] lg:pb-16">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, #070F1E 0%, #0A192F 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 70% at 60% 40%, rgba(0,122,255,0.16) 0%, transparent 65%);"></div>
+      <div class="glow" style="width:36rem;height:36rem;top:-14rem;left:-10rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.35;"></div>
+      <div class="glow" style="width:32rem;height:32rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.28;"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 fade">
       <!-- Breadcrumb -->
-      <nav aria-label="Kruimelpad" class="mb-6">
-        <ol class="flex flex-wrap items-center gap-2 text-xs" style="color:var(--color-text-muted-on-dark);font-family:'Montserrat',sans-serif;">
-          <li><a href="/" style="color:var(--color-text-muted-on-dark);text-decoration:none;">Home</a></li>
-          <li aria-hidden="true">›</li>
-          <li><a href="/blog/" style="color:var(--color-text-muted-on-dark);text-decoration:none;">Blog</a></li>
-          <li aria-hidden="true">›</li>
-          <li style="color:var(--color-accent-text);">Starten als ZZP'er</li>
+      <nav aria-label="Kruimelpad">
+        <ol class="flex flex-wrap items-center gap-2 font-display text-xs text-slate-400">
+          <li><a href="/" class="hover:text-cyan transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li><a href="/blog/" class="hover:text-cyan transition-colors">Blog</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li class="text-cyan">Starten als ZZP&#39;er</li>
         </ol>
       </nav>
-      <span class="tag" style="background:rgba(0,122,255,0.15);">Starten als ZZP'er</span>
-      <h1 class="text-white mt-5" style="font-size:clamp(2rem,4.5vw,3rem);">Boekhouding starten als ZZP'er: 7 dingen die je vanaf dag één goed regelt</h1>
-      <p class="mt-4 text-lg" style="color:var(--color-text-on-dark);font-weight:400;">
-        Net ingeschreven bij de KVK? Gefeliciteerd! Met deze zeven stappen leg je vanaf dag één een stevige, foutloze financiële basis, zonder ingewikkelde jargon, gewoon stap voor stap.
+
+      <span class="mt-6 inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Starten als ZZP&#39;er</span>
+
+      <h1 class="mt-5 font-display font-bold text-white leading-[1.1] tracking-tight text-[2.1rem] sm:text-4xl lg:text-5xl">
+        Boekhouding starten als ZZP&#39;er: 7 dingen die je vanaf dag &eacute;&eacute;n goed regelt
+      </h1>
+
+      <p class="mt-5 text-lg text-slate-300 leading-relaxed">
+        Net ingeschreven bij de KVK? Gefeliciteerd! Met deze zeven stappen leg je vanaf dag &eacute;&eacute;n een stevige, foutloze financi&euml;le basis, zonder ingewikkelde jargon, gewoon stap voor stap.
       </p>
-      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 text-sm" style="color:var(--color-text-muted-on-dark);">
-        <span>Door <strong style="color:white;font-weight:600;">Team Fortly</strong></span>
-        <span aria-hidden="true">•</span>
+
+      <div class="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-400">
+        <span>Door <strong class="font-semibold text-white">Team Fortly</strong></span>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
         <time datetime="2026-05-13">13 mei 2026</time>
-        <span aria-hidden="true">•</span>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
         <span>6 min leestijd</span>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- ═══ ARTICLE BODY ═══ -->
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8" style="padding-top:3.5rem;padding-bottom:4rem;">
-    <div class="max-w-3xl mx-auto">
+  <!-- ================= ARTIKEL-BODY ================= -->
+  <section class="relative bg-ink py-16 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;right:-16rem;top:8rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
 
-      <!-- TOC -->
-      <nav class="toc mb-10" aria-label="Inhoudsopgave">
-        <span class="section-label" style="margin-bottom:0.75rem;">In dit artikel</span>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#zakelijke-rekening">1. Open een aparte zakelijke rekening</a></li>
-          <li><a href="#inschrijving">2. Regel je inschrijving: KVK en btw-id</a></li>
-          <li><a href="#administratie-bijhouden">3. Kies hoe je je administratie bijhoudt</a></li>
-          <li><a href="#bonnetjes-bewaren">4. Bewaar al je bonnetjes en facturen</a></li>
-          <li><a href="#geld-apart">5. Zet vanaf euro één geld apart voor de belasting</a></li>
-          <li><a href="#correcte-facturen">6. Stuur correcte facturen</a></li>
-          <li><a href="#hulp-inschakelen">7. Schakel op tijd hulp in</a></li>
-          <li><a href="#veelgestelde-vragen">Veelgestelde vragen</a></li>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Inhoudsopgave -->
+      <nav class="fade glass rounded-2xl p-6 sm:p-7" aria-label="Inhoudsopgave">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">In dit artikel</p>
+        <ul class="mt-4 space-y-2.5 text-[15px] text-slate-300">
+          <li><a href="#zakelijke-rekening" class="hover:text-cyan transition-colors">1. Open een aparte zakelijke rekening</a></li>
+          <li><a href="#inschrijving" class="hover:text-cyan transition-colors">2. Regel je inschrijving: KVK en btw-id</a></li>
+          <li><a href="#administratie-bijhouden" class="hover:text-cyan transition-colors">3. Kies hoe je je administratie bijhoudt</a></li>
+          <li><a href="#bonnetjes-bewaren" class="hover:text-cyan transition-colors">4. Bewaar al je bonnetjes en facturen</a></li>
+          <li><a href="#geld-apart" class="hover:text-cyan transition-colors">5. Zet vanaf euro &eacute;&eacute;n geld apart voor de belasting</a></li>
+          <li><a href="#correcte-facturen" class="hover:text-cyan transition-colors">6. Stuur correcte facturen</a></li>
+          <li><a href="#hulp-inschakelen" class="hover:text-cyan transition-colors">7. Schakel op tijd hulp in</a></li>
+          <li><a href="#veelgestelde-vragen" class="hover:text-cyan transition-colors">Veelgestelde vragen</a></li>
         </ul>
       </nav>
 
-      <div class="article-body">
-        <div class="callout" style="background:rgba(0,122,255,0.06);border-left:4px solid var(--color-accent-blue);">
-          <span class="callout-label">Kort antwoord</span>
-          <p>Regel vanaf dag één: een aparte zakelijke rekening, je KVK- en btw-inschrijving, een vaste manier om je administratie bij te houden, het bewaren van alle bonnetjes en facturen (7 jaar bewaarplicht), geld apart zetten voor de belasting (± 35%) en correcte facturen versturen. Schakel op tijd een boekhouder in om fouten te voorkomen.</p>
+      <!-- Kort antwoord -->
+      <div class="fade mt-10 rounded-2xl border border-cyan/20 border-l-2 border-l-cyan bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Kort antwoord</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Regel vanaf dag &eacute;&eacute;n: een aparte zakelijke rekening, je KVK- en btw-inschrijving, een vaste manier om je administratie bij te houden, het bewaren van alle bonnetjes en facturen (7 jaar bewaarplicht), geld apart zetten voor de belasting (&plusmn; 35%) en correcte facturen versturen. Schakel op tijd een boekhouder in om fouten te voorkomen.</p>
+      </div>
+
+      <p class="fade mt-8 text-slate-300 text-[17px] leading-[1.8]">De sprong is gemaakt: je bent officieel ondernemer. Spannend! En na de eerste euforie duikt bijna altijd dezelfde vraag op, <strong class="font-semibold text-white">hoe begin ik nu aan mijn boekhouding?</strong> Goed nieuws: het hoeft helemaal niet ingewikkeld te zijn. Als je vanaf dag &eacute;&eacute;n een paar basisdingen goed inricht, voorkom je een hoop gedoe (en boetes) later. In deze gids lopen we samen zeven concrete stappen door waarmee je je administratie meteen goed neerzet. Rustig aan, we nemen je stap voor stap mee.</p>
+
+      <!-- ── H2: 1. Zakelijke rekening ── -->
+      <h2 id="zakelijke-rekening" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">1. Open een aparte zakelijke rekening</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Dit is misschien wel de belangrijkste stap voor een soepele start. Voor een eenmanszaak is een zakelijke rekening niet wettelijk verplicht, maar wel enorm verstandig. Door je zakelijke geld strikt gescheiden te houden van je priv&eacute;geld, hou je overzicht en wordt je administratie een stuk simpeler.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Stel je voor dat je aan het eind van het kwartaal je btw-aangifte moet doen en je zakelijke uitgaven verstopt zitten tussen boodschappen en Netflix-abonnementen. Dat kost je uren uitzoekwerk. Met een aparte rekening zie je in &eacute;&eacute;n oogopslag wat er is binnengekomen en uitgegeven. Veel banken hebben bovendien voordelige zakelijke rekeningen speciaal voor starters.</p>
+
+      <!-- ── H2: 2. Inschrijving ── -->
+      <h2 id="inschrijving" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">2. Regel je inschrijving: KVK en btw-id</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Waarschijnlijk heb je dit al gedaan, maar het hoort in elk startersrijtje thuis. Zodra je je inschrijft bij de <strong class="font-semibold text-white">Kamer van Koophandel (KVK)</strong>, geeft de KVK je gegevens automatisch door aan de Belastingdienst. Die beoordeelt of je btw-ondernemer bent en stuurt je een <strong class="font-semibold text-white">btw-identificatienummer (btw-id)</strong> en een omzetbelastingnummer toe.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Bewaar deze nummers goed: je hebt ze straks nodig op elke factuur die je verstuurt. Je btw-id mag je veilig op je facturen en website vermelden, het is speciaal bedoeld voor extern gebruik en beschermt je priv&eacute;burgerservicenummer.</p>
+
+      <!-- ── H2: 3. Administratie bijhouden ── -->
+      <h2 id="administratie-bijhouden" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">3. Kies hoe je je administratie bijhoudt</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Nu de basis staat, is de volgende vraag: hoe ga je je cijfers bijhouden? Grofweg heb je drie opties, elk met eigen voor- en nadelen.</p>
+
+      <h3 class="fade mt-9 font-display font-semibold text-white text-xl">Boekhoudsoftware</h3>
+      <p class="fade mt-3 text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Voordeel:</strong> facturen maken, bonnetjes inscannen en btw-overzichten gaan grotendeels automatisch. <strong class="font-semibold text-white">Nadeel:</strong> je betaalt een maandbedrag en je moet zelf de knopjes leren kennen, &eacute;n zelf beoordelen of je alles fiscaal juist boekt.</p>
+
+      <h3 class="fade mt-9 font-display font-semibold text-white text-xl">Excel of een spreadsheet</h3>
+      <p class="fade mt-3 text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Voordeel:</strong> gratis en volledig naar eigen inzicht. <strong class="font-semibold text-white">Nadeel:</strong> foutgevoelig, tijdrovend en er zit geen enkele controle in. Bij een handvol facturen per jaar werkt het; groei je, dan loop je er snel tegenaan.</p>
+
+      <h3 class="fade mt-9 font-display font-semibold text-white text-xl">Een boekhouder</h3>
+      <p class="fade mt-3 text-slate-300 text-[17px] leading-[1.8]"><strong class="font-semibold text-white">Voordeel:</strong> je administratie &eacute;n aangiftes worden voor je verzorgd, iemand denkt met je mee en je maakt geen fiscale fouten. <strong class="font-semibold text-white">Nadeel:</strong> er zijn maandelijkse kosten aan verbonden, al zijn die volledig aftrekbaar. Wil je weten wat dat kost? Lees dan onze gids over <a href="/blog/wat-kost-een-boekhouder-zzp.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">wat een boekhouder voor een ZZP&#39;er kost</a>.</p>
+
+      <!-- ── H2: 4. Bonnetjes bewaren ── -->
+      <h2 id="bonnetjes-bewaren" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">4. Bewaar al je bonnetjes en facturen</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Elke zakelijke uitgave kan een aftrekpost zijn, maar alleen als je het kunt aantonen. Bewaar daarom vanaf de eerste dag <strong class="font-semibold text-white">alle</strong> bonnetjes, facturen en bankafschriften. Dat tankbonnetje, die laptop, de kilometers naar een klant: het telt allemaal mee, mits je het bewijs hebt.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Belangrijk om te weten: de Belastingdienst kent een <strong class="font-semibold text-white">fiscale bewaarplicht van 7 jaar</strong>. Je moet je administratie dus zeven jaar lang bewaren. Voor gegevens over onroerend goed geldt zelfs een langere termijn van <strong class="font-semibold text-white">10 jaar</strong>. Digitaal bewaren mag, zolang alles compleet en leesbaar blijft, maak dus meteen een gewoonte van het inscannen of fotograferen van elk bonnetje.</p>
+
+      <!-- Callout: Tip van Fortly -->
+      <div class="fade mt-8 rounded-2xl border border-cyan/20 bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Tip van Fortly</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Fotografeer een bonnetje meteen bij de kassa en zet het in &eacute;&eacute;n vaste map of app. Papieren bonnetjes vervagen namelijk. Een onleesbaar bonnetje is voor de Belastingdienst hetzelfde als geen bonnetje, en dus een aftrekpost die je misloopt.</p>
+      </div>
+
+      <!-- ── H2: 5. Geld apart ── -->
+      <h2 id="geld-apart" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">5. Zet vanaf euro &eacute;&eacute;n geld apart voor de belasting</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Dit is de valkuil waar de meeste starters in trappen. Alles wat op je rekening binnenkomt, is niet allemaal van jou. Een deel is btw die je later moet afdragen, en over je winst betaal je aan het eind van het jaar inkomstenbelasting. Wie dat geld al heeft uitgegeven, schrikt zich bij de aangifte een hoedje.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">De oplossing is simpel: zet elke maand een vast percentage van je omzet apart op een spaarpotje. Zo staat het belastinggeld klaar wanneer de aangifte komt en houd je je hoofd koel.</p>
+
+      <!-- Callout: De 35%-regel -->
+      <div class="fade mt-8 rounded-2xl border border-cyan/20 bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">De 35%-regel</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Een handige vuistregel voor starters: zet ongeveer <strong class="font-semibold text-white">30 tot 40% van je omzet</strong> opzij voor btw en inkomstenbelasting. Hou je 35% aan, dan zit je meestal goed. Verwacht je een omzet onder de <strong class="font-semibold text-white">&euro;20.000</strong> per jaar? Dan kun je mogelijk gebruikmaken van de <strong class="font-semibold text-white">kleineondernemersregeling (KOR)</strong>: je bent dan vrijgesteld van btw, brengt geen btw in rekening en doet meestal geen btw-aangifte. Handig, maar reken goed door of het bij jou past, je kunt namelijk ook geen btw meer terugvragen.</p>
+      </div>
+
+      <!-- ── H2: 6. Correcte facturen ── -->
+      <h2 id="correcte-facturen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">6. Stuur correcte facturen</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Een factuur is meer dan een bedrag en een tikkie. De Belastingdienst stelt duidelijke eisen aan wat er op moet staan. Voldoet je factuur er niet aan, dan kan je klant de btw niet terugvragen en loop je bij een controle risico. Dit zijn de <strong class="font-semibold text-white">verplichte factuurgegevens</strong>:</p>
+
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Je volledige bedrijfsnaam en adres (zoals ingeschreven bij de KVK)</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Je btw-identificatienummer</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Je KVK-nummer</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Een uniek, opeenvolgend factuurnummer</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>De datum waarop je de factuur uitreikt</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>De datum waarop je de goederen of dienst hebt geleverd</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Naam en adres van je klant</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Een duidelijke omschrijving van wat je hebt geleverd en de hoeveelheid</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Het bedrag exclusief btw</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Het gehanteerde btw-tarief en het btw-bedrag</span>
+        </li>
+      </ul>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Voor kleine facturen tot en met &euro;100 (inclusief btw) gelden minder strenge eisen. Werk je met de KOR, dan bereken je geen btw en vermeld je in plaats daarvan dat je gebruikmaakt van de kleineondernemersregeling. Wil je precies weten hoe de btw-aangifte daarna werkt? Lees onze <a href="/blog/btw-aangifte-zzp-gids.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">complete btw-gids voor ZZP&#39;ers</a>.</p>
+
+      <!-- Mid-article CTA -->
+      <div class="fade my-12 glass-strong rounded-3xl p-8 sm:p-10 text-center">
+        <h3 class="font-display font-bold text-white text-2xl tracking-tight">Net ingeschreven bij de KVK? Begin meteen goed.</h3>
+        <p class="mt-3 text-slate-300 text-[15px] leading-relaxed">Fortly richt je administratie vanaf dag &eacute;&eacute;n correct in en houdt de deadlines voor je in de gaten. Zo start je zonder zorgen en zonder fouten met terugwerkende kracht.</p>
+        <a href="/aanmelden.html" class="mt-7 inline-flex justify-center items-center rounded-full px-7 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">Start nu</a>
+      </div>
+
+      <!-- ── H2: 7. Hulp inschakelen ── -->
+      <h2 id="hulp-inschakelen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">7. Schakel op tijd hulp in</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Je hoeft het niet allemaal alleen te doen, en dat is geen zwaktebod, maar slim ondernemen. De eerste maanden leg je de fundamenten waarop de rest van je administratie voortbouwt. Zit daar een fout in, dan moet je die soms met terugwerkende kracht herstellen, en dat is bijna altijd duurder en vervelender dan het meteen goed doen.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Een boekhouder die vanaf de start meekijkt, zorgt dat je aangiftes op tijd de deur uit gaan, dat je geen aftrekposten misloopt en dat je de juiste keuzes maakt, bijvoorbeeld rond de KOR of de zelfstandigenaftrek. Zo kun jij je richten op waar je &eacute;cht goed in bent: ondernemen. Benieuwd welke <a href="/#pakketten" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">pakketten</a> bij jouw startfase passen? We denken graag met je mee.</p>
+
+      <!-- ── H2: FAQ ── -->
+      <h2 id="veelgestelde-vragen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Veelgestelde vragen</h2>
+
+      <div class="mt-8 border-t border-white/10">
+        <div class="fade border-b border-white/10 py-7">
+          <h3 class="font-display font-semibold text-white text-lg">Heb ik als ZZP&#39;er een aparte zakelijke rekening nodig?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Wettelijk is een zakelijke rekening voor een eenmanszaak niet verplicht, maar in de praktijk is het sterk aan te raden. Door je zakelijke inkomsten en uitgaven strikt gescheiden te houden van je priv&eacute;geld, blijft je administratie overzichtelijk, wordt je btw- en inkomstenbelastingaangifte eenvoudiger en voorkom je fouten. Veel banken bieden voordelige zakelijke rekeningen speciaal voor starters.</p>
         </div>
-        <p>De sprong is gemaakt: je bent officieel ondernemer. Spannend! En na de eerste euforie duikt bijna altijd dezelfde vraag op, <strong>hoe begin ik nu aan mijn boekhouding?</strong> Goed nieuws: het hoeft helemaal niet ingewikkeld te zijn. Als je vanaf dag één een paar basisdingen goed inricht, voorkom je een hoop gedoe (en boetes) later. In deze gids lopen we samen zeven concrete stappen door waarmee je je administratie meteen goed neerzet. Rustig aan, we nemen je stap voor stap mee.</p>
-
-        <h2 id="zakelijke-rekening">1. Open een aparte zakelijke rekening</h2>
-        <p>Dit is misschien wel de belangrijkste stap voor een soepele start. Voor een eenmanszaak is een zakelijke rekening niet wettelijk verplicht, maar wel enorm verstandig. Door je zakelijke geld strikt gescheiden te houden van je privégeld, hou je overzicht en wordt je administratie een stuk simpeler.</p>
-        <p>Stel je voor dat je aan het eind van het kwartaal je btw-aangifte moet doen en je zakelijke uitgaven verstopt zitten tussen boodschappen en Netflix-abonnementen. Dat kost je uren uitzoekwerk. Met een aparte rekening zie je in één oogopslag wat er is binnengekomen en uitgegeven. Veel banken hebben bovendien voordelige zakelijke rekeningen speciaal voor starters.</p>
-
-        <h2 id="inschrijving">2. Regel je inschrijving: KVK en btw-id</h2>
-        <p>Waarschijnlijk heb je dit al gedaan, maar het hoort in elk startersrijtje thuis. Zodra je je inschrijft bij de <strong>Kamer van Koophandel (KVK)</strong>, geeft de KVK je gegevens automatisch door aan de Belastingdienst. Die beoordeelt of je btw-ondernemer bent en stuurt je een <strong>btw-identificatienummer (btw-id)</strong> en een omzetbelastingnummer toe.</p>
-        <p>Bewaar deze nummers goed: je hebt ze straks nodig op elke factuur die je verstuurt. Je btw-id mag je veilig op je facturen en website vermelden, het is speciaal bedoeld voor extern gebruik en beschermt je privéburgerservicenummer.</p>
-
-        <h2 id="administratie-bijhouden">3. Kies hoe je je administratie bijhoudt</h2>
-        <p>Nu de basis staat, is de volgende vraag: hoe ga je je cijfers bijhouden? Grofweg heb je drie opties, elk met eigen voor- en nadelen.</p>
-        <h3>Boekhoudsoftware</h3>
-        <p><strong>Voordeel:</strong> facturen maken, bonnetjes inscannen en btw-overzichten gaan grotendeels automatisch. <strong>Nadeel:</strong> je betaalt een maandbedrag en je moet zelf de knopjes leren kennen, én zelf beoordelen of je alles fiscaal juist boekt.</p>
-        <h3>Excel of een spreadsheet</h3>
-        <p><strong>Voordeel:</strong> gratis en volledig naar eigen inzicht. <strong>Nadeel:</strong> foutgevoelig, tijdrovend en er zit geen enkele controle in. Bij een handvol facturen per jaar werkt het; groei je, dan loop je er snel tegenaan.</p>
-        <h3>Een boekhouder</h3>
-        <p><strong>Voordeel:</strong> je administratie én aangiftes worden voor je verzorgd, iemand denkt met je mee en je maakt geen fiscale fouten. <strong>Nadeel:</strong> er zijn maandelijkse kosten aan verbonden, al zijn die volledig aftrekbaar. Wil je weten wat dat kost? Lees dan onze gids over <a href="/blog/wat-kost-een-boekhouder-zzp.html">wat een boekhouder voor een ZZP'er kost</a>.</p>
-
-        <h2 id="bonnetjes-bewaren">4. Bewaar al je bonnetjes en facturen</h2>
-        <p>Elke zakelijke uitgave kan een aftrekpost zijn, maar alleen als je het kunt aantonen. Bewaar daarom vanaf de eerste dag <strong>alle</strong> bonnetjes, facturen en bankafschriften. Dat tankbonnetje, die laptop, de kilometers naar een klant: het telt allemaal mee, mits je het bewijs hebt.</p>
-        <p>Belangrijk om te weten: de Belastingdienst kent een <strong>fiscale bewaarplicht van 7 jaar</strong>. Je moet je administratie dus zeven jaar lang bewaren. Voor gegevens over onroerend goed geldt zelfs een langere termijn van <strong>10 jaar</strong>. Digitaal bewaren mag, zolang alles compleet en leesbaar blijft, maak dus meteen een gewoonte van het inscannen of fotograferen van elk bonnetje.</p>
-
-        <div class="callout">
-          <span class="callout-label">Tip van Fortly</span>
-          <p>Fotografeer een bonnetje meteen bij de kassa en zet het in één vaste map of app. Papieren bonnetjes vervagen namelijk. Een onleesbaar bonnetje is voor de Belastingdienst hetzelfde als geen bonnetje, en dus een aftrekpost die je misloopt.</p>
+        <div class="fade border-b border-white/10 py-7">
+          <h3 class="font-display font-semibold text-white text-lg">Hoe lang moet ik mijn administratie bewaren?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed">De Belastingdienst hanteert een fiscale bewaarplicht van 7 jaar voor je administratie, zoals facturen, bonnetjes, bankafschriften en je grootboek. Voor gegevens over onroerend goed geldt een langere bewaartermijn van 10 jaar. Je mag documenten digitaal bewaren, zolang ze compleet en leesbaar blijven.</p>
         </div>
-
-        <h2 id="geld-apart">5. Zet vanaf euro één geld apart voor de belasting</h2>
-        <p>Dit is de valkuil waar de meeste starters in trappen. Alles wat op je rekening binnenkomt, is niet allemaal van jou. Een deel is btw die je later moet afdragen, en over je winst betaal je aan het eind van het jaar inkomstenbelasting. Wie dat geld al heeft uitgegeven, schrikt zich bij de aangifte een hoedje.</p>
-        <p>De oplossing is simpel: zet elke maand een vast percentage van je omzet apart op een spaarpotje. Zo staat het belastinggeld klaar wanneer de aangifte komt en houd je je hoofd koel.</p>
-
-        <div class="callout">
-          <span class="callout-label">De 35%-regel</span>
-          <p>Een handige vuistregel voor starters: zet ongeveer <strong>30 tot 40% van je omzet</strong> opzij voor btw en inkomstenbelasting. Hou je 35% aan, dan zit je meestal goed. Verwacht je een omzet onder de <strong>€20.000</strong> per jaar? Dan kun je mogelijk gebruikmaken van de <strong>kleineondernemersregeling (KOR)</strong>: je bent dan vrijgesteld van btw, brengt geen btw in rekening en doet meestal geen btw-aangifte. Handig, maar reken goed door of het bij jou past, je kunt namelijk ook geen btw meer terugvragen.</p>
+        <div class="fade border-b border-white/10 py-7">
+          <h3 class="font-display font-semibold text-white text-lg">Moet ik meteen bij de start een boekhouder inschakelen?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Het is niet verplicht, maar het scheelt je veel stress en voorkomt fouten. Juist in het begin worden de basiskeuzes gemaakt die later doorwerken: hoe je je administratie inricht, welke kosten je mag aftrekken en of de KOR bij je past. Een boekhouder die vanaf dag &eacute;&eacute;n meekijkt, voorkomt dat je fouten met terugwerkende kracht moet herstellen.</p>
         </div>
-
-        <h2 id="correcte-facturen">6. Stuur correcte facturen</h2>
-        <p>Een factuur is meer dan een bedrag en een tikkie. De Belastingdienst stelt duidelijke eisen aan wat er op moet staan. Voldoet je factuur er niet aan, dan kan je klant de btw niet terugvragen en loop je bij een controle risico. Dit zijn de <strong>verplichte factuurgegevens</strong>:</p>
-        <ul>
-          <li>Je volledige bedrijfsnaam en adres (zoals ingeschreven bij de KVK)</li>
-          <li>Je btw-identificatienummer</li>
-          <li>Je KVK-nummer</li>
-          <li>Een uniek, opeenvolgend factuurnummer</li>
-          <li>De datum waarop je de factuur uitreikt</li>
-          <li>De datum waarop je de goederen of dienst hebt geleverd</li>
-          <li>Naam en adres van je klant</li>
-          <li>Een duidelijke omschrijving van wat je hebt geleverd en de hoeveelheid</li>
-          <li>Het bedrag exclusief btw</li>
-          <li>Het gehanteerde btw-tarief en het btw-bedrag</li>
-        </ul>
-        <p>Voor kleine facturen tot en met €100 (inclusief btw) gelden minder strenge eisen. Werk je met de KOR, dan bereken je geen btw en vermeld je in plaats daarvan dat je gebruikmaakt van de kleineondernemersregeling. Wil je precies weten hoe de btw-aangifte daarna werkt? Lees onze <a href="/blog/btw-aangifte-zzp-gids.html">complete btw-gids voor ZZP'ers</a>.</p>
-
-        <!-- Mid-article CTA -->
-        <div class="my-10 rounded-2xl overflow-hidden" style="background:var(--color-primary-deep-dark);">
-          <div class="relative p-8 sm:p-10 text-center" style="background:radial-gradient(ellipse 70% 90% at 50% 0%, rgba(0,122,255,0.16) 0%, transparent 70%);">
-            <h3 class="text-white" style="font-size:1.5rem;">Net ingeschreven bij de KVK? Begin meteen goed.</h3>
-            <p class="mt-2 mb-6" style="color:var(--color-text-muted-on-dark);">Fortly richt je administratie vanaf dag één correct in en houdt de deadlines voor je in de gaten. Zo start je zonder zorgen en zonder fouten met terugwerkende kracht.</p>
-            <a href="/aanmelden.html" class="btn btn-white">Nu starten</a>
-          </div>
-        </div>
-
-        <h2 id="hulp-inschakelen">7. Schakel op tijd hulp in</h2>
-        <p>Je hoeft het niet allemaal alleen te doen, en dat is geen zwaktebod, maar slim ondernemen. De eerste maanden leg je de fundamenten waarop de rest van je administratie voortbouwt. Zit daar een fout in, dan moet je die soms met terugwerkende kracht herstellen, en dat is bijna altijd duurder en vervelender dan het meteen goed doen.</p>
-        <p>Een boekhouder die vanaf de start meekijkt, zorgt dat je aangiftes op tijd de deur uit gaan, dat je geen aftrekposten misloopt en dat je de juiste keuzes maakt, bijvoorbeeld rond de KOR of de zelfstandigenaftrek. Zo kun jij je richten op waar je écht goed in bent: ondernemen. Benieuwd welke <a href="/#pakketten">pakketten</a> bij jouw startfase passen? We denken graag met je mee.</p>
-
-        <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
-        <div class="mt-4">
-          <details class="faq-item">
-            <summary>Heb ik als ZZP'er een aparte zakelijke rekening nodig?</summary>
-            <div class="faq-answer">Wettelijk is een zakelijke rekening voor een eenmanszaak niet verplicht, maar in de praktijk is het sterk aan te raden. Door je zakelijke inkomsten en uitgaven strikt gescheiden te houden van je privégeld, blijft je administratie overzichtelijk, wordt je btw- en inkomstenbelastingaangifte eenvoudiger en voorkom je fouten. Veel banken bieden voordelige zakelijke rekeningen speciaal voor starters.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Hoe lang moet ik mijn administratie bewaren?</summary>
-            <div class="faq-answer">De Belastingdienst hanteert een fiscale bewaarplicht van 7 jaar voor je administratie, zoals facturen, bonnetjes, bankafschriften en je grootboek. Voor gegevens over onroerend goed geldt een langere bewaartermijn van 10 jaar. Je mag documenten digitaal bewaren, zolang ze compleet en leesbaar blijven.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Moet ik meteen bij de start een boekhouder inschakelen?</summary>
-            <div class="faq-answer">Het is niet verplicht, maar het scheelt je veel stress en voorkomt fouten. Juist in het begin worden de basiskeuzes gemaakt die later doorwerken: hoe je je administratie inricht, welke kosten je mag aftrekken en of de KOR bij je past. Een boekhouder die vanaf dag één meekijkt, voorkomt dat je fouten met terugwerkende kracht moet herstellen.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Welke gegevens moeten er verplicht op een factuur staan?</summary>
-            <div class="faq-answer">Volgens de Belastingdienst moet een factuur onder meer bevatten: je bedrijfsnaam en adres, je btw-identificatienummer, je KVK-nummer, een uniek en opeenvolgend factuurnummer, de factuurdatum en de datum van levering, naam en adres van je klant, een omschrijving van de geleverde goederen of diensten, het bedrag exclusief btw, het btw-tarief en het btw-bedrag. Voor facturen tot en met 100 euro (inclusief btw) gelden minder eisen.</div>
-          </details>
+        <div class="fade border-b border-white/10 py-7">
+          <h3 class="font-display font-semibold text-white text-lg">Welke gegevens moeten er verplicht op een factuur staan?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Volgens de Belastingdienst moet een factuur onder meer bevatten: je bedrijfsnaam en adres, je btw-identificatienummer, je KVK-nummer, een uniek en opeenvolgend factuurnummer, de factuurdatum en de datum van levering, naam en adres van je klant, een omschrijving van de geleverde goederen of diensten, het bedrag exclusief btw, het btw-tarief en het btw-bedrag. Voor facturen tot en met 100 euro (inclusief btw) gelden minder eisen.</p>
         </div>
       </div>
 
-    </div>
-  </div>
-  </article>
-
-  <!-- ═══ END CTA ═══ -->
-  <section class="section-padding" style="background:var(--color-background-main);padding-top:4.5rem;padding-bottom:4.5rem;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center reveal">
-      <span class="section-label">Klaar om te starten?</span>
-      <h2 style="font-size:2rem;">Begin je onderneming met een boekhouding die klopt</h2>
-      <p class="mt-3 mb-8 text-lg" style="color:var(--color-text-medium);">Fortly verzorgt de complete boekhouding voor startende ZZP'ers vanaf €85 per maand. Vaste prijs, vaste contactpersoon en altijd antwoord binnen één werkdag, zodat jij vanaf dag één zorgeloos kunt ondernemen.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/aanmelden.html" class="btn btn-accent">Nu starten</a>
-        <a href="/#pakketten" class="btn" style="background:transparent;color:var(--color-accent-text);border-color:var(--color-accent-blue);border-radius:0.625rem;">Bekijk de pakketten</a>
-      </div>
     </div>
   </section>
+</article>
 
-  <!-- ═══ RELATED ═══ -->
-  <section class="section-padding" style="padding-top:4.5rem;padding-bottom:5rem;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <span class="section-label">Lees ook</span>
-        <h2 class="mb-10" style="font-size:1.9rem;">Meer over ondernemen &amp; belasting</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
-          <a href="/blog/wat-kost-een-boekhouder-zzp.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">Kosten &amp; Prijzen</span>
-              <h3 style="font-size:1.15rem;">Wat kost een boekhouder voor een ZZP'er in 2026?</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Uurtarief of vaste maandprijs? Zo weet je wat een eerlijke prijs is.</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-          <a href="/blog/btw-aangifte-zzp-gids.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">Btw &amp; Aangiften</span>
-              <h3 style="font-size:1.15rem;">Btw-aangifte voor ZZP'ers: de complete gids voor 2026</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Alles over je kwartaalaangifte, deadlines en veelgemaakte fouten.</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-          <a href="/blog/zelfstandigenaftrek-startersaftrek-2026.html" class="article-card">
-            <div class="p-6 flex flex-col flex-1">
-              <span class="tag mb-3" style="align-self:flex-start;">Belasting besparen</span>
-              <h3 style="font-size:1.15rem;">Zelfstandigenaftrek &amp; startersaftrek 2026</h3>
-              <p class="text-sm mt-2 flex-1" style="color:var(--color-text-medium);">Hoeveel belasting bespaar je écht met de ondernemersaftrek?</p>
-              <span class="mt-4 text-sm font-semibold" style="color:var(--color-accent-text);font-family:'Montserrat',sans-serif;">Lees verder →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer style="background:var(--color-primary-deep-dark);border-top:1px solid rgba(255,255,255,0.07);padding:5rem 0 3rem;" data-nosnippet>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="mb-8">
-        <a href="/" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;background:white;border-radius:4px;display:flex;align-items:center;justify-content:center;">
-            <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:16px;color:var(--color-primary-deep-dark);">F</span>
-          </div>
-          <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.1em;text-transform:uppercase;color:white;">Fortly</span>
+  <!-- ================= EIND-CTA ================= -->
+  <section id="contact" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:40rem;height:40rem;left:-16rem;top:-6rem;background:radial-gradient(circle,rgba(0,122,255,0.28),transparent 66%);opacity:0.2;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center fade">
+      <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Klaar om te starten?</p>
+      <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Begin je onderneming met een boekhouding die <span class="gradient-text">klopt</span></h2>
+      <p class="mt-5 text-slate-300 text-lg leading-relaxed">Fortly verzorgt de complete boekhouding voor startende ZZP&#39;ers vanaf &euro;85 per maand. Vaste prijs, vaste contactpersoon en altijd antwoord binnen &eacute;&eacute;n werkdag, zodat jij vanaf dag &eacute;&eacute;n zorgeloos kunt ondernemen.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center">
+        <a href="/aanmelden.html" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <a href="/#pakketten" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+          Bekijk de pakketten
         </a>
       </div>
-      <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 mb-10" aria-label="Footernavigatie">
-        <a href="/#voor-wie" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Voor wie</a>
-        <a href="/#diensten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Diensten</a>
-        <a href="/#pakketten" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Prijzen</a>
-        <a href="/over-ons.html" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Over ons</a>
-        <a href="/blog/" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Blog</a>
-        <a href="/#contact" class="font-body text-sm hover:text-blue-400 transition-colors" style="color:var(--color-text-muted-on-dark);">Contact</a>
-      </nav>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.5);">Joan Muyskenweg 82, 1114 AN Amsterdam · KvK 42002566 · contact@fortly.nl · +31 6 230 71 852</p>
-      <p class="font-body text-xs" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
-      <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.2);">
-        Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,0.25);text-decoration:none;">Indufort Consulting</a>
-      </p>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  <!-- ================= GERELATEERDE ARTIKELEN ================= -->
+  <section class="relative bg-ink py-20 overflow-hidden" aria-labelledby="lees-ook-heading">
+    <div class="glow" style="width:34rem;height:34rem;right:-14rem;top:2rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-violet">Lees ook</p>
+        <h2 id="lees-ook-heading" class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Meer over ondernemen &amp; belasting</h2>
+      </div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        <a href="/blog/wat-kost-een-boekhouder-zzp.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Kosten &amp; Prijzen</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Wat kost een boekhouder voor een ZZP&#39;er in 2026?</h3>
+          <p class="mt-2 text-slate-400 text-[15px] leading-relaxed flex-1">Uurtarief of vaste maandprijs? Zo weet je wat een eerlijke prijs is.</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/btw-aangifte-zzp-gids.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="1">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Btw &amp; Aangiften</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Btw-aangifte voor ZZP&#39;ers: de complete gids voor 2026</h3>
+          <p class="mt-2 text-slate-400 text-[15px] leading-relaxed flex-1">Alles over je kwartaalaangifte, deadlines en veelgemaakte fouten.</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/zelfstandigenaftrek-startersaftrek-2026.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="2">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Belasting besparen</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Zelfstandigenaftrek &amp; startersaftrek 2026</h3>
+          <p class="mt-2 text-slate-400 text-[15px] leading-relaxed flex-1">Hoeveel belasting bespaar je &eacute;cht met de ondernemersaftrek?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
+
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-400">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31613036183" class="hover:text-cyan transition-colors">+31 6 13036183</a></p>
+      <p class="text-xs text-slate-500">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-400 transition-colors">Indufort Consulting</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/fortly.js"></script>
 </body>
 </html>

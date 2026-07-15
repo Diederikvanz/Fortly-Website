@@ -13,270 +13,210 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.classList.add('js');</script>
+
   <title>Welkom bij Fortly — Bedankt!</title>
   <meta name="description" content="Bedankt dat je klant bent geworden bij Fortly. We nemen snel contact met je op." />
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://www.fortly.nl/bedankt.html" />
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
 
-  <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Open Sans', 'sans-serif'],
-            header: ['Montserrat', 'sans-serif'],
-          },
-          keyframes: {
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(25px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            scaleIn: {
-              '0%': { opacity: '0', transform: 'scale(0.8)' },
-              '100%': { opacity: '1', transform: 'scale(1)' },
-            },
-          },
-          animation: {
-            'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
-            'scale-in': 'scaleIn 0.5s ease-out forwards',
-          },
-        },
-      },
-    };
-  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --color-primary-dark: #1D1D1F;
-      --color-primary-deep-dark: #0A192F;
-      --color-accent-blue: #007AFF;
-      --color-text-medium: #58585b;
-      --color-text-on-dark: #F5F5F7;
-      --color-text-muted-on-dark: #A1A1A6;
-      --color-background-main: #F5F5F7;
-      --color-border-light: #D2D2D7;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--color-primary-dark);
-      -webkit-font-smoothing: antialiased;
-      background-color: var(--color-background-main);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
-
-    .btn {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      padding: 0.875rem 2rem;
-      border-radius: 9999px;
-      transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-      text-align: center;
-      font-size: 0.875rem;
-      cursor: pointer;
-      border: 2px solid transparent;
-      text-decoration: none;
-    }
-    .btn-accent {
-      background: var(--color-accent-blue);
-      color: white;
-      border-color: var(--color-accent-blue);
-      border-radius: 0.625rem;
-    }
-    .btn-accent:hover { background: #0069D9; transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0,122,255,0.25); }
-    .btn-outline {
-      background: transparent;
-      color: var(--color-accent-blue);
-      border-color: var(--color-accent-blue);
-      border-radius: 0.625rem;
-    }
-    .btn-outline:hover { background: rgba(0,122,255,0.06); transform: translateY(-2px); }
-
-    .section-label {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-accent-blue);
-      margin-bottom: 1rem;
-    }
-
-    .animate-fade-in-up { animation: fadeInUp 0.7s ease-out forwards; opacity: 0; }
-    .animate-scale-in   { animation: scaleIn  0.5s ease-out forwards; opacity: 0; }
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(25px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes scaleIn  { from { opacity:0; transform:scale(0.8);      } to { opacity:1; transform:scale(1);   } }
-
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.25s; }
-    .delay-3 { animation-delay: 0.4s; }
-    .delay-4 { animation-delay: 0.55s; }
-    .delay-5 { animation-delay: 0.7s; }
-
-    .step-card {
-      background: white;
-      border-radius: 1.25rem;
-      padding: 2rem;
-      border: 1px solid var(--color-border-light);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .step-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
+  <script src="/assets/fortly-theme.js"></script>
+  <link rel="stylesheet" href="/assets/fortly.css">
 </head>
-<body class="antialiased">
 
-  <!-- ══════════════════════════════════════════
-       HEADER
-  ══════════════════════════════════════════ -->
-  <header style="background:var(--color-primary-deep-dark);height:80px;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-      <a href="https://www.fortly.nl" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;">
-        <img src="fortly_logo_outlined.svg" alt="Fortly — Online boekhouder" width="130" height="130" style="width:130px;height:130px;display:block;" />
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+        </svg>
       </a>
-      <a href="https://www.fortly.nl#contact" class="btn btn-accent" style="padding:0.6rem 1.3rem;font-size:0.82rem;border-radius:8px;">
-        Gratis gesprek
-      </a>
+
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
     </div>
-  </header>
+    <a href="/aanmelden.html" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
 
-  <!-- ══════════════════════════════════════════
-       HERO — bedankt
-  ══════════════════════════════════════════ -->
-  <section class="relative overflow-hidden" style="background:var(--color-primary-deep-dark);padding:7rem 0 8rem;">
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,122,255,0.12) 0%, transparent 70%);"></div>
+<main id="hoofdinhoud">
+  <span id="top"></span>
 
-    <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
-      <div class="max-w-3xl mx-auto">
+  <!-- ================= HERO — bedankt ================= -->
+  <section class="relative overflow-hidden pt-[130px] pb-24 lg:pt-[160px] lg:pb-28">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg,#050B18 0%, #0A192F 55%, #0A192F 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 62% 58% at 50% 42%, rgba(0,122,255,0.18) 0%, transparent 68%);"></div>
+      <div class="glow" style="width:40rem;height:40rem;top:-16rem;left:-12rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.36;"></div>
+      <div class="glow" style="width:34rem;height:34rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.3;"></div>
+    </div>
 
-        <!-- Vinkje -->
-        <div class="animate-scale-in flex items-center justify-center mx-auto mb-8"
-             style="width:88px;height:88px;border-radius:50%;background:rgba(0,122,255,0.15);border:2px solid rgba(0,122,255,0.3);">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12"/>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- Vinkje -->
+      <div class="fade grid place-items-center mx-auto mb-8 w-[88px] h-[88px] rounded-full bg-cyan/10 border border-cyan/25 text-cyan">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <p class="fade font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan" data-delay="1">Welkom bij Fortly</p>
+
+      <h1 class="fade mt-3 font-display font-bold text-white leading-[1.07] tracking-tight text-[2.4rem] sm:text-5xl lg:text-6xl" data-delay="1">
+        Bedankt dat je <span class="gradient-text">klant bent!</span>
+      </h1>
+
+      <p class="fade mt-6 text-lg text-slate-300 leading-relaxed max-w-xl mx-auto" data-delay="2">
+        We zijn blij je aan boord te hebben. Je administratie is in goede handen, wij zorgen dat je nergens meer aan hoeft te denken.
+      </p>
+
+      <div class="fade mt-9 flex flex-col sm:flex-row gap-3.5 justify-center" data-delay="3">
+        <a href="/#contact" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Neem contact op
+        </a>
+        <a href="/" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+          Terug naar de website
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ONTZORGD ================= -->
+  <section class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:34rem;height:34rem;left:-14rem;top:2rem;background:radial-gradient(circle,rgba(34,211,238,0.28),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+      <div class="fade card-hover glass rounded-3xl px-8 py-14 sm:px-12 text-center">
+        <span class="grid place-items-center w-16 h-16 rounded-2xl bg-cyan/10 border border-cyan/20 text-cyan mx-auto mb-7">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
-        </div>
-
-        <p class="animate-fade-in-up delay-1 section-label text-blue-400">Welkom bij Fortly</p>
-        <h1 class="animate-fade-in-up delay-2 text-white mb-6"
-            style="font-size:clamp(2.4rem,5vw,3.75rem);">
-          Bedankt dat je klant bent!
-        </h1>
-        <p class="animate-fade-in-up delay-3 text-xl leading-relaxed max-w-xl mx-auto mb-10"
-           style="color:var(--color-text-muted-on-dark);font-weight:300;">
-          We zijn blij je aan boord te hebben. Je administratie is in goede handen —
-          wij zorgen dat je nergens meer aan hoeft te denken.
+        </span>
+        <h2 class="font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">
+          Je bent volledig ontzorgd
+        </h2>
+        <p class="mt-4 text-slate-300 text-lg leading-relaxed">
+          Vanaf nu zorgen wij voor je boekhouding, aangiftes en advies. Jij focust op je bedrijf, wij regelen de rest.
         </p>
-
-        <div class="animate-fade-in-up delay-4 flex flex-col sm:flex-row justify-center gap-4">
-          <a href="https://www.fortly.nl#contact" class="btn btn-accent">Neem contact op</a>
-          <a href="https://www.fortly.nl" class="btn btn-outline" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.3);background:transparent;">
-            Terug naar de website
-          </a>
-        </div>
-
+        <p class="mt-6 font-display font-semibold text-white text-lg">
+          Bedankt voor het vertrouwen.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       ONTZORGD
-  ══════════════════════════════════════════ -->
-  <section style="padding:6rem 0;background:var(--color-background-main);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mx-auto text-center">
-
-        <div class="step-card py-14 px-10">
-          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-7"
-               style="background:rgba(0,122,255,0.08);">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h2 class="font-header font-bold mb-4" style="font-size:1.75rem;color:var(--color-primary-dark);">
-            Je bent volledig ontzorgd
-          </h2>
-          <p class="text-lg leading-relaxed" style="color:var(--color-text-medium);">
-            Vanaf nu zorgen wij voor je boekhouding, aangiftes en advies.
-            Jij focust op je bedrijf — wij regelen de rest.
-            <br><br>
-            <span class="font-header font-semibold" style="color:var(--color-primary-dark);">Bedankt voor het vertrouwen.</span>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CONTACT STRIP
-  ══════════════════════════════════════════ -->
-  <section style="padding:4rem 0;background:white;border-top:1px solid var(--color-border-light);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+  <!-- ================= CONTACT STRIP ================= -->
+  <section id="contact" class="relative bg-ink border-t border-white/10 py-16 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;right:-14rem;top:-6rem;background:radial-gradient(circle,rgba(0,122,255,0.28),transparent 66%);opacity:0.18;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="fade flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         <div>
-          <h3 class="font-header font-bold text-xl mb-2" style="color:var(--color-primary-dark);">
+          <h2 class="font-display font-bold text-white text-xl tracking-tight">
             Vragen? We staan voor je klaar.
-          </h3>
-          <p class="text-sm" style="color:var(--color-text-medium);">
-            Bereikbaar op werkdagen van 9:00 – 17:30.
+          </h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Bereikbaar op werkdagen van 9:00 tot 17:30.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-5 text-sm flex-shrink-0">
-          <a href="mailto:contact@fortly.nl"
-             class="flex items-center gap-2 font-header font-semibold transition-colors hover:opacity-70"
-             style="color:var(--color-accent-blue);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="flex flex-col sm:flex-row gap-5 text-sm shrink-0">
+          <a href="mailto:contact@fortly.nl" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-cyan hover:text-white transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
             contact@fortly.nl
           </a>
-          <a href="tel:+31623071852"
-             class="flex items-center gap-2 font-header font-semibold transition-colors hover:opacity-70"
-             style="color:var(--color-accent-blue);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+          <a href="tel:+31613036183" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-cyan hover:text-white transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
-            +31 6 230 71 852
+            +31 6 13036183
           </a>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer style="background:var(--color-primary-deep-dark);padding:3rem 0;" data-nosnippet>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <a href="https://www.fortly.nl" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;margin-bottom:1.5rem;">
-        <div style="width:32px;height:32px;background:white;border-radius:4px;display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;color:var(--color-primary-deep-dark);">F</span>
-        </div>
-        <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;letter-spacing:0.1em;text-transform:uppercase;color:white;">Fortly</span>
-      </a>
-      <p class="font-body text-xs block" style="color:rgba(255,255,255,0.35);">© 2026 Fortly. Alle rechten voorbehouden.</p>
-      <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.2);">
-        Een onderdeel van <a href="https://indufort.nl" style="color:rgba(255,255,255,0.25);text-decoration:none;">Indufort Consulting</a>
-      </p>
+<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in Amsterdam" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
+
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-400">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31613036183" class="hover:text-cyan transition-colors">+31 6 13036183</a></p>
+      <p class="text-xs text-slate-500">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-400 transition-colors">Indufort Consulting</a></p>
     </div>
-  </footer>
+  </div>
+</footer>
 
+<script src="/assets/fortly.js"></script>
 </body>
 </html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fortly, online boekhouder voor ZZP en MKB in Amsterdam</title>
+<meta name="description" content="Fortly neemt je administratie volledig uit handen, tegen een vaste maandprijs, met een vaste persoonlijke boekhouder die meedenkt. Voor ZZP en MKB in Amsterdam en heel Nederland." />
+
+<!-- Mark that JS is active as early as possible so scroll-reveals only hide when they can be revealed again -->
+<script>document.documentElement.classList.add('js');</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          navy: '#0A192F',
+          ink: '#050B18',
+          accent: '#007AFF',
+          cyan: '#22D3EE',
+          violet: '#8B5CF6',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #050B18;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #E6EDF6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* ---------- Focus visibility ---------- */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* ---------- Typography safety: never let long words overflow ---------- */
+  h1, h2, h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  h1, h2 { text-wrap: balance; }
+  p { overflow-wrap: break-word; }
+
+  /* ---------- Scroll progress bar ---------- */
+  #scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, #007AFF, #22D3EE, #8B5CF6);
+    z-index: 60;
+    pointer-events: none;
+  }
+
+  /* ---------- Hero cursor spotlight (desktop, fine pointer only) ---------- */
+  .hero-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 40%), rgba(34,211,238,0.14), transparent 70%);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    #hero:hover .hero-spotlight { opacity: 1; }
+  }
+
+  /* ---------- Aurora / mesh background ---------- */
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.55;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  @keyframes drift-a {
+    0%,100% { transform: translate3d(0,0,0) scale(1); }
+    33%     { transform: translate3d(6%, 8%, 0) scale(1.12); }
+    66%     { transform: translate3d(-5%, 4%, 0) scale(0.94); }
+  }
+  @keyframes drift-b {
+    0%,100% { transform: translate3d(0,0,0) scale(1); }
+    50%     { transform: translate3d(-8%, -6%, 0) scale(1.15); }
+  }
+  @keyframes drift-c {
+    0%,100% { transform: translate3d(0,0,0) scale(1); }
+    50%     { transform: translate3d(7%, -7%, 0) scale(1.08); }
+  }
+
+  .aurora-a { animation: drift-a 20s ease-in-out infinite; }
+  .aurora-b { animation: drift-b 26s ease-in-out infinite; }
+  .aurora-c { animation: drift-c 23s ease-in-out infinite; }
+
+  /* ---------- Hero orb ---------- */
+  @keyframes orb-pulse {
+    0%,100% { transform: scale(1); opacity: 0.85; }
+    50%     { transform: scale(1.06); opacity: 1; }
+  }
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  .orb-core { animation: orb-pulse 8s ease-in-out infinite; }
+  .orb-ring { animation: spin-slow 32s linear infinite; }
+  .orb-ring-2 { animation: spin-slow 46s linear infinite reverse; }
+
+  /* ---------- Animated gradient text ---------- */
+  @keyframes text-sheen {
+    to { background-position: 200% center; }
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #7FB2FF 0%, #22D3EE 25%, #8B5CF6 50%, #22D3EE 75%, #7FB2FF 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: text-sheen 8s linear infinite;
+  }
+
+  /* ---------- Glass ---------- */
+  .glass {
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+  }
+  .glass-strong {
+    background: rgba(14, 27, 51, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  /* Hover glow for cards */
+  .card-glow {
+    position: relative;
+    transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), border-color 0.45s, box-shadow 0.45s;
+  }
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(34,211,238,0.0), rgba(139,92,246,0.0));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.45s;
+    pointer-events: none;
+  }
+  .card-glow:hover {
+    transform: translateY(-6px);
+    border-color: rgba(34,211,238,0.35);
+    box-shadow: 0 24px 60px -20px rgba(34,211,238,0.28), 0 12px 40px -24px rgba(139,92,246,0.35);
+  }
+  .card-glow:hover::before {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(34,211,238,0.6), rgba(139,92,246,0.6));
+  }
+
+  /* ---------- Scroll reveal ----------
+     Safe fallback: content is visible by default. The hidden start-state
+     only applies when JS is active (html.js), so a JS failure or disabled
+     JS never leaves anything permanently invisible. */
+  .reveal { opacity: 1; transform: none; }
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+    will-change: opacity, transform;
+  }
+  .js .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Fine grid overlay ---------- */
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 78%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 78%);
+  }
+
+  /* ---------- Marquee for trust bar ---------- */
+  .divider-glow {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34,211,238,0.5), rgba(139,92,246,0.5), transparent);
+  }
+
+  /* Popular badge shine */
+  @keyframes badge-shine {
+    to { background-position: 200% center; }
+  }
+  .badge-popular {
+    background: linear-gradient(90deg, #007AFF, #22D3EE, #8B5CF6, #007AFF);
+    background-size: 200% auto;
+    animation: badge-shine 5s linear infinite;
+  }
+
+  /* Nav link underline */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 100%; height: 1.5px;
+    background: linear-gradient(90deg, #22D3EE, #8B5CF6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body class="font-body antialiased selection:bg-cyan/30 selection:text-white">
+
+<!-- Scroll progress indicator -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ SKIP LINK ============ -->
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">
+  Direct naar inhoud
+</a>
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-3">
+    <nav id="navbar" class="glass-strong rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between transition-all duration-300" aria-label="Hoofdnavigatie">
+      <a href="#hero" class="flex items-center gap-2.5 shrink-0" aria-label="Fortly home">
+        <span class="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-accent via-cyan to-violet shadow-lg shadow-cyan/20">
+          <span class="w-3.5 h-3.5 rounded-md bg-ink/90"></span>
+        </span>
+        <span class="font-display text-xl font-bold tracking-tight text-white">Fortly</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-7 text-sm text-slate-300">
+        <li><a href="#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a></li>
+        <li><a href="#diensten" class="nav-link hover:text-white transition-colors">Diensten</a></li>
+        <li><a href="#pakketten" class="nav-link hover:text-white transition-colors">Pakketten</a></li>
+        <li><a href="#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a></li>
+        <li><a href="#contact" class="nav-link hover:text-white transition-colors">Contact</a></li>
+      </ul>
+
+      <a href="/aanmelden.html" class="shrink-0 inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet shadow-lg shadow-accent/25 hover:shadow-violet/35 hover:brightness-110 transition-all">
+        <span class="hidden sm:inline">Plan een gratis kennismaking</span>
+        <span class="sm:hidden">Kennismaken</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="hoofdinhoud">
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="relative min-h-[100svh] flex items-center overflow-hidden pt-28 pb-20">
+
+  <!-- Cursor spotlight (desktop only) -->
+  <div class="hero-spotlight" aria-hidden="true"></div>
+
+  <!-- Aurora background -->
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora aurora-a" style="width:46rem;height:46rem;top:-14rem;left:-10rem;background:radial-gradient(circle,#007AFF,transparent 65%);"></div>
+    <div class="aurora aurora-b" style="width:40rem;height:40rem;top:-6rem;right:-12rem;background:radial-gradient(circle,#8B5CF6,transparent 65%);"></div>
+    <div class="aurora aurora-c" style="width:36rem;height:36rem;bottom:-16rem;left:30%;background:radial-gradient(circle,#22D3EE,transparent 65%);opacity:0.4;"></div>
+  </div>
+  <div class="absolute inset-0 -z-10 grid-overlay" aria-hidden="true"></div>
+
+  <!-- Glowing orb behind title -->
+  <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10" aria-hidden="true">
+    <div class="relative w-[22rem] h-[22rem] sm:w-[32rem] sm:h-[32rem]">
+      <div class="orb-core absolute inset-8 rounded-full" style="background:radial-gradient(circle at 35% 30%, rgba(127,178,255,0.55), rgba(139,92,246,0.28) 45%, transparent 70%);filter:blur(30px);"></div>
+      <div class="orb-ring absolute inset-0 rounded-full border border-cyan/20"></div>
+      <div class="orb-ring-2 absolute inset-10 rounded-full border border-violet/20"></div>
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6 w-full">
+    <div class="max-w-3xl">
+
+      <div class="reveal inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs sm:text-sm text-slate-200 mb-7">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75 animate-ping"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan"></span>
+        </span>
+        Online boekhouder voor ZZP en MKB, onderdeel van Indufort Consulting
+      </div>
+
+      <h1 class="reveal font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white">
+        Je administratie
+        <span class="gradient-text block sm:inline">volledig uit handen.</span>
+      </h1>
+
+      <p class="reveal mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+        Een vaste maandprijs, zonder verrassingen, en een vaste persoonlijke boekhouder die met je meedenkt. Voor ZZP'ers en het MKB in Amsterdam en heel Nederland.
+      </p>
+
+      <div class="reveal mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="/aanmelden.html" class="group inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 text-base font-semibold text-white bg-gradient-to-r from-accent to-violet shadow-xl shadow-accent/25 hover:shadow-violet/40 hover:brightness-110 transition-all">
+          Plan een gratis kennismaking
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#pakketten" class="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 text-base font-semibold text-white glass hover:border-cyan/40 transition-all">
+          Bekijk de pakketten
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <ul class="reveal mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Vaste maandprijs, geen uurtarief</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Altijd dezelfde boekhouder</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Reactie binnen een werkdag</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Floating stat cards -->
+  <div class="hidden xl:block absolute right-8 top-1/3 reveal" aria-hidden="true">
+    <div class="glass rounded-2xl p-5 w-56 shadow-2xl shadow-black/40" style="animation: drift-c 14s ease-in-out infinite;">
+      <p class="text-xs text-slate-400">Reactietijd</p>
+      <p class="font-display text-3xl font-bold text-white mt-1">&lt; 1 <span class="text-base text-cyan">werkdag</span></p>
+      <div class="mt-3 h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-4/5 rounded-full bg-gradient-to-r from-cyan to-violet"></div></div>
+    </div>
+  </div>
+  <div class="hidden xl:block absolute right-24 bottom-24 reveal" aria-hidden="true">
+    <div class="glass rounded-2xl p-5 w-52 shadow-2xl shadow-black/40" style="animation: drift-b 17s ease-in-out infinite;">
+      <p class="text-xs text-slate-400">Vanaf</p>
+      <p class="font-display text-3xl font-bold text-white mt-1">85<span class="text-base text-slate-400"> euro p/m</span></p>
+      <p class="text-xs text-slate-400 mt-1">excl. btw, alles inbegrepen</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ STATS BAR ============ -->
+<section class="relative -mt-6 pb-4" aria-label="Kerncijfers">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="glass-strong rounded-2xl px-6 py-8 grid grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+      <div class="text-center">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-white"><span class="counter" data-target="1" data-suffix="">0</span> <span class="gradient-text">werkdag</span></p>
+        <p class="text-sm text-slate-400 mt-1">reactie, altijd</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-white"><span class="counter" data-target="5" data-suffix="">0</span></p>
+        <p class="text-sm text-slate-400 mt-1">diensten onder een dak</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-white">&euro;<span class="counter" data-target="0" data-suffix="">0</span></p>
+        <p class="text-sm text-slate-400 mt-1">verrassingen achteraf</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-3xl sm:text-4xl font-bold gradient-text">100<span class="text-white">%</span></p>
+        <p class="text-sm text-slate-400 mt-1">uit handen genomen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOOR WIE ============ -->
+<section id="voor-wie" class="relative py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora aurora-b" style="width:34rem;height:34rem;top:8rem;left:-14rem;background:radial-gradient(circle,#007AFF,transparent 68%);opacity:0.35;"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-widest text-cyan mb-3">Voor wie</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">Gemaakt voor jouw fase</h2>
+      <p class="mt-4 text-lg text-slate-300">Of je nu net begint of al jaren draait met personeel en een holding, wij sluiten aan op waar jij staat.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Starters -->
+      <article class="card-glow reveal glass rounded-2xl p-6">
+        <div class="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-accent/30 to-cyan/20 border border-cyan/25 mb-5">
+          <svg class="w-6 h-6 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v6m0 0 3-3m-3 3L9 5m3 15a8 8 0 0 0 8-8H4a8 8 0 0 0 8 8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white">Starters</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Je begint net en wilt het meteen goed doen. Wij leggen alles stap voor stap uit.</p>
+      </article>
+      <!-- ZZP -->
+      <article class="card-glow reveal glass rounded-2xl p-6">
+        <div class="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-cyan/30 to-violet/20 border border-cyan/25 mb-5">
+          <svg class="w-6 h-6 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 21a7 7 0 0 1 14 0" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white">ZZP'ers</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Focus op je vak, wij regelen de administratie en btw en houden overzicht.</p>
+      </article>
+      <!-- MKB & BV -->
+      <article class="card-glow reveal glass rounded-2xl p-6">
+        <div class="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-violet/30 to-accent/20 border border-violet/25 mb-5">
+          <svg class="w-6 h-6 text-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white">MKB &amp; BV</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Met personeel, holding of DGA. Wij regelen loon, VPB en de juiste structuur.</p>
+      </article>
+      <!-- Overstappers -->
+      <article class="card-glow reveal glass rounded-2xl p-6">
+        <div class="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-cyan/30 to-accent/20 border border-cyan/25 mb-5">
+          <svg class="w-6 h-6 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 4v6m0 0h-6m6 0-8-8M7 20v-6m0 0h6m-6 0 8 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white">Overstappers</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Weg bij een duur accountantskantoor. Wij nemen je bestaande administratie volledig over.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIENSTEN ============ -->
+<section id="diensten" class="relative py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora aurora-c" style="width:34rem;height:34rem;top:4rem;right:-14rem;background:radial-gradient(circle,#8B5CF6,transparent 68%);opacity:0.32;"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-widest text-violet mb-3">Diensten</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">Alles onder een dak</h2>
+      <p class="mt-4 text-lg text-slate-300">Van de dagelijkse boekhouding tot strategisch structuuradvies. Actieve controllers die proactief signaleren.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <article class="card-glow reveal glass rounded-2xl p-7">
+        <span class="font-display text-sm text-cyan/70">01</span>
+        <h3 class="font-display text-xl font-semibold text-white mt-3">Administratie &amp; btw</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Je complete boekhouding en btw-aangifte, netjes en op tijd verzorgd.</p>
+      </article>
+      <article class="card-glow reveal glass rounded-2xl p-7">
+        <span class="font-display text-sm text-cyan/70">02</span>
+        <h3 class="font-display text-xl font-semibold text-white mt-3">Jaarrekening &amp; aangifte</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Jaarrekening en aangifte inkomstenbelasting of vennootschapsbelasting, correct en volledig.</p>
+      </article>
+      <article class="card-glow reveal glass rounded-2xl p-7">
+        <span class="font-display text-sm text-cyan/70">03</span>
+        <h3 class="font-display text-xl font-semibold text-white mt-3">Loonadministratie &amp; DGA</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Loonadministratie voor je personeel en volledige DGA-support voor jou als eigenaar.</p>
+      </article>
+      <article class="card-glow reveal glass rounded-2xl p-7">
+        <span class="font-display text-sm text-cyan/70">04</span>
+        <h3 class="font-display text-xl font-semibold text-white mt-3">Holding- en structuuradvies</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">De juiste structuur voor jouw situatie, met een holding waar dat zinvol is.</p>
+      </article>
+      <article class="card-glow reveal glass rounded-2xl p-7">
+        <span class="font-display text-sm text-cyan/70">05</span>
+        <h3 class="font-display text-xl font-semibold text-white mt-3">Advies op maat</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Meedenken over groei en keuzes, met proactieve tips die je verder brengen.</p>
+      </article>
+      <article class="card-glow reveal rounded-2xl p-7 relative overflow-hidden" style="background:linear-gradient(135deg,rgba(0,122,255,0.14),rgba(139,92,246,0.14));border:1px solid rgba(34,211,238,0.25);">
+        <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-cyan/20 blur-2xl" aria-hidden="true"></div>
+        <h3 class="font-display text-xl font-semibold text-white">Alles in een vaste maandprijs</h3>
+        <p class="mt-2 text-sm text-slate-200 leading-relaxed">Geen uurtjes tellen, geen verrassingen. Kies je pakket en wij doen de rest.</p>
+        <a href="#pakketten" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan hover:gap-2.5 transition-all">Bekijk pakketten
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAKKETTEN ============ -->
+<section id="pakketten" class="relative py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora aurora-a" style="width:40rem;height:40rem;top:2rem;left:50%;transform:translateX(-50%);background:radial-gradient(circle,#007AFF,transparent 66%);opacity:0.3;"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <p class="text-sm font-semibold uppercase tracking-widest text-cyan mb-3">Pakketten</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">Een vaste prijs, alles inbegrepen</h2>
+      <p class="mt-4 text-lg text-slate-300">Prijzen per maand, exclusief btw. Geen uurtarief, geen verrassingen.</p>
+    </div>
+
+    <div class="mt-16 grid gap-6 lg:grid-cols-3 lg:items-center">
+
+      <!-- Instap -->
+      <article class="card-glow reveal glass rounded-3xl p-8 flex flex-col">
+        <h3 class="font-display text-lg font-semibold text-white">Instap</h3>
+        <p class="mt-1 text-sm text-slate-400">Voor eenmanszaken</p>
+        <div class="mt-6 flex items-end gap-1">
+          <span class="font-display text-5xl font-bold text-white">&euro;85</span>
+          <span class="text-slate-400 mb-1.5">/mnd</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">excl. btw</p>
+        <ul class="mt-7 space-y-3 text-sm text-slate-300 flex-1">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Voor eenmanszaken</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tot 200 boekingen</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Administratie &amp; btw</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Vaste persoonlijke boekhouder</li>
+        </ul>
+        <a href="/aanmelden.html" class="mt-8 inline-flex items-center justify-center rounded-xl px-5 py-3.5 text-sm font-semibold text-white glass hover:border-cyan/40 transition-all">Plan een gratis kennismaking</a>
+      </article>
+
+      <!-- Groei (popular) -->
+      <article class="card-glow reveal relative rounded-3xl p-8 flex flex-col lg:scale-105 lg:-my-2" style="background:linear-gradient(180deg,rgba(20,34,64,0.75),rgba(10,20,40,0.6));border:1px solid rgba(34,211,238,0.35);box-shadow:0 30px 80px -30px rgba(34,211,238,0.35);">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="badge-popular text-ink text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-lg">Meest gekozen</span>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mt-2">Groei</h3>
+        <p class="mt-1 text-sm text-slate-300">ZZP en groeiende eenmanszaken</p>
+        <div class="mt-6 flex items-end gap-1">
+          <span class="font-display text-5xl font-bold gradient-text">&euro;145</span>
+          <span class="text-slate-400 mb-1.5">/mnd</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">excl. btw</p>
+        <ul class="mt-7 space-y-3 text-sm text-slate-200 flex-1">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Voor ZZP en groeiende eenmanszaken</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tot 500 boekingen</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Administratie, btw &amp; jaarrekening</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Proactief advies van je controller</li>
+        </ul>
+        <a href="/aanmelden.html" class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet shadow-lg shadow-accent/25 hover:brightness-110 transition-all">
+          Plan een gratis kennismaking
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <!-- MKB & BV / DGA -->
+      <article class="card-glow reveal glass rounded-3xl p-8 flex flex-col">
+        <h3 class="font-display text-lg font-semibold text-white">MKB &amp; BV / DGA</h3>
+        <p class="mt-1 text-sm text-slate-400">BV's, DGA's en MKB met personeel</p>
+        <div class="mt-6 flex items-end gap-1">
+          <span class="font-display text-5xl font-bold text-white">&euro;200</span>
+          <span class="text-slate-400 mb-1.5">/mnd</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">excl. btw</p>
+        <ul class="mt-7 space-y-3 text-sm text-slate-300 flex-1">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-violet shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>BV's, DGA's, MKB met personeel</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-violet shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Onbeperkte boekingen</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-violet shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>VPB &amp; jaarrekening</li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-violet shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Loonadministratie inbegrepen</li>
+        </ul>
+        <a href="/aanmelden.html" class="mt-8 inline-flex items-center justify-center rounded-xl px-5 py-3.5 text-sm font-semibold text-white glass hover:border-violet/40 transition-all">Plan een gratis kennismaking</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WERKWIJZE ============ -->
+<section id="werkwijze" class="relative py-24 sm:py-32 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-widest text-violet mb-3">Werkwijze</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">In vier stappen zorgeloos</h2>
+      <p class="mt-4 text-lg text-slate-300">Van kennismaking tot samen groeien, wij regelen de overdracht en het contact met de Belastingdienst.</p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative">
+      <!-- connecting line -->
+      <div class="hidden lg:block absolute top-8 left-[12%] right-[12%] divider-glow" aria-hidden="true"></div>
+
+      <div class="card-glow reveal glass rounded-2xl p-6 relative">
+        <div class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-cyan font-display text-xl font-bold text-white shadow-lg shadow-accent/30 mb-5">1</div>
+        <h3 class="font-display text-lg font-semibold text-white">Gratis kennismaking</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Een vrijblijvend gesprek van 20 minuten om je situatie te leren kennen.</p>
+      </div>
+      <div class="card-glow reveal glass rounded-2xl p-6 relative">
+        <div class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan to-violet font-display text-xl font-bold text-white shadow-lg shadow-cyan/30 mb-5">2</div>
+        <h3 class="font-display text-lg font-semibold text-white">Helder voorstel</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Een duidelijk voorstel met een vaste maandprijs, zonder kleine lettertjes.</p>
+      </div>
+      <div class="card-glow reveal glass rounded-2xl p-6 relative">
+        <div class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-violet to-accent font-display text-xl font-bold text-white shadow-lg shadow-violet/30 mb-5">3</div>
+        <h3 class="font-display text-lg font-semibold text-white">Opstart &amp; overdracht</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Wij nemen je administratie over en regelen alles met de Belastingdienst.</p>
+      </div>
+      <div class="card-glow reveal glass rounded-2xl p-6 relative">
+        <div class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent via-cyan to-violet font-display text-xl font-bold text-white shadow-lg shadow-accent/30 mb-5">4</div>
+        <h3 class="font-display text-lg font-semibold text-white">Samen groeien</h3>
+        <p class="mt-2 text-sm text-slate-300 leading-relaxed">Doorlopend proactief advies zodat je bedrijf gezond blijft groeien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="relative py-24 sm:py-32 overflow-hidden" aria-label="Ervaringen van klanten">
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora aurora-c" style="width:36rem;height:36rem;bottom:-10rem;right:-12rem;background:radial-gradient(circle,#8B5CF6,transparent 66%);opacity:0.3;"></div>
+    <div class="aurora aurora-a" style="width:32rem;height:32rem;top:-8rem;left:-12rem;background:radial-gradient(circle,#22D3EE,transparent 66%);opacity:0.25;"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-widest text-cyan mb-3">Ervaringen</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">Persoonlijk, altijd bereikbaar</h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+      <figure class="card-glow reveal glass rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-cyan mb-4" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote class="text-slate-200 leading-relaxed flex-1">"Eindelijk een boekhouder die gewoon opneemt als ik bel."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=96&q=80" alt="" width="44" height="44" loading="lazy" class="w-11 h-11 rounded-full object-cover border border-white/15" />
+          <span><span class="block text-sm font-semibold text-white">Lisa van den Berg</span><span class="block text-xs text-slate-400">Freelance designer</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="card-glow reveal glass rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-cyan mb-4" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote class="text-slate-200 leading-relaxed flex-1">"Als starter wist ik niet wat ik nodig had; ze legden alles stap voor stap uit."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80" alt="" width="44" height="44" loading="lazy" class="w-11 h-11 rounded-full object-cover border border-white/15" />
+          <span><span class="block text-sm font-semibold text-white">Tom Jacobs</span><span class="block text-xs text-slate-400">IT-consultant</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="card-glow reveal glass rounded-2xl p-7 flex flex-col">
+        <div class="flex gap-1 text-cyan mb-4" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote class="text-slate-200 leading-relaxed flex-1">"Ik heb echt het gevoel dat iemand meedenkt; de proactieve tips zijn goud waard."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=96&q=80" alt="" width="44" height="44" loading="lazy" class="w-11 h-11 rounded-full object-cover border border-white/15" />
+          <span><span class="block text-sm font-semibold text-white">Marieke de Vries</span><span class="block text-xs text-slate-400">Marketingconsultant</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACT ============ -->
+<section id="contact" class="relative py-24 sm:py-32 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="relative reveal rounded-3xl overflow-hidden glass-strong p-8 sm:p-14">
+      <!-- glow -->
+      <div class="absolute inset-0 -z-10" aria-hidden="true">
+        <div class="aurora aurora-b" style="width:34rem;height:34rem;top:-10rem;left:-6rem;background:radial-gradient(circle,#007AFF,transparent 66%);opacity:0.45;"></div>
+        <div class="aurora aurora-c" style="width:30rem;height:30rem;bottom:-12rem;right:-6rem;background:radial-gradient(circle,#8B5CF6,transparent 66%);opacity:0.45;"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">Klaar om je administratie <span class="gradient-text">uit handen</span> te geven?</h2>
+          <p class="mt-5 text-lg text-slate-300 leading-relaxed">Plan een gratis kennismaking van 20 minuten. Je hoort binnen een werkdag van ons, gegarandeerd door je vaste boekhouder, geen callcenter.</p>
+          <div class="mt-8">
+            <a href="/aanmelden.html" class="group inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 text-base font-semibold text-white bg-gradient-to-r from-accent to-violet shadow-xl shadow-accent/25 hover:shadow-violet/40 hover:brightness-110 transition-all">
+              Plan een gratis kennismaking
+              <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-6 sm:p-7 space-y-5">
+          <a href="mailto:contact@fortly.nl" class="flex items-center gap-4 group">
+            <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-accent/30 to-cyan/20 border border-cyan/25 shrink-0">
+              <svg class="w-5 h-5 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16v12H4z M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><span class="block text-xs text-slate-400">E-mail</span><span class="block text-white font-medium group-hover:text-cyan transition-colors break-all">contact@fortly.nl</span></span>
+          </a>
+          <a href="tel:+31623071852" class="flex items-center gap-4 group">
+            <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-cyan/30 to-violet/20 border border-cyan/25 shrink-0">
+              <svg class="w-5 h-5 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><span class="block text-xs text-slate-400">Telefoon</span><span class="block text-white font-medium group-hover:text-cyan transition-colors">+31 6 230 71 852</span></span>
+          </a>
+          <div class="flex items-center gap-4">
+            <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-violet/30 to-accent/20 border border-violet/25 shrink-0">
+              <svg class="w-5 h-5 text-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><span class="block text-xs text-slate-400">Adres</span><span class="block text-white font-medium">Joan Muyskenweg 82, 1114 AN Amsterdam</span></span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-cyan/30 to-accent/20 border border-cyan/25 shrink-0">
+              <svg class="w-5 h-5 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><span class="block text-xs text-slate-400">Bereikbaar</span><span class="block text-white font-medium">Werkdagen 9:00 tot 17:30</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="relative border-t border-white/10 pt-16 pb-10 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="#hero" class="flex items-center gap-2.5 w-fit" aria-label="Fortly home">
+          <span class="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-accent via-cyan to-violet">
+            <span class="w-3.5 h-3.5 rounded-md bg-ink/90"></span>
+          </span>
+          <span class="font-display text-xl font-bold tracking-tight text-white">Fortly</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-400 max-w-sm leading-relaxed">Online boekhouder en administratiekantoor voor ZZP'ers en het MKB in Amsterdam en heel Nederland. Onderdeel van Indufort Consulting.</p>
+      </div>
+
+      <nav aria-label="Footer navigatie">
+        <p class="text-sm font-semibold text-white mb-4">Ontdek</p>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a></li>
+          <li><a href="#diensten" class="hover:text-cyan transition-colors">Diensten</a></li>
+          <li><a href="#pakketten" class="hover:text-cyan transition-colors">Pakketten</a></li>
+          <li><a href="#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Contact</p>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors break-all">contact@fortly.nl</a></li>
+          <li><a href="tel:+31623071852" class="hover:text-cyan transition-colors">+31 6 230 71 852</a></li>
+          <li>Joan Muyskenweg 82<br>1114 AN Amsterdam</li>
+          <li>Werkdagen 9:00 tot 17:30</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-400">&copy; 2026 Fortly, onderdeel van Indufort Consulting. Alle rechten voorbehouden.</p>
+      <a href="/aanmelden.html" class="text-xs font-semibold text-cyan hover:text-white transition-colors">Plan een gratis kennismaking</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Scroll reveal ----------
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    reveals.forEach(function (el, i) {
+      el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms';
+      io.observe(el);
+    });
+  })();
+
+  // ---------- Counters ----------
+  (function () {
+    var counters = document.querySelectorAll('.counter');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function run(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduce || target === 0) { el.textContent = target + suffix; return; }
+      var start = 0, dur = 1100, t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if (!('IntersectionObserver' in window)) { counters.forEach(run); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { io.observe(c); });
+  })();
+
+  // ---------- Navbar shrink on scroll ----------
+  (function () {
+    var nav = document.getElementById('navbar');
+    var ticking = false;
+    function update() {
+      if (window.scrollY > 20) {
+        nav.classList.add('shadow-2xl', 'shadow-black/40');
+        nav.style.paddingTop = '0.5rem';
+        nav.style.paddingBottom = '0.5rem';
+      } else {
+        nav.classList.remove('shadow-2xl', 'shadow-black/40');
+        nav.style.paddingTop = '';
+        nav.style.paddingBottom = '';
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+  })();
+
+  // ---------- Subtle parallax on aurora ----------
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var blobs = document.querySelectorAll('#hero .aurora');
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          blobs.forEach(function (b, i) {
+            var speed = (i + 1) * 0.04;
+            b.style.marginTop = (y * speed) + 'px';
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>
