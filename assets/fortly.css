@@ -8,7 +8,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
 html, body { max-width: 100%; overflow-x: hidden; }
 body {
-  background-color: #050B18;
+  background-color: #0C1524;
   font-family: 'Inter', system-ui, sans-serif;
   color: #E6EDF6;
   -webkit-font-smoothing: antialiased;
@@ -51,12 +51,12 @@ a:focus-visible, button:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 .glass-strong {
-  background: rgba(14, 27, 51, 0.55);
+  background: rgba(22, 38, 62, 0.55);
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.09);
 }
 .glass-nav {
-  background: rgba(5, 11, 24, 0.75);
+  background: rgba(12, 21, 36, 0.75);
   backdrop-filter: saturate(150%) blur(14px);
   -webkit-backdrop-filter: saturate(150%) blur(14px);
 }
@@ -147,4 +147,35 @@ a:focus-visible, button:focus-visible {
   }
   /* cellen zonder label (bv. een lege kolom) tonen alleen de waarde */
   table.table-stack td[data-label=""]::before { content: none; }
+}
+
+/* ============================================================
+   FAQ-accordeon. Native <details>, dus toetsenbord-toegankelijk
+   en zonder JS. De antwoorden blijven in de HTML staan, zodat het
+   FAQPage-schema geldig blijft (Google staat uitklapbare FAQ toe).
+   ============================================================ */
+.faq-item > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.5rem 2.75rem 1.5rem 0;
+  position: relative;
+  transition: color .2s ease;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::after {
+  content: "";
+  position: absolute;
+  right: 0.5rem; top: 50%;
+  width: 9px; height: 9px;
+  border-right: 2px solid #22D3EE;
+  border-bottom: 2px solid #22D3EE;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .25s ease;
+}
+.faq-item[open] > summary::after { transform: translateY(-25%) rotate(-135deg); }
+.faq-item > summary:hover { color: #22D3EE; }
+.faq-item > .faq-answer { padding-bottom: 1.5rem; }
+.faq-item > .faq-answer > p:first-child { margin-top: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-item > summary::after { transition: none; }
 }

@@ -9,8 +9,8 @@ module.exports = {
         serif: ['Fraunces', 'Georgia', 'serif'],
       },
       colors: {
-        navy: '#0A192F',
-        ink: '#050B18',
+        navy: '#14243A',
+        ink: '#0C1524',
         accent: '#007AFF',
         cyan: '#22D3EE',
         violet: '#8B5CF6',
