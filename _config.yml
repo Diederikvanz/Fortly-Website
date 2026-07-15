@@ -1,0 +1,13 @@
+# GitHub Pages draait Jekyll over deze repo. Dit bestand doet één ding:
+# build- en ontwikkelbestanden buiten de gepubliceerde site houden.
+# De site zelf is gewone statische HTML; er wordt niets door Jekyll gerenderd.
+#
+# Let op: `exclude` vervangt Jekylls standaardlijst, dus node_modules staat er
+# expliciet bij. Mappen die met _ beginnen (zoals _partials) sluit Jekyll al uit.
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - assets/tailwind.src.css
+  - redesign
