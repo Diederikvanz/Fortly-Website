@@ -1,6 +1,6 @@
 # Fortly
 
-> Fortly is een online boekhouder en administratiekantoor voor ZZP'ers, het MKB, starters, eenmanszaken en BV's in Amsterdam en heel Nederland. Fortly bedient zowel zelfstandigen als klein MKB met personeel, een BV of een holdingstructuur. Vaste maandprijzen vanaf €85 (excl. btw), een vaste persoonlijke aanspreekpersoon en actieve controllers die meedenken. Onderdeel van Indufort Consulting.
+> Fortly is een online boekhouder en administratiekantoor voor ZZP'ers, het MKB, starters, eenmanszaken en BV's in heel Nederland. Fortly bedient zowel zelfstandigen als klein MKB met personeel, een BV of een holdingstructuur. Vaste maandprijzen vanaf €85 (excl. btw), een vaste persoonlijke aanspreekpersoon en actieve controllers die meedenken. Onderdeel van Indufort Consulting.
 
 Fortly onderscheidt zich met: transparante vaste prijzen (geen uurtarieven of verrassingen), persoonlijk contact (geen callcenter, altijd dezelfde boekhouder), reactie binnen één werkdag, en volledige overname van bestaande administratie bij overstappen van je huidige boekhouder of accountant.
 
@@ -24,7 +24,7 @@ Voor het MKB verzorgt Fortly onder meer loonadministratie voor personeel (loonst
 
 - [Home](https://www.fortly.nl/): Overzicht van Fortly, diensten, pakketten en werkwijze.
 - [Over ons](https://www.fortly.nl/over-ons.html): Wie Fortly is, waar het kantoor zit (Amsterdam) en het KvK-nummer.
-- [Boekhouder voor het MKB](https://www.fortly.nl/boekhouder-mkb.html): Boekhouder en administratiekantoor voor het MKB in Amsterdam. Loonadministratie voor personeel, VPB, jaarrekening, DGA-salaris, holdingstructuur en overstappen van je accountant.
+- [Boekhouder voor het MKB](https://www.fortly.nl/boekhouder-mkb.html): Boekhouder en administratiekantoor voor het MKB in heel Nederland. Loonadministratie voor personeel, VPB, jaarrekening, DGA-salaris, holdingstructuur en overstappen van je accountant.
 - [Aanmelden / gratis kennismaking](https://www.fortly.nl/aanmelden.html): Vrijblijvend kennismakingsgesprek van 20 minuten aanvragen.
 - [Blog](https://www.fortly.nl/blog/): Alle artikelen over boekhouding, btw, belasting besparen en ondernemen.
 
