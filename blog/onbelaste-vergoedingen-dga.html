@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="nl" dir="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Verberg de fade-content alleen als we 'm ook weer kunnen tonen.
+    // Laadt assets/fortly.js niet, dan halen we 'js' terug weg en is alles gewoon zichtbaar.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__fortlyFade) document.documentElement.classList.remove('js');
+    }, 2500);
+  </script>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XT407991C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1XT407991C');
+    gtag('config', 'AW-18076485002');
+  </script>
+
+  <title>Onbelaste vergoedingen DGA: wat kan echt? | Fortly</title>
+  <link rel="canonical" href="https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html" />
+  <meta name="description" content="Wat kun je als DGA echt onbelast uit je BV halen? Een eerlijk overzicht van gerichte vrijstellingen, de vrije ruimte (WKR 2026) en de valkuilen." />
+  <meta name="keywords" content="onbelaste vergoedingen DGA, werkkostenregeling 2026, vrije ruimte WKR, gerichte vrijstellingen, geld uit je BV halen, gebruikelijk loon, box 2" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Fortly, onderdeel van Indufort Consulting" />
+  <meta name="geo.region" content="NL-NH" />
+  <meta name="geo.placename" content="Amsterdam" />
+  <link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html" />
+  <meta property="og:site_name" content="Fortly" />
+  <meta property="og:title" content="Wat kun je als DGA onbelast uit je BV halen?" />
+  <meta property="og:description" content="De lijst is korter dan je hoopt. Een nuchtere inventarisatie van wat echt onbelast kan, wat er alleen zo uitziet, en de administratie die je nodig hebt." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
+  <meta property="og:image:alt" content="DGA bekijkt de cijfers van de eigen BV op kantoor" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="article:published_time" content="2026-07-29" />
+  <meta property="article:modified_time" content="2026-07-29" />
+  <meta property="article:author" content="Fortly" />
+  <meta property="article:section" content="DGA &amp; Belasting" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wat kun je als DGA onbelast uit je BV halen?" />
+  <meta name="twitter:description" content="Een eerlijk overzicht van gerichte vrijstellingen, de vrije ruimte van de WKR 2026 en de routes die er alleen maar onbelast uitzien." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg" />
+
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+
+  <link rel="stylesheet" href="/assets/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/assets/fortly.css">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html#article",
+    "headline": "Wat kun je als DGA onbelast uit je BV halen?",
+    "description": "Een eerlijk overzicht van wat een DGA in 2026 onbelast uit de eigen BV kan halen: gerichte vrijstellingen, nihilwaarderingen, de vrije ruimte van de werkkostenregeling en de routes die er alleen maar onbelast uitzien.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&fit=crop&w=1200&q=70&fm=jpg",
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
+    "inLanguage": "nl-NL",
+    "articleSection": "DGA & Belasting",
+    "keywords": "onbelaste vergoedingen DGA, werkkostenregeling 2026, vrije ruimte WKR, gerichte vrijstellingen, geld uit je BV halen, gebruikelijk loon, box 2",
+    "wordCount": 1300,
+    "author": {
+      "@type": "Organization",
+      "name": "Fortly",
+      "url": "https://www.fortly.nl/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fortly",
+      "logo": {"@type": "ImageObject", "url": "https://www.fortly.nl/fortly_logo_kort.png"}
+    },
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html"},
+    "isPartOf": {"@id": "https://www.fortly.nl/#website"},
+    "about": [
+      {"@type": "Thing", "name": "Onbelaste vergoedingen DGA"},
+      {"@type": "Thing", "name": "Werkkostenregeling"},
+      {"@type": "Thing", "name": "Vrije ruimte"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fortly.nl/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.fortly.nl/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Wat kun je als DGA onbelast uit je BV halen?", "item": "https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoeveel kan een DGA onbelast uit de BV halen?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Minder dan de meeste ondernemers hopen. Bijna alle onbelaste vergoedingen zijn een terugbetaling van kosten die je feitelijk maakt, zoals zakelijke kilometers, thuiswerk, opleidingen en werkmiddelen. Het enige echt vrij besteedbare bedrag is de vrije ruimte van de werkkostenregeling. Bij een fiscale loonsom van 48.333 euro komt die in 2026 uit op ongeveer 967 euro per jaar. Grote bedragen komen alleen via loon of dividend uit de BV."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wat is de vrije ruimte van de werkkostenregeling in 2026?",
+        "acceptedAnswer": {"@type": "Answer", "text": "In 2026 is de vrije ruimte 2,00% van de fiscale loonsom tot en met 400.000 euro en 1,18% over het meerdere. Uit die ruimte mag je onbelast vergoedingen geven zonder zakelijk doel of bonnetje. Overschrijd je de vrije ruimte, dan betaalt de BV 80% eindheffing over het meerdere. Per 2027 staat een verhoging van het eerste percentage naar 2,16% gepland."}
+      },
+      {
+        "@type": "Question",
+        "name": "Is de onbelaste kilometervergoeding in 2026 nog 0,23 euro?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Nee. De onbelaste kilometervergoeding is voor 2026 verhoogd naar 0,25 euro per kilometer. Het kabinet voerde die verhoging in met terugwerkende kracht tot 1 januari 2026. De vergoeding geldt voor zakelijke kilometers en woon-werkverkeer en is een gerichte vrijstelling, dus onbelast voor jou en aftrekbaar voor de BV."}
+      },
+      {
+        "@type": "Question",
+        "name": "Mag je thuiswerkvergoeding en reiskostenvergoeding op dezelfde dag geven?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Nee. Voor dezelfde dag kies je tussen de thuiswerkvergoeding van 2,45 euro of de reiskostenvergoeding voor woon-werkverkeer. Je kunt ze niet allebei voor dezelfde dag onbelast uitbetalen. Werk je een deel van de dag thuis en reis je een deel, dan geldt het een of het ander, niet allebei."}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-body antialiased">
+
+<a href="#hoofdinhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-cyan focus:text-ink focus:font-semibold">Direct naar inhoud</a>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-[72px]" aria-label="Hoofdnavigatie">
+      <a href="/" class="flex items-center shrink-0" aria-label="Fortly, online boekhouder voor ZZP en MKB in heel Nederland">
+        <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in heel Nederland" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+          <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+          <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+          <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+          <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+        </svg>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-7 text-[15px] text-slate-300">
+        <a href="/#voor-wie" class="nav-link hover:text-white transition-colors">Voor wie</a>
+        <a href="/#diensten" class="nav-link hover:text-white transition-colors">Diensten</a>
+        <a href="/boekhouder-mkb.html" class="nav-link hover:text-white transition-colors">MKB</a>
+        <a href="/#pakketten" class="nav-link hover:text-white transition-colors">Prijzen</a>
+        <a href="/#werkwijze" class="nav-link hover:text-white transition-colors">Werkwijze</a>
+        <a href="/blog/" class="nav-link hover:text-white transition-colors">Blog</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/aanmelden.html" class="hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start nu
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-white/15 text-white" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div id="mobileMenu" class="hidden-menu lg:hidden absolute inset-x-0 top-[72px] glass-nav border-b border-white/10 px-5 py-6">
+    <div class="flex flex-col gap-1 font-display font-semibold text-white text-lg">
+      <a href="/#voor-wie" class="py-2.5 border-b border-white/10">Voor wie</a>
+      <a href="/#diensten" class="py-2.5 border-b border-white/10">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="py-2.5 border-b border-white/10">MKB</a>
+      <a href="/#pakketten" class="py-2.5 border-b border-white/10">Prijzen</a>
+      <a href="/#werkwijze" class="py-2.5 border-b border-white/10">Werkwijze</a>
+      <a href="/blog/" class="py-2.5 border-b border-white/10">Blog</a>
+      <a href="/#contact" class="py-2.5">Contact</a>
+    </div>
+    <a href="/aanmelden.html" class="mt-5 inline-flex w-full justify-center items-center rounded-full px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet">Start nu</a>
+  </div>
+</header>
+
+<main id="hoofdinhoud">
+<article>
+
+  <!-- ================= ARTIKEL-HERO ================= -->
+  <section class="relative overflow-hidden pt-[120px] pb-14 lg:pt-[140px] lg:pb-16">
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, #070F1E 0%, #14243A 100%);"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 70% at 60% 40%, rgba(0,122,255,0.16) 0%, transparent 65%);"></div>
+      <div class="glow" style="width:36rem;height:36rem;top:-14rem;left:-10rem;background:radial-gradient(circle,rgba(0,122,255,0.45),transparent 62%);opacity:0.35;"></div>
+      <div class="glow" style="width:32rem;height:32rem;top:-8rem;right:-12rem;background:radial-gradient(circle,rgba(139,92,246,0.4),transparent 64%);opacity:0.28;"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 fade">
+      <!-- Breadcrumb -->
+      <nav aria-label="Kruimelpad">
+        <ol class="flex flex-wrap items-center gap-2 font-display text-xs text-slate-300">
+          <li><a href="/" class="hover:text-cyan transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li><a href="/blog/" class="hover:text-cyan transition-colors">Blog</a></li>
+          <li aria-hidden="true" class="text-slate-600">&rsaquo;</li>
+          <li class="text-cyan">DGA &amp; Belasting</li>
+        </ol>
+      </nav>
+
+      <span class="mt-6 inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">DGA &amp; Belasting</span>
+
+      <h1 class="mt-5 font-display font-bold text-white leading-[1.1] tracking-tight text-[2.1rem] sm:text-4xl lg:text-5xl">
+        Wat kun je als DGA onbelast uit je BV halen?
+      </h1>
+
+      <p class="mt-5 text-lg text-slate-300 leading-relaxed">
+        De lijst is korter dan de meeste ondernemers hopen. Bijna alles wat &quot;belastingvrij&quot; heet, is een vergoeding van kosten die je feitelijk maakt. We zetten nuchter op een rij wat echt onbelast kan, wat er alleen zo uitziet, en wat je nodig hebt om het zonder gedoe toe te passen.
+      </p>
+
+      <div class="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-300">
+        <span>Door <strong class="font-semibold text-white">Team Fortly</strong></span>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
+        <time datetime="2026-07-29">29 juli 2026</time>
+        <span aria-hidden="true" class="text-slate-600">&bull;</span>
+        <span>7 min leestijd</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTIKEL-BODY ================= -->
+  <section class="relative bg-ink py-16 overflow-hidden">
+    <div class="glow" style="width:36rem;height:36rem;right:-16rem;top:8rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Inhoudsopgave -->
+      <nav class="fade glass rounded-2xl p-6 sm:p-7" aria-label="Inhoudsopgave">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">In dit artikel</p>
+        <ul class="mt-4 space-y-2.5 text-[15px] text-slate-300">
+          <li><a href="#gerichte-vrijstellingen" class="hover:text-cyan transition-colors">Gerichte vrijstellingen: onbelast, maar wel echte kosten</a></li>
+          <li><a href="#nihilwaarderingen" class="hover:text-cyan transition-colors">Nihilwaarderingen en de valkuil van de thuiswerkplek</a></li>
+          <li><a href="#vrije-ruimte" class="hover:text-cyan transition-colors">De vrije ruimte: het enige echt vrije geld</a></li>
+          <li><a href="#al-van-jou" class="hover:text-cyan transition-colors">Geld dat al van jou is</a></li>
+          <li><a href="#lijkt-onbelast" class="hover:text-cyan transition-colors">Wat er alleen maar uitziet als onbelast</a></li>
+          <li><a href="#rekenvoorbeeld" class="hover:text-cyan transition-colors">Een rekenvoorbeeld bij een loonsom van 48.000 euro</a></li>
+          <li><a href="#onderbouwing" class="hover:text-cyan transition-colors">Onderbouwing: alles moet aantoonbaar zijn</a></li>
+          <li><a href="#veelgestelde-vragen" class="hover:text-cyan transition-colors">Veelgestelde vragen</a></li>
+        </ul>
+      </nav>
+
+      <!-- Kort antwoord -->
+      <div class="fade mt-10 rounded-2xl border border-cyan/20 border-l-2 border-l-cyan bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Kort antwoord</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Echt onbelast geld uit je BV halen kan maar beperkt. De meeste onbelaste vergoedingen zijn een terugbetaling van kosten die je feitelijk maakt, zoals kilometers, thuiswerk, opleidingen en werkmiddelen. Het enige vrij besteedbare bedrag is de vrije ruimte van de werkkostenregeling, in 2026 ongeveer &euro;967 bij een fiscale loonsom van &euro;48.333. De grote bedragen komen alleen via loon of dividend uit de BV.</p>
+      </div>
+
+      <p class="fade mt-8 text-slate-300 text-[17px] leading-[1.8]">Je hebt een BV of een holding, en je vraagt je af wat je er onbelast uit kunt halen. Een logische vraag, want op loon en dividend gaat een fors deel naar de fiscus. Het eerlijke antwoord is dat de lijst korter is dan de meeste ondernemers hopen, en dat bijna alles wat &quot;belastingvrij&quot; heet een vergoeding is van kosten die je toch al maakt.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Het re&euml;le voordeel zit hem er niet in dat je gratis geld krijgt, maar dat je die kosten met onbelast geld van de BV betaalt in plaats van uit je nettoloon. Bij een marginale druk van rond de 50% scheelt dat ongeveer de helft. Het blijft je eigen kostenpost, alleen slimmer gefinancierd.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Er is precies &eacute;&eacute;n post die wel vrij besteedbaar geld is, en die is klein. Voor 2026 ligt het normbedrag voor het gebruikelijk loon op &euro;58.000. Over dividend betaal je in box 2 24,5% tot &euro;68.843 en 31% daarboven. De echt grote bedragen verlaten de BV dus nog steeds alleen via salaris of dividend.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Hieronder loop je de routes langs die echt onbelast zijn, de posten die er alleen maar zo uitzien, en de administratie die je nodig hebt. We schrijven dit als kantoor dat je voor fouten wil behoeden, niet om je een trucje aan te praten.</p>
+
+      <!-- ── H2: Gerichte vrijstellingen ── -->
+      <h2 id="gerichte-vrijstellingen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Gerichte vrijstellingen: onbelast, maar wel echte kosten</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Gerichte vrijstellingen zijn vergoedingen die je onbelast aan jezelf als werknemer van de BV uitbetaalt. Ze zijn aftrekbaar voor de BV en gaan niet ten koste van je vrije ruimte. De rode draad is dat er een zakelijke kost tegenover moet staan. Dit zijn de belangrijkste posten voor 2026.</p>
+
+      <div class="fade mt-7 glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
+            <thead>
+              <tr class="bg-white/[0.04]">
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Post</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Onbelast in 2026</th>
+              </tr>
+            </thead>
+            <tbody class="text-[15px] text-slate-300">
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Zakelijke kilometers en woon-werkverkeer</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Maximaal &euro;0,25 per kilometer</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Openbaar vervoer</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Volledig</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Thuiswerkdag</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Maximaal &euro;2,45 per dag</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Maaltijden bij overwerk, dienstreis en klantbezoek</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Werkelijke kosten</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Verblijf en overnachting bij dienstreizen</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Werkelijke kosten</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Cursus, congres, opleiding, vakliteratuur, beroepsregister</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Werkelijke kosten</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Zakelijke verhuizing</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">&euro;7.750 plus werkelijke boedelkosten</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Verklaring Omtrent het Gedrag</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Werkelijke kosten</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Noodzakelijke werkmiddelen (laptop, telefoon, tablet, gereedschap)</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Volledig (noodzakelijkheidscriterium)</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Arbovoorzieningen (bureaustoel, beeldscherm, verlichting)</td><td class="px-5 py-3.5" data-label="Onbelast in 2026">Volledig</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="fade mt-7 text-slate-300 text-[17px] leading-[1.8]">Twee regels lopen in de praktijk vaak mis. Je kunt op dezelfde dag niet zowel de thuiswerkvergoeding als de reiskostenvergoeding voor woon-werkverkeer geven; het is het een of het ander. En het noodzakelijkheidscriterium is ruimer dan veel ondernemers denken. Is een telefoon noodzakelijk voor het werk, dan is hij volledig onbelast, ook als je hem daarnaast priv&eacute; gebruikt.</p>
+
+      <!-- ── H2: Nihilwaarderingen ── -->
+      <h2 id="nihilwaarderingen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Nihilwaarderingen en de valkuil van de thuiswerkplek</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Naast gerichte vrijstellingen kent de werkkostenregeling nihilwaarderingen. Dat zijn verstrekkingen die op nul worden gewaardeerd en dus niets van je vrije ruimte opsnoepen. Het gaat om werkkleding met een logo van minimaal 70 vierkante centimeter, consumpties tijdens werktijd op de werkplek, en arbovoorzieningen op de werkplek.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Voor een DGA zit hier een addertje onder het gras. Een werkkamer thuis geldt fiscaal doorgaans niet als werkplek. Daardoor zijn de meeste nihilwaarderingen thuis niet van toepassing. De uitzondering zijn de arbovoorzieningen: een goede bureaustoel of een beeldscherm mag je ook thuis onbelast verstrekken.</p>
+
+      <!-- ── H2: Vrije ruimte ── -->
+      <h2 id="vrije-ruimte" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">De vrije ruimte: het enige echt vrije geld</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Binnen de werkkostenregeling heb je een vrije ruimte. Daaruit mag je vergoedingen en verstrekkingen onbelast geven zonder zakelijk doel en zonder bonnetje. Dit is het enige bedrag dat echt vrij besteedbaar is.</p>
+
+      <div class="fade mt-7 glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
+            <thead>
+              <tr class="bg-white/[0.04]">
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Deel van de fiscale loonsom</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Vrije ruimte 2026</th>
+              </tr>
+            </thead>
+            <tbody class="text-[15px] text-slate-300">
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Deel van de fiscale loonsom">Eerste &euro;400.000</td><td class="px-5 py-3.5" data-label="Vrije ruimte 2026">2,00%</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Deel van de fiscale loonsom">Het meerdere</td><td class="px-5 py-3.5" data-label="Vrije ruimte 2026">1,18%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="fade mt-7 text-slate-300 text-[17px] leading-[1.8]">Bij een fiscale loonsom van &euro;48.333 komt de vrije ruimte uit op ongeveer &euro;967 per jaar. Overschrijd je de vrije ruimte, dan betaalt de BV 80% eindheffing over het meerdere. Per 2027 staat een verhoging van het eerste percentage naar 2,16% gepland.</p>
+
+      <!-- Callout: Let op -->
+      <div class="fade mt-8 rounded-2xl border border-cyan/20 bg-cyan/[0.06] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Let op de gebruikelijkheidstoets</p>
+        <p class="mt-3 text-slate-300 text-[17px] leading-[1.8]">Wat je in de vrije ruimte stopt, mag niet ongebruikelijk veel afwijken van wat normaal is. De doelmatigheidsgrens ligt op &euro;2.400 per persoon per jaar, en daaronder toetst de Belastingdienst in de regel niet. Bij een BV met alleen jou als werknemer ontbreekt een collega om mee te vergelijken. Dat maakt je positie kwetsbaarder dan bij een gewone werkgever, dus wees hier terughoudend.</p>
+      </div>
+
+      <!-- ── H2: Al van jou ── -->
+      <h2 id="al-van-jou" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Geld dat al van jou is</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Sommige bedragen die je uit de BV haalt, zijn helemaal geen onttrekking maar een teruggave. Ze zijn volledig onbelast, simpelweg omdat het geld al van jou was.</p>
+
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Aflossing van een vordering op de BV.</strong> Heb je geld in de BV ingelegd of kosten voorgeschoten, dan is de terugbetaling daarvan onbelast.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Terugbetaling van gestort kapitaal of agio.</strong> Onbelast in box 2, maar alleen met een besluit van de algemene vergadering, een statutenwijziging bij de notaris en een verzettermijn van twee maanden voor crediteuren. Het bedrag mag niet hoger zijn dan wat er is gestort. Zonder statutenwijziging is het gewoon dividend en geldt het box 2-tarief.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span><strong class="font-semibold text-white">Vergoeding van intermediaire kosten.</strong> Kosten die je namens de BV hebt betaald en even hebt voorgeschoten, krijg je onbelast terug.</span>
+        </li>
+      </ul>
+
+      <!-- ── H2: Lijkt onbelast ── -->
+      <h2 id="lijkt-onbelast" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Wat er alleen maar uitziet als onbelast</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Een paar routes klinken als een manier om onbelast geld uit de BV te halen, maar dat zijn ze niet. Ze verplaatsen de heffing of stellen hem alleen uit.</p>
+
+      <div class="fade mt-7 glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
+            <thead>
+              <tr class="bg-white/[0.04]">
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Route</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Werkelijke behandeling</th>
+              </tr>
+            </thead>
+            <tbody class="text-[15px] text-slate-300">
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Route">Auto van de zaak</td><td class="px-5 py-3.5" data-label="Werkelijke behandeling">Bijtelling, tenzij minder dan 500 priv&eacute;kilometers per jaar met een sluitende rittenregistratie</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Route">Fiets van de zaak</td><td class="px-5 py-3.5" data-label="Werkelijke behandeling">7% bijtelling</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Route">Rente op een lening van jou aan de BV</td><td class="px-5 py-3.5" data-label="Werkelijke behandeling">Belast in box 1 onder de terbeschikkingstellingsregeling, niet in box 3</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Route">Werkruimte thuis verhuren aan de BV</td><td class="px-5 py-3.5" data-label="Werkelijke behandeling">Alleen bij een zelfstandige ruimte met eigen ingang en sanitair; de huur is box 1-inkomen en zelden gunstig</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Route">Rekening-courant</td><td class="px-5 py-3.5" data-label="Werkelijke behandeling">Uitstel van heffing, geen afstel; de box 2-claim blijft staan</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="fade mt-7 text-slate-300 text-[17px] leading-[1.8]">De rekening-courant verdient een aparte waarschuwing. Rood staan bij je eigen BV is uitstel van heffing, geen afstel. De box 2-claim blijft staan, de rente die je aan de BV betaalt wordt daar opnieuw belast met vennootschapsbelasting, en een oplopende consumptieve rekening-courant ondergraaft je positie over het gebruikelijk loon. Sinds de Wet excessief lenen worden schulden boven &euro;500.000 op peildatum 31 december belast als inkomen in box 2.</p>
+
+      <!-- ── H2: Rekenvoorbeeld ── -->
+      <h2 id="rekenvoorbeeld" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Een rekenvoorbeeld bij een loonsom van 48.000 euro</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Wat betekent dit in geld? Neem een DGA met een fiscale loonsom van ongeveer &euro;48.000, die realistisch gebruikmaakt van de regelingen hierboven.</p>
+
+      <div class="fade mt-7 glass rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-stack w-full min-w-[34rem] text-left border-collapse">
+            <thead>
+              <tr class="bg-white/[0.04]">
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Post</th>
+                <th scope="col" class="px-5 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Bedrag per jaar</th>
+              </tr>
+            </thead>
+            <tbody class="text-[15px] text-slate-300">
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Totaal aan onbelaste vergoedingen</td><td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag per jaar">&euro;5.000 tot &euro;6.500</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Waarvan echt vrij besteedbaar (vrije ruimte)</td><td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag per jaar">&euro;967</td></tr>
+              <tr class="border-t border-white/10"><td class="px-5 py-3.5 font-semibold text-white" data-label="Post">Re&euml;el voordeel ten opzichte van dezelfde kosten uit nettoloon</td><td class="px-5 py-3.5 whitespace-nowrap" data-label="Bedrag per jaar">&euro;2.500 tot &euro;3.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="fade mt-7 text-slate-300 text-[17px] leading-[1.8]">Van dat totaal is &euro;967 echt vrij besteedbaar. De rest is vergoeding van kosten die je toch al maakt. Het voordeel zit hem erin dat je die kosten met onbelast geld betaalt in plaats van uit je nettoloon.</p>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Bij een inkomen tussen &euro;45.592 en &euro;78.426 ligt de marginale druk op loon rond de 50,5%. Dat komt doordat naast het schijftarief van 37,56% ook de algemene heffingskorting met 6,398% en de arbeidskorting met 6,51% afbouwen. Daardoor levert &euro;5.000 aan kosten die je met onbelast geld betaalt ongeveer &euro;2.500 tot &euro;3.000 per jaar op ten opzichte van dezelfde kosten uit je nettoloon.</p>
+
+      <!-- Mid-article CTA -->
+      <div class="fade my-12 glass-strong rounded-3xl p-8 sm:p-10 text-center">
+        <h3 class="font-display font-bold text-white text-2xl tracking-tight">Haal je uit je BV wat er in zit, zonder risico?</h3>
+        <p class="mt-3 text-slate-300 text-[15px] leading-relaxed">Fortly regelt je loonadministratie, DGA-salaris en de aangiften, en zorgt dat je onbelaste vergoedingen kloppen en aantoonbaar zijn. Bekijk onze <a href="/boekhouder-mkb.html" class="font-semibold text-cyan hover:text-white transition-colors underline underline-offset-2">boekhouding voor het MKB</a> of meld je direct aan.</p>
+        <a href="/aanmelden.html?pakket=bv" class="mt-7 inline-flex justify-center items-center rounded-full px-7 py-3.5 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">Start met het BV-pakket</a>
+      </div>
+
+      <!-- ── H2: Onderbouwing ── -->
+      <h2 id="onderbouwing" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Onderbouwing: alles moet aantoonbaar zijn</h2>
+      <p class="fade mt-4 text-slate-300 text-[17px] leading-[1.8]">Alle regelingen hierboven zijn legitiem, mits je ze kunt onderbouwen. De Belastingdienst kijkt niet naar je bedoeling, maar naar je vastlegging. Dit heb je op orde te hebben.</p>
+
+      <ul class="fade mt-5 space-y-3.5">
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Een kilometeradministratie voor je zakelijke ritten en woon-werkverkeer.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Een schriftelijke vaststelling van het aantal thuiswerkdagen waarover je de vergoeding betaalt.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Bonnen en facturen bij opleidingen, werkmiddelen en overige kosten.</span>
+        </li>
+        <li class="flex gap-3.5 text-slate-300 text-[17px] leading-[1.8]">
+          <span class="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
+          <span>Een expliciete aanwijzing als eindheffingsloon in de loonadministratie, op het moment zelf en niet achteraf.</span>
+        </li>
+      </ul>
+
+      <p class="fade mt-6 text-slate-300 text-[17px] leading-[1.8]">Heb je dat op orde, dan heb je gewoon recht op deze regelingen. Wie een agressief opgetuigde onkostenstroom combineert met een laag gebruikelijk loon, roept juist de vragen op die hij wil vermijden.</p>
+
+      <!-- Disclaimer -->
+      <div class="fade mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-7">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-slate-400">Disclaimer</p>
+        <p class="mt-3 text-slate-400 text-[15px] leading-[1.8]">Dit artikel is gebaseerd op de regelgeving zoals die geldt voor 2026. Bedragen en percentages wijzigen jaarlijks en de toepassing hangt af van je individuele situatie. Laat je situatie altijd toetsen door je boekhouder of adviseur voordat je een regeling toepast.</p>
+      </div>
+
+      <!-- ── H2: FAQ ── -->
+      <h2 id="veelgestelde-vragen" class="fade mt-14 scroll-mt-28 font-display font-bold text-white text-2xl sm:text-3xl tracking-tight">Veelgestelde vragen</h2>
+
+      <div class="mt-8 border-t border-white/10">
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Hoeveel kan een DGA onbelast uit de BV halen?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Minder dan de meeste ondernemers hopen. Bijna alle onbelaste vergoedingen zijn een terugbetaling van kosten die je feitelijk maakt, zoals zakelijke kilometers, thuiswerk, opleidingen en werkmiddelen. Het enige echt vrij besteedbare bedrag is de vrije ruimte van de werkkostenregeling. Bij een fiscale loonsom van &euro;48.333 komt die in 2026 uit op ongeveer &euro;967 per jaar. Grote bedragen komen alleen via loon of dividend uit de BV.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Wat is de vrije ruimte van de werkkostenregeling in 2026?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">In 2026 is de vrije ruimte 2,00% van de fiscale loonsom tot en met &euro;400.000 en 1,18% over het meerdere. Uit die ruimte mag je onbelast vergoedingen geven zonder zakelijk doel of bonnetje. Overschrijd je de vrije ruimte, dan betaalt de BV 80% eindheffing over het meerdere. Per 2027 staat een verhoging van het eerste percentage naar 2,16% gepland.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Is de onbelaste kilometervergoeding in 2026 nog &euro;0,23?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Nee. De onbelaste kilometervergoeding is voor 2026 verhoogd naar &euro;0,25 per kilometer. Het kabinet voerde die verhoging in met terugwerkende kracht tot 1 januari 2026. De vergoeding geldt voor zakelijke kilometers en woon-werkverkeer en is een gerichte vrijstelling, dus onbelast voor jou en aftrekbaar voor de BV.</p></div>
+        </details>
+        <details class="faq-item fade border-b border-white/10">
+          <summary><h3 class="font-display font-semibold text-white text-lg">Mag je thuiswerkvergoeding en reiskostenvergoeding op dezelfde dag geven?</h3></summary>
+          <div class="faq-answer"><p class="mt-2 text-slate-300 text-[15px] leading-relaxed">Nee. Voor dezelfde dag kies je tussen de thuiswerkvergoeding van &euro;2,45 of de reiskostenvergoeding voor woon-werkverkeer. Je kunt ze niet allebei voor dezelfde dag onbelast uitbetalen. Werk je een deel van de dag thuis en reis je een deel, dan geldt het een of het ander.</p></div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</article>
+
+  <!-- ================= EIND-CTA ================= -->
+  <section id="contact" class="relative bg-navy py-24 overflow-hidden">
+    <div class="glow" style="width:40rem;height:40rem;left:-16rem;top:-6rem;background:radial-gradient(circle,rgba(0,122,255,0.28),transparent 66%);opacity:0.2;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center fade">
+      <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Boekhouding voor DGA en BV</p>
+      <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Loon, dividend en vergoedingen: alles <span class="gradient-text">kloppend</span></h2>
+      <p class="mt-5 text-slate-300 text-lg leading-relaxed">Fortly verzorgt de complete boekhouding voor BV&#39;s en DGA&#39;s vanaf &euro;200 per maand (excl. btw): je loonadministratie en DGA-salaris, de vennootschapsbelasting, de jaarrekening en onbelaste vergoedingen die kloppen en aantoonbaar zijn. Vaste prijs, vaste controller, altijd antwoord binnen &eacute;&eacute;n werkdag.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center">
+        <a href="/aanmelden.html?pakket=bv" class="inline-flex justify-center items-center rounded-full px-7 py-4 font-semibold text-white bg-gradient-to-r from-accent to-violet hover:brightness-110 transition-all">
+          Start met het BV-pakket
+        </a>
+        <a href="/boekhouder-mkb.html" class="inline-flex justify-center items-center rounded-full glass px-7 py-4 font-semibold text-white hover:border-cyan/30 transition-all">
+          Bekijk de MKB-pagina
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GERELATEERDE ARTIKELEN ================= -->
+  <section class="relative bg-ink py-20 overflow-hidden" aria-labelledby="lees-ook-heading">
+    <div class="glow" style="width:34rem;height:34rem;right:-14rem;top:2rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.14;" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-violet">Lees ook</p>
+        <h2 id="lees-ook-heading" class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Meer over ondernemen met een BV</h2>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        <a href="/blog/vennootschapsbelasting-2026-mkb.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">MKB &amp; Belasting</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Vennootschapsbelasting 2026: tarieven en aftrekposten voor het MKB</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Welke tarieven gelden er en waar bespaar je op als BV?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/holdingstructuur-management-bv.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="1">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Holding &amp; Structuur</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Holdingstructuur opzetten: wanneer loont een management-BV?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Wanneer is een holding de moeite waard, en wat kost het?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="/blog/eenmanszaak-naar-bv-wanneer.html" class="fade card-hover glass rounded-2xl p-6 flex flex-col" data-delay="2">
+          <span class="self-start inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.1em] text-cyan">Ondernemen &amp; Groei</span>
+          <h3 class="mt-4 font-display font-semibold text-white text-lg leading-snug">Van eenmanszaak naar BV: wanneer is het fiscaal voordelig?</h3>
+          <p class="mt-2 text-slate-300 text-[15px] leading-relaxed flex-1">Bij welke winst wordt de overstap naar een BV interessant?</p>
+          <span class="mt-5 inline-flex items-center gap-2 font-display text-sm font-semibold text-cyan">
+            Lees verder
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-ink border-t border-white/10 pt-14 pb-10" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8">
+    <a href="/" class="flex items-center" aria-label="Fortly, online boekhouder voor ZZP en MKB in heel Nederland">
+      <svg class="h-9 w-auto" viewBox="12 12 274 96" role="img" aria-label="Fortly, online boekhouder voor ZZP en MKB in heel Nederland" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="#007AFF" x="14" y="14" width="92" height="92" rx="10"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="54" height="12" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="32" width="12" height="56" rx="3"/>
+        <rect fill="#FFFFFF" x="34" y="62" width="40" height="12" rx="3"/>
+        <line x1="124" y1="18" x2="124" y2="102" stroke="#007AFF" stroke-width="1.5" opacity="0.5"/>
+        <path fill="#F5F5F7" d="M142.6797 56.2900L142.6797 50.0313L147.0977 50.0313L147.0977 47.7656Q147.0977 43.9707 147.9048 42.1016Q148.7119 40.2324 150.8784 39.0571Q153.0449 37.8818 156.3584 37.8818L156.3584 37.8818Q159.7568 37.8818 163.0137 38.9014L163.0137 38.9014L161.9375 44.4521Q160.0400 43.9990 158.2842 43.9990L158.2842 43.9990Q156.5566 43.9990 155.8062 44.8062Q155.0557 45.6133 155.0557 47.9072L155.0557 47.9072L155.0557 50.0313L161.0029 50.0313L161.0029 56.2900L155.0557 56.2900L155.0557 80.1074L147.0977 80.1074L147.0977 56.2900L142.6797 56.2900Z M162.6367 64.6445L162.6367 64.6445Q162.6367 60.6797 164.5908 56.9697Q166.5449 53.2598 170.1274 51.3057Q173.7100 49.3516 178.1279 49.3516L178.1279 49.3516Q184.9531 49.3516 189.3145 53.7837Q193.6758 58.2158 193.6758 64.9844L193.6758 64.9844Q193.6758 71.8096 189.2720 76.2983Q184.8682 80.7871 178.1846 80.7871L178.1846 80.7871Q174.0498 80.7871 170.2974 78.9180Q166.5449 77.0488 164.5908 73.4380Q162.6367 69.8271 162.6367 64.6445ZM170.7930 65.0693L170.7930 65.0693Q170.7930 69.5439 172.9170 71.9229Q175.0410 74.3018 178.1563 74.3018L178.1563 74.3018Q181.2715 74.3018 183.3813 71.9229Q185.4912 69.5439 185.4912 65.0127L185.4912 65.0127Q185.4912 60.5947 183.3813 58.2158Q181.2715 55.8369 178.1563 55.8369L178.1563 55.8369Q175.0410 55.8369 172.9170 58.2158Q170.7930 60.5947 170.7930 65.0693Z M206.5244 70.8184L206.5244 80.1074L198.5664 80.1074L198.5664 50.0313L205.9580 50.0313L205.9580 54.3076Q207.8555 51.2773 209.3706 50.3145Q210.8857 49.3516 212.8115 49.3516L212.8115 49.3516Q215.5303 49.3516 218.0508 50.8525L218.0508 50.8525L215.5869 57.7910Q213.5762 56.4883 211.8486 56.4883L211.8486 56.4883Q210.1777 56.4883 209.0166 57.4087Q207.8555 58.3291 207.1899 60.7363Q206.5244 63.1436 206.5244 70.8184L206.5244 70.8184Z M228.8320 50.0313L234.2695 50.0313L234.2695 56.3750L228.8320 56.3750L228.8320 68.4961Q228.8320 72.1777 228.9878 72.7866Q229.1436 73.3955 229.6958 73.7920Q230.2480 74.1885 231.0410 74.1885L231.0410 74.1885Q232.1455 74.1885 234.2412 73.4238L234.2412 73.4238L234.9209 79.5977Q232.1455 80.7871 228.6338 80.7871L228.6338 80.7871Q226.4814 80.7871 224.7539 80.0649Q223.0264 79.3428 222.2192 78.1958Q221.4121 77.0488 221.1006 75.0947L221.1006 75.0947Q220.8457 73.7070 220.8457 69.4873L220.8457 69.4873L220.8457 56.3750L217.1924 56.3750L217.1924 50.0313L220.8457 50.0313L220.8457 44.0557L228.8320 39.4111L228.8320 50.0313Z"/>
+        <path fill="#007AFF" d="M246.7500 80.1074L238.7920 80.1074L238.7920 38.5898L246.7500 38.5898L246.7500 80.1074Z M261.5811 80.1924L250.1396 50.0313L258.6074 50.0313L265.8008 71.3848L272.8242 50.0313L281.0654 50.0313L270.4453 78.9746L268.5479 84.2139Q267.5000 86.8477 266.5513 88.2354Q265.6025 89.6230 264.3706 90.4868Q263.1387 91.3506 261.3403 91.8320Q259.5420 92.3135 257.2764 92.3135L257.2764 92.3135Q254.9824 92.3135 252.7734 91.8320L252.7734 91.8320L252.0654 85.6016Q253.9346 85.9697 255.4355 85.9697L255.4355 85.9697Q258.2109 85.9697 259.5420 84.3413Q260.8730 82.7129 261.5811 80.1924L261.5811 80.1924Z"/>
+      </svg>
+    </a>
+
+    <nav class="flex justify-center flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300" aria-label="Footernavigatie">
+      <a href="/#voor-wie" class="hover:text-cyan transition-colors">Voor wie</a>
+      <a href="/#diensten" class="hover:text-cyan transition-colors">Diensten</a>
+      <a href="/boekhouder-mkb.html" class="hover:text-cyan transition-colors">Boekhouder MKB</a>
+      <a href="/#pakketten" class="hover:text-cyan transition-colors">Prijzen</a>
+      <a href="/#werkwijze" class="hover:text-cyan transition-colors">Werkwijze</a>
+      <a href="/#faq" class="hover:text-cyan transition-colors">Veelgestelde vragen</a>
+      <a href="/over-ons.html" class="hover:text-cyan transition-colors">Over ons</a>
+      <a href="/blog/" class="hover:text-cyan transition-colors">Blog</a>
+      <a href="/#contact" class="hover:text-cyan transition-colors">Contact</a>
+    </nav>
+
+    <div class="space-y-2">
+      <p class="text-xs text-slate-300">Joan Muyskenweg 82, 1114 AN Amsterdam &middot; KvK 42002566 &middot; <a href="mailto:contact@fortly.nl" class="hover:text-cyan transition-colors">contact@fortly.nl</a> &middot; <a href="tel:+31202611285" class="hover:text-cyan transition-colors">020 261 1285</a></p>
+      <p class="text-xs text-slate-400">&copy; <span id="year">2026</span> Fortly. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-slate-600">Een onderdeel van <a href="https://indufort.nl" class="underline underline-offset-2 hover:text-slate-300 transition-colors">Indufort Consulting</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/fortly.js"></script>
+</body>
+</html>
