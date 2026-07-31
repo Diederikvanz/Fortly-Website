@@ -58,6 +58,13 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/onbelaste-vergoedingen-dga.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.fortly.nl/blog/jaarrekening-deponeren-kvk.html</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.fortly.nl/blog/jaarrekening-deponeren-kvk.html"/>
     <lastmod>2026-07-07</lastmod>
