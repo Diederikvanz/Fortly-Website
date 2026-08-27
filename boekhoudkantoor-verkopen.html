@@ -199,8 +199,42 @@
     </div>
   </section>
 
+  <!-- ================= WAT IS HET WAARD ================= -->
+  <section id="waarde" class="relative bg-ink py-24 overflow-hidden">
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl fade">
+        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Wat is het waard</p>
+        <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Een indicatie van je opbrengst</h2>
+        <p class="mt-4 text-slate-300 text-lg">De waarde van een klantenbestand hangt vooral af van je jaarlijkse terugkerende omzet, je klantprofiel en hoe soepel de overdracht kan. Onderstaande rekenhulp geeft een globale richting. Je definitieve bod krijg je binnen een week.</p>
+      </div>
+      <div class="mt-12 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <ul class="fade space-y-1">
+          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Terugkerende omzet weegt het zwaarst.</strong> Vaste maandklanten (btw + IB) zijn waardevoller dan losse opdrachten.</span></li>
+          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Klantprofiel telt.</strong> Zzp&#39;ers en mkb met een stabiele relatie en lage churn verhogen de waarde.</span></li>
+          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Een warme overdracht loont.</strong> Jouw introductie bij klanten verhoogt het behoud, en daarmee het bod.</span></li>
+          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">De vorm van de betaling telt mee.</strong> Wil je alles direct en volledig vooraf, dan zit je onderin de bandbreedte; met een deel nabetaling op basis van klantbehoud haal je de bovenkant.</span></li>
+        </ul>
+        <div class="fade glass-strong rounded-3xl p-6 sm:p-8 ring-1 ring-white/10 shadow-2xl shadow-black/40" data-delay="1">
+          <h3 class="font-display font-semibold text-white text-lg">Rekenhulp opbrengst</h3>
+          <p class="text-sm text-slate-400 mt-0.5">Globale indicatie, geen bod.</p>
+          <label for="omzet" class="block text-sm font-medium text-slate-300 mt-6 mb-2">Jaarlijkse terugkerende omzet klantenbestand</label>
+          <input type="range" id="omzet" min="10000" max="300000" step="5000" value="80000" class="w-full accent-cyan cursor-pointer">
+          <div class="flex justify-between text-sm text-slate-400 mt-1"><span>&euro;10.000</span><span id="omzetVal" class="text-white font-medium">&euro;80.000</span><span>&euro;300.000</span></div>
+          <label for="recur" class="block text-sm font-medium text-slate-300 mt-5 mb-2">Aandeel vaste maandklanten</label>
+          <input type="range" id="recur" min="30" max="100" step="5" value="70" class="w-full accent-cyan cursor-pointer">
+          <div class="flex justify-between text-sm text-slate-400 mt-1"><span>30%</span><span id="recurVal" class="text-white font-medium">70%</span><span>100%</span></div>
+          <div class="mt-6 rounded-2xl bg-white/[0.04] border border-white/10 p-5 text-center">
+            <div class="font-display text-3xl font-bold text-white" id="range">&euro;59.000 &ndash; &euro;75.000</div>
+            <div class="text-sm text-slate-400 mt-1">Indicatieve bandbreedte overnamewaarde</div>
+          </div>
+          <p class="text-xs text-slate-500 mt-4 leading-relaxed">Indicatie op basis van circa 0,65&ndash;1&times; jaaromzet, oplopend met het aandeel vaste klanten. Dit is geen aanbod en geen advies; je persoonlijke bod hangt af van je specifieke situatie en van verificatie van de cijfers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= HOE HET WERKT ================= -->
-  <section id="hoe" class="relative bg-ink py-24 overflow-hidden">
+  <section id="hoe" class="relative bg-navy py-24 overflow-hidden">
     <div class="glow" style="width:36rem;height:36rem;right:-16rem;top:-4rem;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 66%);opacity:0.16;" aria-hidden="true"></div>
     <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl fade">
@@ -238,40 +272,6 @@
       <div class="fade mt-8 max-w-4xl rounded-2xl border border-cyan/20 border-l-2 border-l-cyan bg-cyan/[0.06] p-6 sm:p-7">
         <p class="font-display font-semibold text-white">Waarom er een voorbehoud op het bod zit.</p>
         <p class="mt-2 text-slate-300 text-[15px] leading-[1.75]">Wij bieden binnen een week op basis van wat jij ons vertelt. Dat kan alleen als we daarna even mogen controleren of het beeld klopt: omzet, klantlijst en of de klanten overdraagbaar zijn. Ook kijken we of we jouw klanten kunnen bedienen met de kwaliteit die we willen leveren; bij een grotere praktijk stellen we soms een overname in fasen voor. Nemen we zelf niet over, dan kunnen we je een bod doen op basis van wat de markt ervoor betaalt, via een koper uit ons netwerk. Zo&#39;n bod is niet bindend en hangt af van het boekenonderzoek van die partij. Blijkt alles te kloppen, dan staat het bedrag. Wijkt het wezenlijk af, dan bespreken we dat open met je in plaats van je aan een verkeerd getal te houden. Wat wij bieden is dus snelheid en duidelijkheid, geen blind bod.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WAT IS HET WAARD ================= -->
-  <section id="waarde" class="relative bg-navy py-24 overflow-hidden">
-    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl fade">
-        <p class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-cyan">Wat is het waard</p>
-        <h2 class="mt-3 font-display font-bold text-white text-3xl sm:text-4xl tracking-tight">Een indicatie van je opbrengst</h2>
-        <p class="mt-4 text-slate-300 text-lg">De waarde van een klantenbestand hangt vooral af van je jaarlijkse terugkerende omzet, je klantprofiel en hoe soepel de overdracht kan. Onderstaande rekenhulp geeft een globale richting. Je definitieve bod krijg je binnen een week.</p>
-      </div>
-      <div class="mt-12 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <ul class="fade space-y-1">
-          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Terugkerende omzet weegt het zwaarst.</strong> Vaste maandklanten (btw + IB) zijn waardevoller dan losse opdrachten.</span></li>
-          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Klantprofiel telt.</strong> Zzp&#39;ers en mkb met een stabiele relatie en lage churn verhogen de waarde.</span></li>
-          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">Een warme overdracht loont.</strong> Jouw introductie bij klanten verhoogt het behoud, en daarmee het bod.</span></li>
-          <li class="flex gap-3.5 text-slate-300 text-[16px] leading-[1.7]"><span class="mt-[0.15em] shrink-0"><svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong class="font-semibold text-white">De vorm van de betaling telt mee.</strong> Wil je alles direct en volledig vooraf, dan zit je onderin de bandbreedte; met een deel nabetaling op basis van klantbehoud haal je de bovenkant.</span></li>
-        </ul>
-        <div class="fade glass-strong rounded-3xl p-6 sm:p-8 ring-1 ring-white/10 shadow-2xl shadow-black/40" data-delay="1">
-          <h3 class="font-display font-semibold text-white text-lg">Rekenhulp opbrengst</h3>
-          <p class="text-sm text-slate-400 mt-0.5">Globale indicatie, geen bod.</p>
-          <label for="omzet" class="block text-sm font-medium text-slate-300 mt-6 mb-2">Jaarlijkse terugkerende omzet klantenbestand</label>
-          <input type="range" id="omzet" min="10000" max="300000" step="5000" value="80000" class="w-full accent-cyan cursor-pointer">
-          <div class="flex justify-between text-sm text-slate-400 mt-1"><span>&euro;10.000</span><span id="omzetVal" class="text-white font-medium">&euro;80.000</span><span>&euro;300.000</span></div>
-          <label for="recur" class="block text-sm font-medium text-slate-300 mt-5 mb-2">Aandeel vaste maandklanten</label>
-          <input type="range" id="recur" min="30" max="100" step="5" value="70" class="w-full accent-cyan cursor-pointer">
-          <div class="flex justify-between text-sm text-slate-400 mt-1"><span>30%</span><span id="recurVal" class="text-white font-medium">70%</span><span>100%</span></div>
-          <div class="mt-6 rounded-2xl bg-white/[0.04] border border-white/10 p-5 text-center">
-            <div class="font-display text-3xl font-bold text-white" id="range">&euro;59.000 &ndash; &euro;75.000</div>
-            <div class="text-sm text-slate-400 mt-1">Indicatieve bandbreedte overnamewaarde</div>
-          </div>
-          <p class="text-xs text-slate-500 mt-4 leading-relaxed">Indicatie op basis van circa 0,65&ndash;1&times; jaaromzet, oplopend met het aandeel vaste klanten. Dit is geen aanbod en geen advies; je persoonlijke bod hangt af van je specifieke situatie en van verificatie van de cijfers.</p>
-        </div>
       </div>
     </div>
   </section>
